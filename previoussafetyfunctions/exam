@@ -1,0 +1,151 @@
+#!/usr/bin/env python
+
+import random
+import io
+import sys
+
+grader = None
+
+class Problem:
+	def __init__(self, line):
+		self.question = line
+		self.answers = {}
+
+	def askQuestion(self, indx):
+		global grader
+
+		print ('')
+		print ('<P>') + str(indx) + self.question[1:-1] + '<BR>'
+		grader.write('    /* Grading for question %d */\n' % indx)
+		grader.write('        $score =0;\n')
+		count = 0
+		ids = 'abcdefghijklmn'
+		correctness = 0
+		for key in self.answers:
+			print ('<input type="checkbox" name="') + str(indx) + '_' + ids[count] + '" value="yes">' + self.answers[key][1:-1] + '<BR>'
+			if self.answers[key][0] == '+':
+				grader.write('        if($_POST["%d_%s"] === "yes") { $score += 1; }\n' % (indx, ids[count]))
+				correctness += 1
+			else:
+				grader.write('        if($_POST["%d_%s"] === "yes") { $score -= 1; }\n' % (indx, ids[count]))
+			count += 1
+			if ids[count] == 'e': break
+
+		print ('</P>')
+		grader.write('        $score += %d;\n' % (count - correctness))
+		grader.write('        $numAnswers = %d;\n' % count)
+		grader.write('        $totalScore += $score / $numAnswers;\n')
+
+
+		return 1
+
+def putoutHeader(indx):
+	header = '''
+<head>
+<title>Safety quiz form</title>
+</head>
+<body bgcolor=#ffffff>
+
+<h3>Team 4079 Safety Quiz 2019</h3>
+
+<form method="post" action="./results/grade%d.php">
+
+First name:<br>
+<input type="text" name="firstname"><br>
+Last name:<br>
+<input type="text" name="lastname"><br>
+
+<br>
+Check all correct answers to each multiple-choice question, and click on the "Submit" button to submit the information.
+<!-- The checkboxes return the value field to the php script when the name is requested or nothing if not checked. -->
+'''
+	print(header % indx)
+
+def putoutTrailer():
+	trailer = '''
+
+<br>
+<br>
+<br>
+<br>
+<input type="submit" value="Submit">
+<input type="reset" value="Clear">
+</form>
+</body>
+'''
+	print(trailer)
+	
+def putoutGrader(grader, numProblems):
+	header = '''
+<html>
+<body>
+
+<h1>Your Score</h1>
+
+<?php
+	$firstname = ucfirst(strtolower(test_input($_POST["firstname"])));
+	$lastname = ucfirst(strtolower(test_input($_POST["lastname"])));
+
+	$numProblems = %d;
+	$totalScore = 0;
+
+'''
+	grader.write(header % numProblems)
+
+def moreGrader(grader):
+	trailer = '''
+    /* Compute and report final score */
+	$outdata = $firstname . ',' . $lastname . ',' . $totalScore . '\n';
+        file_put_contents('./results.csv', $outdata, FILE_APPEND | LOCK_EX);
+	echo 'Name:' . $firstname . ' ' . $lastname . '<BR>Score:' . $totalScore . ' out of ' . $numProblems . '';
+ 
+
+function test_input($data) {
+	$data = trim($data);
+	$data = stripslashes($data);
+	$data = htmlspecialchars($data);
+	return $data;
+}
+?>
+
+</body>
+</html> 
+'''
+	grader.write(trailer)
+
+
+def main():
+	global grader
+
+	problemMap = {}
+	random.seed()
+
+	# Read in the problems
+	infile = open('./Test.txt', 'r')
+	for line in infile:
+		if line[0] == 'Q':
+			newProblem = Problem(line)
+			problemMap[random.randint(0,999999)] = newProblem
+		else:
+			newProblem.answers[random.randint(0,999999)] = line
+
+	indx = 1
+	total = 0
+	randomizer = random.randint(0,999999)
+	putoutHeader(randomizer)
+	grader = open('./results/grade' + str(randomizer) + '.php', 'w+')
+	putoutGrader(grader, len(problemMap))
+	for key in problemMap:
+		score = problemMap[key].askQuestion(indx)
+		#print 'Score:' + str(score)
+		total += score
+		indx += 1
+
+	putoutTrailer()
+	moreGrader(grader)
+	#print 'Your total score was:' + str(total) + ' out of ' + str(len(problemMap))
+	pass
+
+
+
+main()

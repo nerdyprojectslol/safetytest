@@ -1,0 +1,149 @@
+<html>
+    
+    <head>
+        
+        <!-- Page Title -->
+        <title>Main Safety Test</title>
+
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="4079.png" type="image/x-icon">
+        <link rel="">
+        <?PHP
+        echo shell_exec("safety.py");
+        ?>
+    </head>
+
+<!-- Main Program -->
+
+    <body>
+
+        
+
+        <center>
+            <!-- Main Safety Heading -->
+            <h1 class="header" style="font-family: Arial, Helvetica, sans-serif;">	
+                OA Robotics General Safety Test
+            </h1>
+
+            <!-- Secondary Heading -->
+            <h2 id="Compendium1" class="header" style="font-family: Arial, Helvetica, sans-serif;">	
+                A safety compendium for the 22-23 school year
+            </h2>
+                <br>
+            <img id="logo" src="4079.png">
+            <br><br>
+
+            <!-- Safety Slides Link and Redirect-->
+            <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8" target="_blank"><h1 style="font-size: x-large;letter-spacing: 2px;">If you haven't, please go through the safety slides</h1></a>
+            <br><br>
+
+        </center>
+        <button id="Classic" class="btn btn-primary" style="position:absolute; top: 10px; right:10px;"onclick="Classic()">Old Layout</button>
+        
+        <!-- Question Columns -->
+            <div id="QuestionBox" class="form-group" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+                
+                    <h1>1.</h1>
+            </div>
+        <br><br><br>
+
+            <div id="QuestionBox" class="form-group" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+                
+                <h1>2.</h1>
+        </div>
+        <br><br><br>
+
+        <center>
+            <button id="FunctionalButtons" onclick="">Submit</button>
+            <button id="FunctionalButtons" onclick="">Clear</button>
+                <br><br>
+            <div id="ScoreBox"></div>
+                <br><br><br><br>
+            <h1 id="BottomThing">If you have any questions, contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
+        </center>
+        
+        <!-- CSS Program (Looks/Front End) -->
+
+        <style>
+            body
+            {
+            background-image: linear-gradient(to right top, #33a0f1, #30709a, #1882c1, #21645a, #1e419b);
+            }
+            .header
+            {
+	            color: white;
+                font-family: 'Yeon Sung';
+                font-size: 45px;
+                letter-spacing: 5px;
+                margin-top: 80px;
+            }
+            .header img
+            {
+	            width: 80px; margin-left: -15px;
+            }
+            #logo
+            {
+                width: 10px;
+                margin-top: 30px;
+                width: 10%;
+                border-radius: 15px;
+            }
+
+            #QuestionBox
+                {
+                background: rgba(255,255,255,0.5);
+                float: none;
+                border-radius: 5px;
+                height: 150px;
+                width: 250px;
+                position:relative;
+                left: 10px;
+                line-height: 20px;
+                }
+
+            /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+
+            @media (max-width: 720px) {
+                #Compendium1
+                {
+                     font-size: 30px;
+                }
+                #logo
+                {
+                width: 50px;
+                margin-top: 30px;
+                width: 50%;
+                border-radius: 15px;
+                }
+                #QuestionBox, #Scorebox
+                {
+                background: rgba(255,255,255,0.5);
+                float: none;
+                border-radius: 5px;
+                height: 150px;
+                width: 250px;
+                position:relative;
+                left:10px;
+                line-height: 20px;
+                }
+                #FunctionalButtons
+                {
+                    height: 50px; 
+                    width: 100px; 
+                    border-radius: 100px; 
+                    font-size: 25px; 
+                    background: rgba(255,255,255,0.75); 
+                    font-family: 'Times New Roman', Times, serif;
+                }
+            }
+
+        </style>
+
+        <!-- JavaScript Program -->
+
+        <script>
+        </script>
+
+    </body>
+
+</html>

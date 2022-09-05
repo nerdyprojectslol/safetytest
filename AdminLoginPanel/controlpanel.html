@@ -1,0 +1,121 @@
+<html>
+
+    <head>
+        <!-- Page Title -->
+        <meta charset="UTF-8"/>
+        <title>OA Administrator Safety Test Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="4079.png" type="image/x-icon">
+
+        <!-- Libaries -->
+        <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
+    </head>
+
+    <!-- Main Program -->
+
+    <body>
+        <!-- Positions the page in the center -->
+            <center>
+                <h1 class="header" style="font-family: Arial, Helvetica, sans-serif">Welcome to OA Robotics</h1>
+
+            <!-- The white box and it's contents are here up until </div> -->
+                <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+                <img src="4079.png" class="logo">
+                <h1 id="SafetyPanel1" style="position:absolute; top: 15%; left: 45%">Safety Test Control Panel</h1>
+                <br><br><br><br>
+
+                <!-- Number of answers-->
+                <a href="questions.html"><button id="Questions" style="right: 77%; top: 45%;">Questions</button></a>
+                <a><button id="TestingHTML" style="right: 54%; top: 45%;">Test HTML</button></a>
+                <a href="settings/testsettings.html"><button id="TestingSet" style="right: 31%; top: 45%;">Test Settings</button></a>
+                <a href="https://github.com/LilGamerPlayz/OA-Robotics-Safety-Test"><button id="Github" style="right:7%; top: 45%;">Test Github</button></a>
+                <a href="settings/profsettings.html"><button id="ProfileSet" style="right: 77%; top: 72%;">Profile Settings</button></a>
+        
+                </div>
+
+            </center>
+
+            <!-- Page Looks/Front End -->
+
+        <style>
+            #Questions, #TestingHTML, #TestingSet, #Github, #ProfileSet
+            {
+                background-color:rgb(0, 170, 255); 
+                width: 200px; 
+                height: 150px; 
+                position: absolute;  
+                font-size: 150%; 
+                border-radius: 35px; 
+                font-family:'Times New Roman', Times, serif; 
+                font-size: 40px;
+                color:black
+            }
+            .header img
+            {
+	            width: 80px;
+            }
+            body
+            {
+                background-image: linear-gradient(to right top, #f13333, #762121, #761730, #92245d, #9b1e3b);
+            }
+            .header
+            {
+                color: white;
+                font-family: 'Yeon Sung';
+                font-size: 45px;
+                margin-top: 80px;
+            }
+
+            .login_div
+            {
+                background: rgba(255,255,255,0.8);
+                float: none;
+                border-radius: 15px;
+                height: 720px;
+                width: 1080px;
+
+            }
+
+            .logo
+            {
+                width: 250px;
+                margin-top: 30px;
+                width: 250px;
+                border-radius: 15px;
+                position: absolute;
+                left: 3%;
+            }
+
+            #ProfileSettings
+            {
+                width:200px; 
+                height:150px; 
+                position:absolute; 
+                top: 72%; 
+                font-size: 300%;
+                border-radius: 50px;
+                font-family:'Times New Roman', Times, serif;
+                background: rgba(0, 119, 255, 0.5);
+            }
+
+
+            /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+            @media (max-width: 720px) {
+
+            .login_div
+            {
+                width: 18.5em;
+            }
+
+            #Email
+            {
+                font-size: 10px;
+            }
+            }
+        </style>
+    </body>
+</html>
