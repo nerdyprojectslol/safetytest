@@ -5,59 +5,59 @@ questionRandom = random.randint(1,20)
 if questionRandom == 1:
     #variable goes here, good luck
 
-if questionRandom == 2:
+    elif questionRandom == 2:
+        #variable goes here, good luck
+
+    elif questionRandom == 3:
     #variable goes here, good luck
 
-if questionRandom == 3:
+    elif questionRandom == 4:
     #variable goes here, good luck
 
-if questionRandom == 4:
+    elif questionRandom == 5:
     #variable goes here, good luck
 
-if questionRandom == 5:
+    elif questionRandom == 6:
     #variable goes here, good luck
 
-if questionRandom == 6:
+    elif questionRandom == 7:
     #variable goes here, good luck
 
-if questionRandom == 7:
+    elif questionRandom == 8:
+    #variable goes here, good luck
+    
+    elif questionRandom == 9:
     #variable goes here, good luck
 
-if questionRandom == 8:
+    elif questionRandom == 10:
     #variable goes here, good luck
 
-if questionRandom == 9:
+    elif questionRandom == 11:
     #variable goes here, good luck
 
-if questionRandom == 10:
+    elif questionRandom == 12:
     #variable goes here, good luck
 
-if questionRandom == 11:
+    elif questionRandom == 13:
     #variable goes here, good luck
 
-if questionRandom == 12:
+    elif questionRandom == 14:
     #variable goes here, good luck
 
-if questionRandom == 13:
+    elif questionRandom == 15:
     #variable goes here, good luck
 
-if questionRandom == 14:
+    elif questionRandom == 16:
     #variable goes here, good luck
 
-if questionRandom == 15:
+    elif questionRandom == 17:
     #variable goes here, good luck
 
-if questionRandom == 16:
+    elif questionRandom == 18:
     #variable goes here, good luck
 
-if questionRandom == 17:
+    elif questionRandom == 19:
     #variable goes here, good luck
-
-if questionRandom == 18:
-    #variable goes here, good luck
-
-if questionRandom == 19:
-    #variable goes here, good luck
-
-if questionRandom == 20:
+    
+    elif questionRandom == 20:
     #variable goes here, good luck
