@@ -8,7 +8,7 @@
         <!-- Page Icon -->
         <link rel="shortcut icon" href="4079.png" type="image/x-icon">
         <link rel="">
-        <script href="/safetytest-main/libraries/test.js"></script>
+        <script type="text/javascript" src="/libraries/test.js"></script>
     </head>
 
 <!-- Main Program -->
@@ -134,6 +134,17 @@
         <!-- JavaScript Program -->
 
         <script>
+            window.addEventListener("load", () => {
+            //Script for year updating
+            
+            var thisyear = "";
+            var nextyear = "";
+            thisyear.getFullYear() - 2000;
+            nextyear.getFullYear() - 1999;
+            
+            var Compendium = document.getElementById("Compendium1")
+            Compendium.innerHTML = "A safety compendium for the "+thisyear+nextyear+" school year (Testing Phase)";
+            });
         </script>
 
     </body>

@@ -1,3 +1,5 @@
+//ScoreBox
+
 document.getElementById("Scorebox").style.display = "none";
 var score = 0;
 var QNums = "";
@@ -15,7 +17,10 @@ function completeClassic(){
 
 //All possible Questions
 
+//New Arrays
 var PossibleQuestions = new Array(18);
+var answer = new Array(PossibleQuestions);
+
 var PossibleQuestionsCount = 16;
 
 PossibleQuestions[0] = "What types of things are MSDSs used for?";
@@ -40,25 +45,25 @@ PossibleQuestions[18] = "What person should you go to for safety guidance?";
 
 //Answers to each question held
 
-var answer1 = [];
-var answer2 = [];
-var answer3 = [];
-var answer4 = [];
-var answer5 = [];
-var answer6 = ["A fire extingisher", "A bag of chips", "Electricity", ""];
-var answer7 = ["Material Safety Data Sheet", "Modem Software Delivery System", "Mechanical System Distribution Safety", "Mostly Simpleminded Derpy Students", "Modified Security Derivitive System", "Mechanized Software Distribution Safety"];
-var answer8 = [];
-var answer9 = [];
-var answer10 = [];
-var answer11 = ["When you are scared", "When it requires electricity", "When it is sharp", "When others aren't using it", "When it is broken", ];
-var answer12 = [];
-var answer13 = [];
-var answer14 = [];
-var answer15 = [];
-var answer16 = [];
-var answer17 = [];
-var answer18 = [];
-var answer19 = [];
+answer[0] = "";
+answer[1] = "";
+answer[2] = "";
+answer[3] = "";
+answer[4] = "";
+answer[5] = "A fire extingisher", "A bag of chips", "Electricity", "";
+answer[6] = "Material Safety Data Sheet", "Modem Software Delivery System", "Mechanical System Distribution Safety", "Mostly Simpleminded Derpy Students", "Modified Security Derivitive System", "Mechanized Software Distribution Safety";
+answer[7] = "";
+answer[8] = "";
+answer[9] = "";
+answer[10] = "When you are scared", "When it requires electricity", "When it is sharp", "When others aren't using it", "When it is broken";
+answer[11] = "";
+answer[12] = "";
+answer[13] = "";
+answer[14] = "";
+answer[15] = "";
+answer[16] = "";
+answer[17] = "";
+answer[18] = "";
 
 var CorrectAnswers = ["Material Safety Data Sheet", "A fire extingisher", "When it is broken"];
 
@@ -87,32 +92,47 @@ function QuestionCor() {
     if (PossibleQuestions.answer = CorrectAnswers.indexOf()) {
         score = score + 0.25;
     }
-}
-
+        
+var AddQuestions = document.getElementById("QuestionBoxes");
+var QuestionArrayAt = 0;
 
 //Creating each new "div" dynamically according to how many questions there are
 var ArrayCount = 0;
 var QuestionCount = 1;
 for (i = 0; i < PossibleQuestionsCount; i++) {
-var AddQuestions = document.getElementById("QuestionBoxes");
 
-var AddQuestionsDiv = document.createElement("div");
-AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
-AddQuestionsDiv.id = "QuestionBoxes";
+    var AddQuestionsDiv = document.createElement("div");
+    AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
+    AddQuestionsDiv.id = "QuestionBoxes";
 
-var QuestionDiv = document.getElementById("QuestionBoxes");
-var H1Num = document.createElement("h1");
-H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions.ArrayCount;
-var br1 = document.createElement("br");
+    AddQuestions.appendChild(AddQuestionsDiv);
 
-var Checkboxes = document.createElement("")
+    var QuestionDiv = document.getElementById("QuestionBoxes");
 
+    var H1Num = document.createElement("h1");
+    H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions.ArrayCount;
 
+    QuestionDiv.appendChild(H1Num);
 
-ArrayCount = ArrayCount + 1;
-QuestionCount = QuestionCount + 1;
+    var br1 = document.createElement("br");
+
+    QuestionDiv.appendChild(br1);
 }
-//            <div id="QuestionBox" class="form-group" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
-                
-//<h1>1.</h1>
-//</div>
+
+    ArrayCount = ArrayCount + 1;
+    QuestionCount = QuestionCount + 1;
+
+    //Inputs
+        for (i = 0; i < PossibleQuestionsCount * 4; i++) {
+            var Checkboxes = document.createElement("input");
+            Checkboxes.id = "Checkboxlol";
+            Checkboxes.type = "checkbox";
+            Checkboxes.innerHTML = answer[QuestionArrayAt];
+
+
+            QuestionDiv.appendChild(Checkboxes);
+
+            QuestionArrayAt = QuestionArrayAt + 1;
+
+        }
+}
