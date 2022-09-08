@@ -13,7 +13,7 @@
 
 <!-- Main Program -->
 
-    <body onload="QuestionRan()">
+    <body onload="QuestionRan(), Compendium()">
 
         
 
@@ -45,8 +45,10 @@
             </div>
         <br><br><br>
         </div>
+
+        <!-- Submit/Clear buttons -->
         <center>
-            <button id="FunctionalButtons" onclick="QuetionCor()">Submit</button>
+            <button id="FunctionalButtons" onclick="QuestionCor()">Submit</button>
             <button id="FunctionalButtons" onclick="">Clear</button>
                 <br><br>
             <div id="ScoreBox"></div>
@@ -54,6 +56,8 @@
             <h1 id="BottomThing">If you have any questions, contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
         </center>
         
+
+
         <!-- CSS Program (Looks/Front End) -->
 
         <style>
@@ -91,6 +95,16 @@
                 position:relative;
                 left: 10px;
                 line-height: 20px;
+                }
+
+                #FunctionalButtons
+                {
+                    height: 50px; 
+                    width: 100px; 
+                    border-radius: 100px; 
+                    font-size: 25px; 
+                    background: rgba(255,255,255,0.75); 
+                    font-family: 'Times New Roman', Times, serif;
                 }
 
             /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
@@ -134,17 +148,31 @@
         <!-- JavaScript Program -->
 
         <script>
-            window.addEventListener("load", () => {
+
+            var a = "3";
+            var b = "2";
+
+        for(var i; i <= 5; i++) {
+            if(a == "2"){
+                console.log(b);
+            } else if (a == 3) {
+                a = b;
+            } else {
+                a = "2";
+            }
+        }
+
+
+
+            let thisyear = new Date().getFullYear() - 2000;
+            let nextyear = new Date().getFullYear() - 1999;
+
+            function Compendium() {
             //Script for year updating
-            
-            var thisyear = "";
-            var nextyear = "";
-            thisyear.getFullYear() - 2000;
-            nextyear.getFullYear() - 1999;
-            
-            var Compendium = document.getElementById("Compendium1")
-            Compendium.innerHTML = "A safety compendium for the "+thisyear+nextyear+" school year (Testing Phase)";
-            });
+            var Compendium = document.getElementById("Compendium1");
+            Compendium.innerHTML = "A safety compendium for the "+thisyear+" - "+nextyear+" school year";
+            }
+
         </script>
 
     </body>

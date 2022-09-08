@@ -7,6 +7,8 @@ function Classic(){
     var popup = docment.getElementById("redirect");
     redirect.classList.toggle("show");
 }
+
+//Classic
 function completeClassic(){
     if(document.getElementById("clasYes").click){
         window.location("oldsafetytest.html");
@@ -99,6 +101,8 @@ var QuestionArrayAt = 0;
 //Creating each new "div" dynamically according to how many questions there are
 var ArrayCount = 0;
 var QuestionCount = 1;
+
+//for loop to create questions answers
 for (i = 0; i < PossibleQuestionsCount; i++) {
 
     var AddQuestionsDiv = document.createElement("div");
