@@ -94,49 +94,70 @@ function QuestionCor() {
     if (PossibleQuestions.answer = CorrectAnswers.indexOf()) {
         score = score + 0.25;
     }
-        
-var AddQuestions = document.getElementById("QuestionBoxes");
-var QuestionArrayAt = 0;
-
-//Creating each new "div" dynamically according to how many questions there are
-var ArrayCount = 0;
-var QuestionCount = 1;
-
-//for loop to create questions answers
-for (i = 0; i < PossibleQuestionsCount; i++) {
-
-    var AddQuestionsDiv = document.createElement("div");
-    AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
-    AddQuestionsDiv.id = "QuestionBoxes";
-
-    AddQuestions.appendChild(AddQuestionsDiv);
-
-    var QuestionDiv = document.getElementById("QuestionBoxes");
-
-    var H1Num = document.createElement("h1");
-    H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions.ArrayCount;
-
-    QuestionDiv.appendChild(H1Num);
-
-    var br1 = document.createElement("br");
-
-    QuestionDiv.appendChild(br1);
 }
 
-    ArrayCount = ArrayCount + 1;
-    QuestionCount = QuestionCount + 1;
+
+
+//Question Creation Function
+function QuestionCreate() {
+
+//Preset Variables
+    var ArrayCount = 0;
+    var QuestionCount = 1;
+    var QuestionArrayAt = 0;
+
+//Creating each new "div" dynamically according to how many questions there are (function variable use only)
+
+const AddQuestions = document.getElementById("Questions1");
+
+
+
+    //for loop to create questions answers
+    for (i = 0; i < PossibleQuestionsCount; i++) {
+
+        //Creates a new div for each question
+        const AddQuestionsDiv = document.createElement("div");
+        AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
+        AddQuestionsDiv.id = "QuestionBoxes";
+
+        AddQuestions.appendChild(AddQuestionsDiv);
+
+        const QuestionDiv = document.getElementById("QuestionBoxes");
+
+
+        //Creates a new label for each question
+        const H1Num = document.createElement("h1");
+        H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions.ArrayCount;
+
+        QuestionDiv.appendChild(H1Num);
+
+
+        //Creates a new spacing for each question
+        const br1 = document.createElement("br");
+
+        QuestionDiv.appendChild(br1);
+
+        ArrayCount = ArrayCount + 1;
+        QuestionCount = QuestionCount + 1;
+    }
+
+
 
     //Inputs
-        for (i = 0; i < PossibleQuestionsCount * 4; i++) {
-            var Checkboxes = document.createElement("input");
-            Checkboxes.id = "Checkboxlol";
-            Checkboxes.type = "checkbox";
-            Checkboxes.innerHTML = answer[QuestionArrayAt];
+            for (i = 0; i < PossibleQuestionsCount * 4; i++) {
+                //Checkboxes
+                const Checkboxes = document.createElement("input");
+                Checkboxes.id = "Checkboxlol";
+                Checkboxes.type = "checkbox";
+                Checkboxes.innerHTML = answer[QuestionArrayAt];
 
+                QuestionDiv.appendChild(Checkboxes);
 
-            QuestionDiv.appendChild(Checkboxes);
+                //Input Labels
+                var InputH1 = document.createElement("h1");
+                InputH1.innerHTML = answer[QuestionArrayAt.Math.floor((Math.random() * 4) + answer.length)];
 
-            QuestionArrayAt = QuestionArrayAt + 1;
+                QuestionArrayAt = QuestionArrayAt + 1;
 
+            }
         }
-}
