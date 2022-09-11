@@ -1,5 +1,5 @@
 <html>
-    
+
     <head>
         
         <!-- Page Title -->
@@ -12,11 +12,12 @@
 
 <!-- Main Program -->
 
-    <body onload="QuestionRan(), QuestionCreate()">
+    <body>
 
-        
+    <!-- Center -->        
 
         <center id="center">
+
             <!-- Main Safety Heading -->
             <h1 class="header" style="font-family: Arial, Helvetica, sans-serif;">	
                 OA Robotics General Safety Test
@@ -28,18 +29,24 @@
             <img id="logo" src="4079.png">
             <br><br>
 
+            
             <!-- Safety Slides Link and Redirect-->
             <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8" target="_blank"><h1 style="font-size: x-large;letter-spacing: 2px;">If you haven't, please go through the safety slides</h1></a>
             <br><br>
 
         </center>
+
+        <!-- Classic -->
         <button id="Classic" class="btn btn-primary" style="position:absolute; top: 10px; right:10px;"onclick="Classic()">Old Layout</button>
-        <div id="Questions1">
-        <!-- Question Columns -->
+        
+        <!-- Questions Area-->
+        
+        <div id="Questions1" onload="QuestionRan(), QuestionCreate()">
+            <br><br>
         </div>
 
         <!-- Submit/Clear buttons -->
-        <center>
+        <center id="center">
             <button id="FunctionalButtons" onclick="QuestionCor()">Submit</button>
             <button id="FunctionalButtons" onclick="">Clear</button>
                 <br><br>
@@ -68,6 +75,16 @@
             .header img
             {
 	            width: 80px; margin-left: -15px;
+            }
+            #Questions1 div {
+                background: rgba(255,255,255,0.5);
+                float: none;
+                border-radius: 5px;
+                height: 150px;
+                width: 250px;
+                position:relative;
+                left:10px;
+                line-height: 20px;
             }
             #logo
             {

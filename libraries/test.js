@@ -1,29 +1,10 @@
-//ScoreBox
-
-document.getElementById("Scorebox").style.display = "none";
-var score = 0;
-var QNums = "";
-function Classic(){
-    var popup = docment.getElementById("redirect");
-    redirect.classList.toggle("show");
-}
-
-//Classic
-function completeClassic(){
-    if(document.getElementById("clasYes").click){
-        window.location("oldsafetytest.html");
-    }else if(document.getElementById("clasNo").click)
-        redirect.classList.toggle("hide");
-}
-
-
 //All possible Questions
 
 //New Arrays
-var PossibleQuestions = new Array(18);
-var answer = new Array(PossibleQuestions);
+let PossibleQuestions = new Array(18);
+let answer = new Array(PossibleQuestions);
 
-var PossibleQuestionsCount = 16;
+let PossibleQuestionsCount = 16;
 
 PossibleQuestions[0] = "What types of things are MSDSs used for?";
 PossibleQuestions[1] = "What is the unabbreviated form of PPE?";
@@ -47,8 +28,8 @@ PossibleQuestions[18] = "What person should you go to for safety guidance?";
 
 //Answers to each question held
 
-answer[0] = "";
-answer[1] = "";
+answer[0] = "Software", "Paint", "Metal pieces", "Paint", "Electrical components", "Robot structures", "Number of people", "Injuries";
+answer[1] = "Personal Protective Equipment", "Purposeful Protective Equipment", "Potentially Protective Equipment", "Personal Protective Essentials", "Potentially Protecive Essentials", "Purposeful Proper Equipment";
 answer[2] = "";
 answer[3] = "";
 answer[4] = "";
@@ -67,18 +48,37 @@ answer[16] = "";
 answer[17] = "";
 answer[18] = "";
 
-var CorrectAnswers = ["Material Safety Data Sheet", "A fire extingisher", "When it is broken"];
+const CorrectAnswers = ["Material Safety Data Sheet", "A fire extingisher", "When it is broken"];
 
-var score = 0;
+let score = 0;
+
+//Save Username in index.html
+function saveUser() {
+            
+    //Returns error if box is empty
+    if(document.getElementById("user").value == ""){
+        document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
+        setTimeout(function(){
+            document.getElementById("MainHeadingBox").innerHTML = "Enter Name in Input Box";
+        }, 3000);
+    }else{
+    //Saves user in local storage for test firebase
+    username = document.getElementById("user").value;
+    localStorage.setItem("username", username);
+    window.location = "MainSafetyTest/safetytest.html";
+    }
+}
+
+
 
 //Random Questions Function
 function QuestionRan() {
 
-    var randomNum = Math.floor((Math.random() * 18) + 1);
+    let randomNum = Math.floor((Math.random() * 18) + 1);
     if (randomNum == Number.isInteger){
         PossibleQuestions.length + randomNum;
         //Shifts an the end of an array to the front
-        for (var i = 0; i <= randomNum; i++) {
+        for (let i = 0; i <= randomNum; i++) {
 
             var EndQuestion = PossibleQuestions.pop();
             PossibleQuestions.unshift(EndQuestion);
@@ -89,75 +89,89 @@ function QuestionRan() {
     }
 }
 
+
+
 //Calculating the total score
 function QuestionCor() {
     if (PossibleQuestions.answer = CorrectAnswers.indexOf()) {
         score = score + 0.25;
     }
+    var user = localStorage.getItem("username");
 }
+
+
+//Preset Variables
+let ArrayCount = 0;
+let QuestionCount = 1;
+let QuestionArrayAt = 0;
+
 
 
 
 //Question Creation Function
 function QuestionCreate() {
 
-//Preset Variables
-    var ArrayCount = 0;
-    var QuestionCount = 1;
-    var QuestionArrayAt = 0;
-
-//Creating each new "div" dynamically according to how many questions there are (function variable use only)
-
-const AddQuestions = document.getElementById("Questions1");
-
-
+    const AddQuestions = document.getElementById("Questions1");
 
     //for loop to create questions answers
-    for (i = 0; i < PossibleQuestionsCount; i++) {
+    for (let i = 0; i < PossibleQuestionsCount; i++) {
+        var divid = "Question" + QuestionArrayAt;
 
         //Creates a new div for each question
-        const AddQuestionsDiv = document.createElement("div");
+        let AddQuestionsDiv = document.createElement("div");
         AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
-        AddQuestionsDiv.id = "QuestionBoxes";
+        AddQuestionsDiv.id = divid;
 
         AddQuestions.appendChild(AddQuestionsDiv);
+        
 
-        const QuestionDiv = document.getElementById("QuestionBoxes");
+        //Get the id from "AddQuestionsDiv1"
+        let AddQuestionsDiv1 = document.getElementById(AddQuestionsDiv.id);
+
+        //Br tags for spacing
+        var br1, br2 = document.createElement("br");
+
+        AddQuestions.appendChild(br1, br2);
 
 
         //Creates a new label for each question
-        const H1Num = document.createElement("h1");
+        let H1Num = document.createElement("h1");
         H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions.ArrayCount;
 
-        QuestionDiv.appendChild(H1Num);
+        AddQuestionsDiv1.appendChild(H1Num);
 
 
         //Creates a new spacing for each question
-        const br1 = document.createElement("br");
+        const br = document.createElement("br");
 
-        QuestionDiv.appendChild(br1);
+        AddQuestionsDiv1.appendChild(br);
 
+
+        //Updating Variables
         ArrayCount = ArrayCount + 1;
         QuestionCount = QuestionCount + 1;
-    }
 
 
-
-    //Inputs
-            for (i = 0; i < PossibleQuestionsCount * 4; i++) {
+            //Inputs
+            for (let j = 0; j < 4; j++) {
                 //Checkboxes
-                const Checkboxes = document.createElement("input");
+                let Checkboxes = document.createElement("input");
                 Checkboxes.id = "Checkboxlol";
                 Checkboxes.type = "checkbox";
                 Checkboxes.innerHTML = answer[QuestionArrayAt];
 
-                QuestionDiv.appendChild(Checkboxes);
+                AddQuestionsDiv1.appendChild(Checkboxes);
+
 
                 //Input Labels
-                var InputH1 = document.createElement("h1");
-                InputH1.innerHTML = answer[QuestionArrayAt.Math.floor((Math.random() * 4) + answer.length)];
+                let InputH1 = document.createElement("h1");
+                InputH1.innerHTML = answer[QuestionArrayAt];
+
+                AddQuestionsDiv1.appendChild(InputH1);
 
                 QuestionArrayAt = QuestionArrayAt + 1;
 
             }
         }
+    }
+    

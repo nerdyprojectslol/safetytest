@@ -1,21 +1,8 @@
-document.getElementById("Scorebox").style.display = "none";
-var score = 0;
-var QNums = "";
-function Classic(){
-    var popup = docment.getElementById("redirect");
-    redirect.classList.toggle("show");
-}
-function completeClassic(){
-    if(document.getElementById("clasYes").click){
-        window.location("oldsafetytest.html");
-    }else if(document.getElementById("clasNo").click)
-        redirect.classList.toggle("hide");
-}
-
-
-//All possible Questions
-
+//New Arrays
 var PossibleQuestions = new Array(18);
+var answer = new Array(PossibleQuestions);
+
+var PossibleQuestionsCount = 16;
 
 PossibleQuestions[0] = "What types of things are MSDSs used for?";
 PossibleQuestions[1] = "What is the unabbreviated form of PPE?";
@@ -37,11 +24,26 @@ PossibleQuestions[16] = "Which of the following items should always be available
 PossibleQuestions[17] = "What items should be noted on a MSDS?";
 PossibleQuestions[18] = "What person should you go to for safety guidance?";
 
-// Insert number of questions
-var numQues = 10;
+//Answers to each question held
 
-// Insert number of choices in each question
-var numChoi = 4;
+answer[0] = "Software", "Paint", "Metal pieces", "Paint", "Electrical components", "Robot structures", "Number of people", "Injuries";
+answer[1] = "Personal Protective Equipment", "Purposeful Protective Equipment", "Potentially Protective Equipment", "Personal Protective Essentials", "Potentially Protecive Essentials", "Purposeful Proper Equipment";
+answer[2] = "";
+answer[3] = "";
+answer[4] = "";
+answer[5] = "A fire extingisher", "A bag of chips", "Electricity", "";
+answer[6] = "Material Safety Data Sheet", "Modem Software Delivery System", "Mechanical System Distribution Safety", "Mostly Simpleminded Derpy Students", "Modified Security Derivitive System", "Mechanized Software Distribution Safety";
+answer[7] = "";
+answer[8] = "";
+answer[9] = "";
+answer[10] = "When you are scared", "When it requires electricity", "When it is sharp", "When others aren't using it", "When it is broken";
+answer[11] = "";
+answer[12] = "";
+answer[13] = "";
+answer[14] = "";
+answer[15] = "";
+answer[16] = "";
+answer[17] = "";
+answer[18] = "";
 
-// Insert number of questions displayed in answer area
-var answers = new Array();
+var CorrectAnswers = ["Material Safety Data Sheet", "A fire extingisher", "When it is broken"];

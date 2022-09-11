@@ -12,7 +12,8 @@
         <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/libraries/test.js"></script>
     </head>
 
     <!-- Main Program -->
@@ -118,23 +119,6 @@
             }
             }
         </style>
-
-        <!-- JavaScript Program (Saves the given username in Local Storage)-->
-
-        <script>
-        function saveUser() {
-            
-            //Returns error if box is empty
-            if(document.getElementById("user").value == ""){
-                document.getElementById("MainHeadingBox").innerHTML == "Please enter a valid username";
-            }else{
-            //Saves user in local storage for test firebase
-            username = document.getElementById("user").value;
-            localStorage.setItem("username", username);
-            window.location = "MainSafetyTest/safetytest.html";
-            }
-        }
-        </script>
 
     </body>
 </html>
