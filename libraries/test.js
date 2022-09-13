@@ -1,6 +1,3 @@
-//All possible Questions
-
-//New Arrays
 let PossibleQuestions = new Array(18);
 let answer = new Array(PossibleQuestions);
 
@@ -48,8 +45,6 @@ answer[16] = "";
 answer[17] = "";
 answer[18] = "";
 
-const CorrectAnswers = ["Material Safety Data Sheet", "A fire extingisher", "When it is broken"];
-
 let score = 0;
 
 //Save Username in index.html
@@ -72,28 +67,29 @@ function saveUser() {
 
 
 //Random Questions Function
-function QuestionRan() {
-
-    let randomNum = Math.floor((Math.random() * 18) + 1);
-    if (randomNum == Number.isInteger){
-        PossibleQuestions.length + randomNum;
-        //Shifts an the end of an array to the front
-        for (let i = 0; i <= randomNum; i++) {
-
-            var EndQuestion = PossibleQuestions.pop();
-            PossibleQuestions.unshift(EndQuestion);
+function QuestionRan(array) {
+        let currentIndex = array.length, randomIndex;
+      
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+      
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+      
+          // And swap it with the current element.
+          [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
         }
-        //Reruns the script
-    } else if (randomNum == "") {
-        QuestionRan();
-    }
+      
+    return array;
 }
 
-
+QuestionRan(PossibleQuestions);
 
 //Calculating the total score
 function QuestionCor() {
-    if (PossibleQuestions.answer = CorrectAnswers.indexOf()) {
+    if (PossibleQuestions.answer = fs.readFileSync("corectans.txt")) {
         score = score + 0.25;
     }
     var user = localStorage.getItem("username");
@@ -105,7 +101,7 @@ let ArrayCount = 0;
 let QuestionCount = 1;
 let QuestionArrayAt = 0;
 
-
+let ArrayAnsRan = Math.floor(Math.random() * 4);
 
 
 //Question Creation Function
@@ -115,8 +111,8 @@ function QuestionCreate() {
 
     //for loop to create questions answers
     for (let i = 0; i < PossibleQuestionsCount; i++) {
-        var divid = "Question" + QuestionArrayAt;
-
+        var divid = "Question_" + QuestionArrayAt;
+        
         //Creates a new div for each question
         let AddQuestionsDiv = document.createElement("div");
         AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
@@ -129,14 +125,19 @@ function QuestionCreate() {
         let AddQuestionsDiv1 = document.getElementById(AddQuestionsDiv.id);
 
         //Br tags for spacing
-        var br1, br2 = document.createElement("br");
-
+        var br1 = document.createElement("br");
+        var br2 = document.createElement("br");
         AddQuestions.appendChild(br1, br2);
 
 
         //Creates a new label for each question
         let H1Num = document.createElement("h1");
-        H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions.ArrayCount;
+        H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions[ArrayCount];
+        H1Num.style = "color: black; font-size: 20px; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: left;";
+
+        if (H1Num.innerHTML == PossibleQuestions) {
+
+        }
 
         AddQuestionsDiv1.appendChild(H1Num);
 
@@ -154,24 +155,41 @@ function QuestionCreate() {
 
             //Inputs
             for (let j = 0; j < 4; j++) {
+
+                //Creates a new span for each answer
+
+                let AddSpan = document.createElement("span");
+                AddSpan.id = "Answer_" + QuestionArrayAt + "_" + j;
+
+                AddQuestionsDiv1.appendChild(AddSpan);
+
+                AddSpanId = document.getElementById(AddSpan.id);
+
+
                 //Checkboxes
-                let Checkboxes = document.createElement("input");
-                Checkboxes.id = "Checkboxlol";
+                let Checkboxes = document.createElement('input');
+                Checkboxes.id = "PQ" + QuestionArrayAt + "_" + j;
                 Checkboxes.type = "checkbox";
-                Checkboxes.innerHTML = answer[QuestionArrayAt];
+                Checkboxes.style = "float: left;";
+                
+                AddSpanId.appendChild(Checkboxes); 
+                var Checkboxesid = document.getElementById(Checkboxes.id);
+                Checkboxesid.value = answer[ArrayAnsRan];
+                AddSpanId.appendChild(Checkboxesid); 
+                
+                //Brs
+                let br3 = document.createElement("br");
+                let br4 = document.createElement("br");
+                AddSpanId.appendChild(br3);
+                AddSpanId.appendChild(br4);
 
-                AddQuestionsDiv1.appendChild(Checkboxes);
-
+                Checkboxesid = Checkboxes.id;
 
                 //Input Labels
-                let InputH1 = document.createElement("h1");
-                InputH1.innerHTML = answer[QuestionArrayAt];
-
-                AddQuestionsDiv1.appendChild(InputH1);
-
-                QuestionArrayAt = QuestionArrayAt + 1;
 
             }
+            QuestionArrayAt = QuestionArrayAt + 1;
+
         }
     }
     

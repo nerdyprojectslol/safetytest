@@ -12,7 +12,7 @@
 
 <!-- Main Program -->
 
-    <body>
+    <body onload="QuestionCreate()">
 
     <!-- Center -->        
 
@@ -34,19 +34,16 @@
             <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8" target="_blank"><h1 style="font-size: x-large;letter-spacing: 2px;">If you haven't, please go through the safety slides</h1></a>
             <br><br>
 
-        </center>
-
         <!-- Classic -->
         <button id="Classic" class="btn btn-primary" style="position:absolute; top: 10px; right:10px;"onclick="Classic()">Old Layout</button>
         
         <!-- Questions Area-->
         
-        <div id="Questions1" onload="QuestionRan(), QuestionCreate()">
+        <div id="Questions1">
             <br><br>
         </div>
 
         <!-- Submit/Clear buttons -->
-        <center id="center">
             <button id="FunctionalButtons" onclick="QuestionCor()">Submit</button>
             <button id="FunctionalButtons" onclick="">Clear</button>
                 <br><br>
@@ -80,8 +77,8 @@
                 background: rgba(255,255,255,0.5);
                 float: none;
                 border-radius: 5px;
-                height: 150px;
-                width: 250px;
+                height: 300px;
+                width: 550px;
                 position:relative;
                 left:10px;
                 line-height: 20px;
@@ -93,18 +90,6 @@
                 width: 10%;
                 border-radius: 15px;
             }
-
-            #QuestionBoxes
-                {
-                background: rgba(255,255,255,0.5);
-                float: none;
-                border-radius: 5px;
-                height: 150px;
-                width: 250px;
-                position:relative;
-                left: 10px;
-                line-height: 20px;
-                }
 
                 #FunctionalButtons
                 {
