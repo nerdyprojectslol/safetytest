@@ -44,8 +44,8 @@
         </div>
 
         <!-- Submit/Clear buttons -->
-            <button id="FunctionalButtons" onclick="QuestionCor()">Submit</button>
-            <button id="FunctionalButtons" onclick="">Clear</button>
+            <button id="Submit" onmousedown="QuestionCor()">Submit</button>
+            <button id="Clear" onmousedown="Clear()">Clear</button>
                 <br><br>
             <div id="ScoreBox"></div>
                 <br><br><br><br>
@@ -91,7 +91,7 @@
                 border-radius: 15px;
             }
 
-                #FunctionalButtons
+                #Submit, #Clear
                 {
                     height: 50px; 
                     width: 100px; 

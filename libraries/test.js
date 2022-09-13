@@ -1,3 +1,6 @@
+
+
+//Array Counts
 let PossibleQuestions = new Array(18);
 let answer = new Array(PossibleQuestions);
 
@@ -89,10 +92,45 @@ QuestionRan(PossibleQuestions);
 
 //Calculating the total score
 function QuestionCor() {
-    if (PossibleQuestions.answer = fs.readFileSync("corectans.txt")) {
-        score = score + 0.25;
+
+    const AddQuestions = document.getElementById("Questions1");
+
+    //Checks if the answer is correct
+    //if (PossibleQuestions.answer = fs.readFileSync("corectans.txt")) {
+      //  score = score + 0.25;
+    //}
+
+    //Replaces the scoreboard
+    if (document.getElementById("scoringdiv")) {
+        document.getElementById("scoringdiv").remove();
     }
+
+    //Username
     var user = localStorage.getItem("username");
+
+    //Score Div
+    let scorediv = document.createElement("div");
+    scorediv.id = "scoringdiv";
+    scorediv.style = "font-size: 20px; color: white; text-align: center; margin-top: 20px;";
+    AddQuestions.appendChild(scorediv);
+    const scoredivid = document.getElementById(scorediv.id);
+
+    //Username in Test
+    const name = document.createElement("h1");
+    name.style = "font-size: 40px; color: black; text-align: center; position: absolute; top: 2%; left: 20%;"
+    name.innerHTML = user + "'s Score is:";
+    scoredivid.appendChild(name);
+
+    //Score H1
+    const scoreh1 = document.createElement("h1");
+    scoreh1.innerHTML = "Score: " + score;
+    scoreh1.style = "font-size: 100px; color: black; text-align: center; position: absolute; top: 30%; left: 5%;"
+    scoredivid.appendChild(scoreh1);
+}
+
+//Clear all inputs
+function Clear() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
 }
 
 
@@ -171,18 +209,14 @@ function QuestionCreate() {
                 Checkboxes.id = "PQ" + QuestionArrayAt + "_" + j;
                 Checkboxes.type = "checkbox";
                 Checkboxes.style = "float: left;";
-                
-                AddSpanId.appendChild(Checkboxes); 
-                var Checkboxesid = document.getElementById(Checkboxes.id);
-                Checkboxesid.value = answer[ArrayAnsRan];
-                AddSpanId.appendChild(Checkboxesid); 
-                
-                //Brs
-                let br3 = document.createElement("br");
-                let br4 = document.createElement("br");
-                AddSpanId.appendChild(br3);
-                AddSpanId.appendChild(br4);
 
+                AddSpanId.appendChild(Checkboxes); 
+
+                let h1a = document.createElement("h1");
+                h1a.innerHTML = answer[0];
+                AddSpanId.appendChild(h1a); 
+
+                
                 Checkboxesid = Checkboxes.id;
 
                 //Input Labels
