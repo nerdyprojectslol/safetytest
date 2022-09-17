@@ -6,25 +6,25 @@ let answer = new Array(PossibleQuestions);
 
 let PossibleQuestionsCount = 16;
 
-PossibleQuestions[0] = "What types of things are MSDSs used for?";
-PossibleQuestions[1] = "What is the unabbreviated form of PPE?";
-PossibleQuestions[2] = "In what situations do you need proper ventilation?";
-PossibleQuestions[3] = "Which of the following are possible outcomes of not following safety protocol?";
-PossibleQuestions[4] = "In what situations do you need to wear a filter mask?";
-PossibleQuestions[5] = "What are the most important attributes for safety?";
-PossibleQuestions[6] = "Which of the following should always be available?";
-PossibleQuestions[7] = "What is a MSDS?";
-PossibleQuestions[8] = "Which of the following things should always be followed?";
-PossibleQuestions[9] = "What risks are inherent in lead-acid batteries?";
-PossibleQuestions[10] = "What is the job of the Safety Captain?";
-PossibleQuestions[11] = "When do you NOT use a potentially dangerous tool?";
-PossibleQuestions[12] = "Which of the following are proper PPE for usage of an angle grinder?";
-PossibleQuestions[13] = "Which of the following are adequate PPE for normal robot assembly?";
-PossibleQuestions[14] = "What items should go in the Safety Binder?";
-PossibleQuestions[15] = "What shouldn't be done for proper electicity use?";
-PossibleQuestions[16] = "Which of the following items should always be available?";
-PossibleQuestions[17] = "What items should be noted on a MSDS?";
-PossibleQuestions[18] = "What person should you go to for safety guidance/instruction?";
+PossibleQuestions[0] = "";
+PossibleQuestions[1] = "";
+PossibleQuestions[2] = "";
+PossibleQuestions[3] = "";
+PossibleQuestions[4] = "";
+PossibleQuestions[5] = "";
+PossibleQuestions[6] = "";
+PossibleQuestions[7] = "";
+PossibleQuestions[8] = "";
+PossibleQuestions[9] = "";
+PossibleQuestions[10] = "";
+PossibleQuestions[11] = "";
+PossibleQuestions[12] = "";
+PossibleQuestions[13] = "";
+PossibleQuestions[14] = "";
+PossibleQuestions[15] = "";
+PossibleQuestions[16] = "";
+PossibleQuestions[17] = "";
+PossibleQuestions[18] = "";
 
 //Answers to each question held
 
