@@ -1,32 +1,31 @@
 //Array Counts
-let PossibleQuestions = new Array(18);
+
 let answer = new Array(PossibleQuestions);
+let PossibleQuestions = new Array(18);
 
 let PossibleQuestionsCount = 16;
 
-//Questions Get Request
-
-PossibleQuestions[0] = "a";
-PossibleQuestions[1] = "a";
-PossibleQuestions[2] = "a";
-PossibleQuestions[3] = "a";
-PossibleQuestions[4] = "a";
-PossibleQuestions[5] = "a";
-PossibleQuestions[6] = "a";
-PossibleQuestions[7] = "a";
-PossibleQuestions[8] = "a";
-PossibleQuestions[9] = "a";
-PossibleQuestions[10] = "a";
-PossibleQuestions[11] = "a";
-PossibleQuestions[12] = "a";
-PossibleQuestions[13] = "a";
-PossibleQuestions[14] = "a";
-PossibleQuestions[15] = "a";
-PossibleQuestions[16] = "a";
-PossibleQuestions[17] = "a";
-PossibleQuestions[18] = "a";
-
 //Answers to each question held
+
+PossibleQuestions[0] = questions.json(recordset[0]);
+PossibleQuestions[1] = questions.json(recordset[1]);
+PossibleQuestions[2] = questions.json(recordset[2]);
+PossibleQuestions[3] = questions.json(recordset[3]);
+PossibleQuestions[4] = questions.json(recordset[4]);
+PossibleQuestions[5] = questions.json(recordset[5]);
+PossibleQuestions[6] = questions.json(recordset[6]);
+PossibleQuestions[7] = questions.json(recordset[7]);
+PossibleQuestions[8] = questions.json(recordset[8]);
+PossibleQuestions[9] = questions.json(recordset[9]);
+PossibleQuestions[10] = questions.json(recordset[10]);
+PossibleQuestions[11] = questions.json(recordset[11]);
+PossibleQuestions[12] = questions.json(recordset[12]);
+PossibleQuestions[13] = questions.json(recordset[13]);
+PossibleQuestions[14] = questions.json(recordset[14]);
+PossibleQuestions[15] = questions.json(recordset[15]);
+PossibleQuestions[16] = questions.json(recordset[16]);
+PossibleQuestions[17] = questions.json(recordset[17]);
+PossibleQuestions[18] = questions.json(recordset[18]);
 
 answer[0] = "Software", "Paint", "Metal pieces", "Paint", "Electrical components", "Robot structures", "Number of people", "Injuries";
 answer[1] = "Personal Protective Equipment", "Purposeful Protective Equipment", "Potentially Protective Equipment", "Personal Protective Essentials", "Potentially Protecive Essentials", "Purposeful Proper Equipment";
@@ -64,7 +63,7 @@ function saveUser() {
 
         //Checks if the username contains a space
     }else if(usernameinput.includes(" ") == false) {
-        document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
+        document.getElementById("MainHeadingBox").innerHTML = "Your username MUST contain a space.";
         setTimeout(function(){
             document.getElementById("MainHeadingBox").innerHTML = "Enter FULL Name in Input Box";
         }, 3000);

@@ -9,48 +9,7 @@
         <link rel="shortcut icon" href="4079.png" type="image/x-icon">
 
         <!-- Libraries -->
-        <script data-main="libraries/test" type="text/javascript" src="/libraries/require.js"></script>
         <script type="text/javascript" src="/libraries/test.js"></script>
-
-        <!-- Run RequireJS for SQL -->
-        <script>
-
-            require(['test']), function() {
-
-                const express = require('express');
-                const app = express();
-                const mssql = require('mssql');
-
-
-                app.get('/', function (req, rest) {
-
-                //Database Credentials
-                const qconfig = {
-                    user: 'ewixk',
-                    password: '13xrixk',
-                    server: 'localhost',
-                    database: 'safetytest'
-                };
-
-                //Connect to Database
-                mssql.connect(qconfig, function (err) {
-                    if (err) console.log(err);
-
-                        //Create Request
-                        var request = new mssql.Request();
-
-                        //Query
-                        request.query('SELECT * FROM questions', function (err, recordset) {
-                            if (err) console.log(err)
-        
-                            //Send Records as JSON
-                            questions.json(recordset.recordset);
-                            PossibleQuestions[0] = questions.json(recordset[1]);
-                        });
-                    });
-                });
-            }
-        </script>
     </head>
 
 <!-- Main Program -->
@@ -85,6 +44,8 @@
                 <button id="FRC" onclick="FRC()">FRC</button>
                 <button id="FTC" onclick="FTC()">FTC</button>
                 <button id="VEX" onclick="VEX()">VEX</button>
+                <br>
+                <br>
             </div>
 
             <!-- Questions Area-->
@@ -161,9 +122,9 @@
                     background: rgba(255,255,255,0.75); 
                     font-family: 'Times New Roman', Times, serif;
                 }
-            /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
 
-            @media (max-width: 720px) {
+            /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+            @media (max-width: 700px) {
                 #Compendium1
                 {
                      font-size: 30px;
@@ -195,6 +156,17 @@
                     background: rgba(255,255,255,0.75); 
                     font-family: 'Times New Roman', Times, serif;
                 }
+
+                #Questions1 div, #TeamChoose {
+                background: rgba(255,255,255,0.5);
+                float: none;
+                border-radius: 5px;
+                height: 500px;
+                width: 650px;
+                position:relative;
+                left:10px;
+                line-height: 20px;
+            }
             }
 
         </style>
@@ -203,6 +175,7 @@
 
         <script>
 
+            //Variables for Year Updating
             let thisyear = new Date().getFullYear() - 2000;
             let nextyear = new Date().getFullYear() - 1999;
 
@@ -212,11 +185,14 @@
             }
             Compendium();
             
+            //FRC Button
             function FRC() {
-                //Script for team h1
+                //To check if instance already exists
                 if (document.getElementById("h1team")) {
                     document.getElementById("h1team").remove();
                 }
+
+                //Create and amend instance of h1team
                 const team = document.getElementById("TeamChoose");
                 let h1team = document.createElement("h1");
                 h1team.id = "h1team";
@@ -226,10 +202,14 @@
 
             }
 
+            //FTC Button
             function FTC() {
+                //To check if instance already exists
                 if (document.getElementById("h1team")) {
                     document.getElementById("h1team").remove();
                 }
+
+                //Create and amend instance of h1team
                 const team = document.getElementById("TeamChoose");
                 let h1team = document.createElement("h1");
                 h1team.id = "h1team";
@@ -238,10 +218,14 @@
                 localStorage.setItem("Team", "FTC");
             }
 
+            //VEX Button
             function VEX() {
+                //To check if instance already exists
                 if (document.getElementById("h1team")) {
                     document.getElementById("h1team").remove();
                 }
+
+                //Create and amend instance of h1team
                 const team = document.getElementById("TeamChoose");
                 let h1team = document.createElement("h1");
                 h1team.id = "h1team";
