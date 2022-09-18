@@ -7,7 +7,50 @@
 
         <!-- Page Icon -->
         <link rel="shortcut icon" href="4079.png" type="image/x-icon">
+
+        <!-- Libraries -->
+        <script data-main="libraries/test" type="text/javascript" src="/libraries/require.js"></script>
         <script type="text/javascript" src="/libraries/test.js"></script>
+
+        <!-- Run RequireJS for SQL -->
+        <script>
+
+            require(['test']), function() {
+
+                const express = require('express');
+                const app = express();
+                const mssql = require('mssql');
+
+
+                app.get('/', function (req, rest) {
+
+                //Database Credentials
+                const qconfig = {
+                    user: 'ewixk',
+                    password: '13xrixk',
+                    server: 'localhost',
+                    database: 'safetytest'
+                };
+
+                //Connect to Database
+                mssql.connect(qconfig, function (err) {
+                    if (err) console.log(err);
+
+                        //Create Request
+                        var request = new mssql.Request();
+
+                        //Query
+                        request.query('SELECT * FROM questions', function (err, recordset) {
+                            if (err) console.log(err)
+        
+                            //Send Records as JSON
+                            questions.json(recordset.recordset);
+                            PossibleQuestions[0] = questions.json(recordset[1]);
+                        });
+                    });
+                });
+            }
+        </script>
     </head>
 
 <!-- Main Program -->
