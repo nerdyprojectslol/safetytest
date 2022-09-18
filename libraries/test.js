@@ -52,13 +52,24 @@ let score = 0;
 
 //Save Username in index.html
 function saveUser() {
-            
+    
+    var usernameinput = document.getElementById("user").value;
+
     //Returns error if box is empty
-    if(document.getElementById("user").value == ""){
+    if(usernameinput == ""){
         document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
         setTimeout(function(){
-            document.getElementById("MainHeadingBox").innerHTML = "Enter Name in Input Box";
+            document.getElementById("MainHeadingBox").innerHTML = "Enter FULL Name in Input Box";
         }, 3000);
+
+        //Checks if the username contains a space
+    }else if(usernameinput.includes(" ") == false) {
+        document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
+        setTimeout(function(){
+            document.getElementById("MainHeadingBox").innerHTML = "Enter FULL Name in Input Box";
+        }, 3000);
+
+        //If the username is valid
     }else{
     //Saves user in local storage for test firebase
     username = document.getElementById("user").value;
@@ -66,6 +77,8 @@ function saveUser() {
     window.location = "MainSafetyTest/safetytest.html";
     }
 }
+
+
 
 
 
@@ -88,7 +101,11 @@ function QuestionRan(array) {
     return array;
 }
 
+//Redeclare function to run
 QuestionRan(PossibleQuestions);
+
+
+
 
 //Calculating the total score
 function QuestionCor() {
@@ -103,6 +120,30 @@ function QuestionCor() {
     //Replaces the scoreboard
     if (document.getElementById("scoringdiv")) {
         document.getElementById("scoringdiv").remove();
+    }
+
+    //Store in a JSON file
+
+    //Items to store in JSON file
+    let jsonname = localStorage.getItem("username");
+    
+    let namefirst = jsonname.split(" ")[0];
+    let namelast = jsonname.split(" ")[1];
+
+    let jsonteam = localStorage.getItem("team");
+
+    //Storing in JSON file
+    let overallScore = {
+        "name": namelast + ", " + namefirst,
+        "team": jsonteam,
+        "score": score
+    }
+
+    //Amending the JSON file
+    let data = JSON.stringify(overallScore);
+
+    if (data.name == overallScore.name) {
+
     }
 
     //Username
@@ -128,10 +169,13 @@ function QuestionCor() {
     scoredivid.appendChild(scoreh1);
 }
 
+
+
 //Clear all inputs
 function Clear() {
     document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
 }
+
 
 
 //Preset Variables
@@ -140,6 +184,7 @@ let QuestionCount = 1;
 let QuestionArrayAt = 0;
 
 let ArrayAnsRan = Math.floor(Math.random() * 4);
+
 
 
 //Question Creation Function

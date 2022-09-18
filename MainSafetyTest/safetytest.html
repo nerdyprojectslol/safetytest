@@ -77,8 +77,19 @@
             <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8" target="_blank"><h1 style="font-size: x-large;letter-spacing: 2px;">If you haven't, please go through the safety slides</h1></a>
             <br><br>
         
-        <!-- Questions Area-->
+
+            <!-- FRC/FTC Choose -->
+            <div id="TeamChoose">
+                <h1 style="font-size: x-large;letter-spacing: 2px;">Are you a FRC, FTC, or VEX member?</h1>
+                <br>
+                <button id="FRC" onclick="FRC()">FRC</button>
+                <button id="FTC" onclick="FTC()">FTC</button>
+                <button id="VEX" onclick="VEX()">VEX</button>
+            </div>
+
+            <!-- Questions Area-->
         
+
         <div id="Questions1">
             <br><br>
         </div>
@@ -91,6 +102,7 @@
             <div id="ScoreBox"></div>
                 <br><br><br><br><br>
             <h1 id="BottomThing">If you have any questions, contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
+            <br><br><br><br><br>
         </center>
         
 
@@ -114,7 +126,7 @@
             {
 	            width: 80px; margin-left: -15px;
             }
-            #Questions1 div {
+            #Questions1 div, #TeamChoose {
                 background: rgba(255,255,255,0.5);
                 float: none;
                 border-radius: 5px;
@@ -141,7 +153,14 @@
                     background: rgba(255,255,255,0.75); 
                     font-family: 'Times New Roman', Times, serif;
                 }
-
+                #FRC, #FTC, #VEX {
+                    height: 150px; 
+                    width: 150px; 
+                    border-radius: 100px; 
+                    font-size: 35px; 
+                    background: rgba(255,255,255,0.75); 
+                    font-family: 'Times New Roman', Times, serif;
+                }
             /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
 
             @media (max-width: 720px) {
@@ -193,6 +212,43 @@
             }
             Compendium();
             
+            function FRC() {
+                //Script for team h1
+                if (document.getElementById("h1team")) {
+                    document.getElementById("h1team").remove();
+                }
+                const team = document.getElementById("TeamChoose");
+                let h1team = document.createElement("h1");
+                h1team.id = "h1team";
+                h1team.innerHTML = "You have chosen FRC as your team";
+                team.appendChild(h1team);
+                localStorage.setItem("Team", "FRC");
+
+            }
+
+            function FTC() {
+                if (document.getElementById("h1team")) {
+                    document.getElementById("h1team").remove();
+                }
+                const team = document.getElementById("TeamChoose");
+                let h1team = document.createElement("h1");
+                h1team.id = "h1team";
+                h1team.innerHTML = "You have chosen FTC as your team";
+                team.appendChild(h1team);
+                localStorage.setItem("Team", "FTC");
+            }
+
+            function VEX() {
+                if (document.getElementById("h1team")) {
+                    document.getElementById("h1team").remove();
+                }
+                const team = document.getElementById("TeamChoose");
+                let h1team = document.createElement("h1");
+                h1team.id = "h1team";
+                h1team.innerHTML = "You have chosen VEX Robotics as your team";
+                team.appendChild(h1team);
+                localStorage.setItem("Team", "VEX");
+            }
         </script>
 
     </body>
