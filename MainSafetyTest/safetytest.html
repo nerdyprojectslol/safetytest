@@ -9,7 +9,9 @@
         <link rel="shortcut icon" href="4079.png" type="image/x-icon">
 
         <!-- Libraries -->
-        <script type="text/javascript" src="/libraries/test.js"></script>
+        <script type="type/javascript" src="/libraries/test.js"></script>
+        <script type="application/json" src="/libraries/questions.json"></script>
+        
     </head>
 
 <!-- Main Program -->
@@ -51,7 +53,7 @@
             <!-- Questions Area-->
         
 
-        <div id="Questions1">
+        <div id="Questions1" onload="QuestionCreate()">
             <br><br>
         </div>
         <br><br><br><br><br>
@@ -64,6 +66,7 @@
                 <br><br><br><br><br>
             <h1 id="BottomThing">If you have any questions, contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
             <br><br><br><br><br>
+            <h3 id="Credit">Designed and programmed by Erick Tran</h3>
         </center>
         
 
@@ -117,9 +120,9 @@
                 #FRC, #FTC, #VEX {
                     height: 150px; 
                     width: 150px; 
-                    border-radius: 100px; 
+                    border-radius: 35px; 
                     font-size: 35px; 
-                    background: rgba(255,255,255,0.75); 
+                    background: rgba(29, 185, 202, 0.75); 
                     font-family: 'Times New Roman', Times, serif;
                 }
 
