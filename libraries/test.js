@@ -5,14 +5,7 @@ let PossibleQuestionsCount = 16;
 let PossibleQuestions = new Array(PossibleQuestionsCount + 2);
 let answer = new Array(PossibleQuestions);
 
-//Fetching questions.json file as promise to resolve
-fetch("/libraries/data.json")
-    .then(res => res.json())
-    .then(data => {
-        PossibleQuestionsJSON = data.PossibleQuestions;
-        console.log(PossibleQuestions);
-        PossibleQuestions = JSON.parse(PossibleQuestionsJSON);
-    });
+
 
 //Answers to each question held
 
@@ -70,27 +63,6 @@ function saveUser() {
 
 
 
-//Random Questions Function
-function QuestionRan(array) {
-        let currentIndex = array.length, randomIndex;
-      
-        // While there remain elements to shuffle.
-        while (currentIndex != 0) {
-      
-          // Pick a remaining element.
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-        }
-      
-    return array;
-}
-
-//Redeclare function to run
-QuestionRan(PossibleQuestions);
 
 
 
@@ -148,10 +120,50 @@ let ArrayAnsRan = Math.floor(Math.random() * 4);
 let ArrayCount = 0;
 let QuestionCount = 1;
 let QuestionArrayAt = 0;
-
+let PossibleQuestions2;
 
 //Question Creation Function
 function QuestionCreate() {
+
+
+        //Fetching questions.json file as promise to resolve
+        fetch("/libraries/data.json")
+        .then(data => data.json())
+        .then(data => {
+
+            //Convert JSON Object to JSON String
+            PossibleQuestions1 = JSON.stringify(data);
+            PossibleQuestions2 = JSON.parse(PossibleQuestions1);
+
+            //Pass JSON String to Possible Questions
+                PossibleQuestions = PossibleQuestions2;
+                console.log(PossibleQuestions);
+
+        });
+
+        //Random Questions Function
+        function QuestionRan(array) {
+            let currentIndex = array.length, randomIndex;
+  
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
+  
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+                }
+  
+            return array;
+        }
+
+    //Redeclare function to run
+    QuestionRan(PossibleQuestions);
+
+
 
     const AddQuestions = document.getElementById("Questions1");
 
@@ -180,14 +192,14 @@ function QuestionCreate() {
 
         //Creates a new label for each question
         let H1Num = document.createElement("h1");
-        H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions[ArrayCount];
-        H1Num.style = "color: black; font-size: 20px; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: left;";
-
-        //if (H1Num.innerHTML == PossibleQuestions) {
-        //
-        //}
-
-        AddQuestionsDiv1.appendChild(H1Num);
+            H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions[ArrayCount.Question];
+            H1Num.style = "color: black; font-size: 20px; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: left;";
+    
+            //if (H1Num.innerHTML == PossibleQuestions) {
+            //
+            //}
+    
+            AddQuestionsDiv1.appendChild(H1Num);
 
 
         //Creates a new spacing for each question
