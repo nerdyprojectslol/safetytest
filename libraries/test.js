@@ -1,37 +1,22 @@
-//Prerun Script
-
-
 //Array Counts
-
-let PossibleQuestions = new Array(18);
-let answer = new Array(PossibleQuestions.length);
 
 let PossibleQuestionsCount = 16;
 
-PossibleQuestions[0] = JSON.parse(PossibleQuestions.Q1);
-PossibleQuestions[1] = JSON.parse(PossibleQuestions.Q2);
-PossibleQuestions[2] = JSON.parse(PossibleQuestions.Q3);
-PossibleQuestions[3] = JSON.parse(PossibleQuestions.Q4);
-PossibleQuestions[4] = JSON.parse(PossibleQuestions.Q5);
-PossibleQuestions[5] = JSON.parse(PossibleQuestions.Q6);
-PossibleQuestions[6] = JSON.parse(PossibleQuestions.Q7);
-PossibleQuestions[7] = JSON.parse(PossibleQuestions.Q8);
-PossibleQuestions[8] = JSON.parse(PossibleQuestions.Q9);
-PossibleQuestions[9] = JSON.parse(PossibleQuestions.Q10);
-PossibleQuestions[10] = JSON.parse(PossibleQuestions.Q11);
-PossibleQuestions[11] = JSON.parse(PossibleQuestions.Q12);
-PossibleQuestions[12] = JSON.parse(PossibleQuestions.Q13);
-PossibleQuestions[13] = JSON.parse(PossibleQuestions.Q14);
-PossibleQuestions[14] = JSON.parse(PossibleQuestions.Q15);
-PossibleQuestions[15] = JSON.parse(PossibleQuestions.Q16);
-PossibleQuestions[16] = JSON.parse(PossibleQuestions.Q17);
-PossibleQuestions[17] = JSON.parse(PossibleQuestions.Q18);
-PossibleQuestions[18] = "nerd";
+let PossibleQuestions = new Array(PossibleQuestionsCount + 2);
+let answer = new Array(PossibleQuestions);
 
+//Fetching questions.json file as promise to resolve
+fetch("/libraries/data.json")
+    .then(res => res.json())
+    .then(data => {
+        PossibleQuestionsJSON = data.PossibleQuestions;
+        console.log(PossibleQuestions);
+        PossibleQuestions = JSON.parse(PossibleQuestionsJSON);
+    });
 
 //Answers to each question held
 
-answer[0] = "Software", "Paint", "Metal pieces", "Paint", "Electrical components", "Robot structures", "Number of people", "Injuries";
+answer[0] = "Placeholder";
 answer[1] = "Personal Protective Equipment", "Purposeful Protective Equipment", "Potentially Protective Equipment", "Personal Protective Essentials", "Potentially Protecive Essentials", "Purposeful Proper Equipment";
 answer[2] = "";
 answer[3] = "";
