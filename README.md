@@ -31,9 +31,14 @@ make different types of safety tests compared to the standard ones found at the 
         
 A: It started as a fun project. I was bored one day so I couldn't help myself not to do something productive, as well as to advance my HTML skills.
 It was only when I showed it to the rest of cabinet and the leads that I thought that this might have been a real thing that we could have done.
-I believe, so far on the day that I am making this (9/3/22), this took a cumulative 6 days of time, spread over about 2 weeks. It was mainly because I was bored,
+I believe, so far on the day that I am making this (9/19/22), this took a cumulative 6 days of time, spread over about 4 weeks. It was mainly because I was bored,
 but it did become a real thing that did happen.
 
+
+
+      Q: How does this work?
+
+A: Good question. The safety test is a set of questions stored in a JSON file (If I gave you access, you should be able to see it). These questions also hold answer values. This gets transfered over securely to a JS file which will be randomized and printed onto the page as HTML. It takes a while to even think of this, let alone code so I appreciate it if you are reading this at all. After the test is submitted, the test (Uncharted, but what my hope is.) takes the keys from local storage about the name submitted in the index/home page and the team name and puts them on a google sheet. It also takes the score (out of 16) and puts it on a sheet next to them. There's more, but thats the simplest version I can give without this being too long and wasting my time. I need to go to sleep.
 
 
 Anyway, that's it for me. I need to go code now. If you are reading this. I hope you have a great day (evening? morning? whatever). :))
