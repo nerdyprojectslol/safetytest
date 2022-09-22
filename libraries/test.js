@@ -29,6 +29,8 @@ answer[16] = "";
 answer[17] = "";
 answer[18] = "";
 
+
+
 let score = 0;
 
 //Save Username in index.html
@@ -58,12 +60,6 @@ function saveUser() {
     window.location = "MainSafetyTest/safetytest.html";
     }
 }
-
-
-
-
-
-
 
 
 
@@ -116,14 +112,19 @@ function Clear() {
 //Preset Variables
 
 let ArrayAnsRan = Math.floor(Math.random() * 4);
+let QuestionIDCount = 0;
 let ArrayCount = 0;
 let QuestionCount = 1;
 let QuestionArrayAt = 0;
+let PossibleQuestions1;
+
+
 //let PossibleQuestions2;
 
 //Question Creation Function
 function QuestionCreate() {
-
+            
+            let datavar;
             //Random Questions Function
             function QuestionRan(array) {
                 let currentIndex = array.length, randomIndex;
@@ -151,16 +152,22 @@ function QuestionCreate() {
         fetch("/libraries/data.json")
         .then(data => data.json())
         .then(data => {
+            datavar = data.PossibleQuestions;
+            console.log(datavar);
 
             //Convert JSON Object to JSON String
-            PossibleQuestions1 = JSON.stringify(data);
-            PossibleQuestions2 = JSON.parse(PossibleQuestions1);
 
+            for (var i = 0; i < datavar.length; i++){
+                let QuestionID = "Q" + QuestionCount;
+                if(datavar[i].id == QuestionID) {
+                    PossibleQuestions1 = datavar[i].Question;
+                }
+            }
             
             //Pass JSON String to Possible Questions
             for(let i = 0; i < PossibleQuestions.length; i++) {
                 //Creates a new label for each question
-                PossibleQuestions[i] = PossibleQuestions2[i];
+                PossibleQuestions[i] = PossibleQuestions1[i];
                 console.log(PossibleQuestions);
     }
                 
@@ -206,7 +213,7 @@ function QuestionCreate() {
 
         AddQuestionsDiv1.appendChild(H1Num);
 
-
+        
 
         //Creates a new spacing for each question
         const br = document.createElement("br");
