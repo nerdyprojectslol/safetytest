@@ -9,25 +9,7 @@ let answer = new Array(PossibleQuestions);
 
 //Answers to each question held
 
-answer[0] = "Placeholder";
-answer[1] = "Personal Protective Equipment", "Purposeful Protective Equipment", "Potentially Protective Equipment", "Personal Protective Essentials", "Potentially Protecive Essentials", "Purposeful Proper Equipment";
-answer[2] = "";
-answer[3] = "";
-answer[4] = "";
-answer[5] = "A fire extingisher", "A bag of chips", "Electricity", "";
-answer[6] = "Material Safety Data Sheet", "Modem Software Delivery System", "Mechanical System Distribution Safety", "Mostly Simpleminded Derpy Students", "Modified Security Derivitive System", "Mechanized Software Distribution Safety";
-answer[7] = "";
-answer[8] = "";
-answer[9] = "";
-answer[10] = "When you are scared", "When it requires electricity", "When it is sharp", "When others aren't using it", "When it is broken";
-answer[11] = "";
-answer[12] = "";
-answer[13] = "";
-answer[14] = "";
-answer[15] = "";
-answer[16] = "";
-answer[17] = "";
-answer[18] = "";
+
 
 
 
@@ -112,12 +94,10 @@ function Clear() {
 //Preset Variables
 
 let ArrayAnsRan = Math.floor(Math.random() * 4);
-let QuestionIDCount = 0;
 let ArrayCount = 0;
-let QuestionCount = 1;
 let QuestionArrayAt = 0;
 let PossibleQuestions1;
-
+let AnswersData;
 
 //let PossibleQuestions2;
 
@@ -141,7 +121,6 @@ function QuestionCreate() {
                         array[randomIndex], array[currentIndex]];
                     }
                     
-                console.log(array);
                 return array;
             }
     
@@ -155,27 +134,20 @@ function QuestionCreate() {
             datavar = data.PossibleQuestions;
             console.log(datavar);
 
-            //Convert JSON Object to JSON String
-
             for (var i = 0; i < datavar.length; i++){
-                let QuestionID = "Q" + QuestionCount;
-                if(datavar[i].id == QuestionID) {
-                    PossibleQuestions1 = datavar[i].Question;
+                if(datavar[i].id == ("Q" + (i + 1))) {
+                    PossibleQuestions[i] = datavar[i].Question;
+                    answer[i] = datavar[i].Answers;
+                    console.log(PossibleQuestions[i], answer[i]);
+                } else {
+                    console.log("Question "+i+1+" not found");
                 }
-            }
-            
-            //Pass JSON String to Possible Questions
-            for(let i = 0; i < PossibleQuestions.length; i++) {
-                //Creates a new label for each question
-                PossibleQuestions[i] = PossibleQuestions1[i];
-                console.log(PossibleQuestions);
-    }
+            }   
                 
-                
-
+            QuestionRan(PossibleQuestions);
             });
 
-        QuestionRan(PossibleQuestions);
+        
 
 
 
@@ -184,8 +156,9 @@ function QuestionCreate() {
 
 
     //for loop to create questions answers
+    setTimeout(function(){
     for (let i = 0; i < PossibleQuestionsCount; i++) {
-        var divid = "Question_" + QuestionArrayAt;
+        var divid = "Question_" + i+1;
         
         //Creates a new div for each question
         let AddQuestionsDiv = document.createElement("div");
@@ -204,13 +177,8 @@ function QuestionCreate() {
         AddQuestions.appendChild(br1, br2);
 
         let H1Num = document.createElement("h1");
-        H1Num.innerHTML = QuestionCount + ". " + PossibleQuestions[QuestionCount];
+        H1Num.innerHTML = i+1 + ". " + PossibleQuestions[i + 1];
         H1Num.style = "color: black; font-size: 20px; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: left;";
-
-        //if (H1Num.innerHTML == PossibleQuestions) {
-        //
-        //}
-
         AddQuestionsDiv1.appendChild(H1Num);
 
         
@@ -223,13 +191,12 @@ function QuestionCreate() {
 
         //Updating Variables
         ArrayCount = ArrayCount + 1;
-        QuestionCount = QuestionCount + 1;
 
 
 
             //Inputs
             for (let j = 0; j < 4; j++) {
-
+ 
 
                 //Creates a new span for each answer
 
@@ -240,6 +207,18 @@ function QuestionCreate() {
 
                 AddSpanId = document.getElementById(AddSpan.id);
 
+                for (let i = 0; i < 4; i++){
+                    if(datavar[i].id == ("Q" + (i + 1))) {
+                        
+                        let h1a = document.createElement("h1");
+                        h1a.innerHTML = answer[i];
+                        AddSpanId.appendChild(h1a); 
+        
+                    } else {
+                        console.log("Question "+i+1+" not found");
+                    }
+                }   
+
 
                 //Checkboxes
                 let Checkboxes = document.createElement('input');
@@ -247,13 +226,10 @@ function QuestionCreate() {
                 Checkboxes.type = "checkbox";
                 Checkboxes.style = "float: left;";
 
-                AddSpanId.appendChild(Checkboxes); 
-
-                let h1a = document.createElement("h1");
-                h1a.innerHTML = answer[0];
-                AddSpanId.appendChild(h1a); 
-
+                AddSpanId.appendChild(Checkboxes);
                 
+                
+
                 Checkboxesid = Checkboxes.id;
 
                 //Input Labels
@@ -262,4 +238,5 @@ function QuestionCreate() {
             QuestionArrayAt = QuestionArrayAt + 1;
 
         }
+    }, 1000);
     }
