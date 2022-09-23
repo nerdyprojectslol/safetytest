@@ -134,10 +134,9 @@ function QuestionCreate() {
             datavar = data.PossibleQuestions;
             console.log(datavar);
 
-            for (var i = 0; i < datavar.length; i++){
+            for (let i = 0; i < datavar.length; i++){
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
-                    answer[i] = datavar[i].Answers;
                     console.log(PossibleQuestions[i], answer[i]);
                 } else {
                     console.log("Question "+i+1+" not found");
@@ -207,19 +206,6 @@ function QuestionCreate() {
 
                 AddSpanId = document.getElementById(AddSpan.id);
 
-                for (let i = 0; i < 4; i++){
-                    if(datavar[i].id == ("Q" + (i + 1))) {
-                        
-                        let h1a = document.createElement("h1");
-                        h1a.innerHTML = answer[i];
-                        AddSpanId.appendChild(h1a); 
-        
-                    } else {
-                        console.log("Question "+i+1+" not found");
-                    }
-                }   
-
-
                 //Checkboxes
                 let Checkboxes = document.createElement('input');
                 Checkboxes.id = "PQ" + QuestionArrayAt + "_" + j;
@@ -228,7 +214,14 @@ function QuestionCreate() {
 
                 AddSpanId.appendChild(Checkboxes);
                 
-                
+                    //Answer HTML
+                    //h1a = document.createElement("h1");
+                    //h1a.style = "font-size: 20px;"
+                    //h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                    //h1a.html = datavar[QuestionArrayAt].Answers;
+                    //console.log(datavar[QuestionArrayAt].Answers[QuestionArrayAt].Answer);
+                    //AddSpanId.appendChild(h1a);
+
 
                 Checkboxesid = Checkboxes.id;
 
