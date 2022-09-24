@@ -229,7 +229,14 @@ function QuestionCreate() {
 
                 AddSpanId.appendChild(Checkboxes);
                 
-                
+                    //Answer HTML
+                    //h1a = document.createElement("h1");
+                    //h1a.style = "font-size: 20px;"
+                    //h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                    //h1a.html = datavar[QuestionArrayAt].Answers;
+                    //console.log(datavar[QuestionArrayAt].Answers[QuestionArrayAt].Answer);
+                    //AddSpanId.appendChild(h1a);
+
 
                 Checkboxesid = Checkboxes.id;
 
