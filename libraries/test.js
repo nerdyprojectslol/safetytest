@@ -107,7 +107,7 @@ function QuestionCreate() {
             let datavar;
             //Random Questions Function
             function QuestionRan(array) {
-                let currentIndex = array.length, randomIndex;
+                let currentIndex = array.length, randomIndex;;
       
                 // While there remain elements to shuffle.
                 while (currentIndex != 0) {
@@ -139,14 +139,17 @@ function QuestionCreate() {
                 //https://docs.google.com/document/d/1FgRlnSqRrApEkwcvM0OiQbvQhh-pAN_1nUfUGYhkVcg/edit?usp=sharing
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
-                    answer[i] = datavar[i].Answers[i].Answer;
-                    console.log(PossibleQuestions[i], answer[i]);
+                    //Array randomizes PossibleQuestions array and not with answer array so it turns out random
+                    //PLS FIX THIS EVENTUALLY
+                    answer[i] = datavar[i].Answers[1].Answer;
+                    console.log("Question: "+ PossibleQuestions[i], ", Answer: " + answer[i]);
                 } else {
                     console.log("Question "+i+1+" not found");
                 }
             }   
                 
             QuestionRan(PossibleQuestions);
+            console.log("Questions: "+ PossibleQuestions, ", Answers: " + answer);
             });
 
         
@@ -209,16 +212,6 @@ function QuestionCreate() {
 
                 AddSpanId = document.getElementById(AddSpan.id);
 
-                    if(datavar[i].id == ("Q" + (i + 1))) {
-                        
-                        let h1a = document.createElement("h1");
-                        h1a.innerHTML = answer[i];
-                        h1a.style = "color:black; font-size: 35px;"
-                        AddSpanId.appendChild(h1a); 
-        
-                    } else {
-                        console.log("Question "+i+1+" not found");
-                    }
 
 
                 //Checkboxes
@@ -232,10 +225,22 @@ function QuestionCreate() {
                     //Answer HTML
                     //h1a = document.createElement("h1");
                     //h1a.style = "font-size: 20px;"
-                    //h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                    //
                     //h1a.html = datavar[QuestionArrayAt].Answers;
                     //console.log(datavar[QuestionArrayAt].Answers[QuestionArrayAt].Answer);
                     //AddSpanId.appendChild(h1a);
+
+                    if(datavar[i].id == ("Q" + (i + 1))) {
+                        
+                        let h1a = document.createElement("h1");
+                        h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                        h1a.innerHTML = answer[i];
+                        h1a.style = "color:black; font-size: 30px;"
+                        AddSpanId.appendChild(h1a); 
+        
+                    } else {
+                        console.log("Question "+i+1+" not found");
+                    }
 
 
                 Checkboxesid = Checkboxes.id;
