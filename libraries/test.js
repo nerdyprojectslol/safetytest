@@ -2,7 +2,7 @@
 
 let PossibleQuestionsCount = 16;
 
-let PossibleQuestions = new Array(PossibleQuestionsCount + 2);
+let PossibleQuestions = new Array(20);
 let answer = new Array(PossibleQuestions);
 
 
@@ -135,9 +135,11 @@ function QuestionCreate() {
             console.log(datavar);
 
             for (var i = 0; i < datavar.length; i++){
+                //Document for my thought process in calulating questions and answers
+                //https://docs.google.com/document/d/1FgRlnSqRrApEkwcvM0OiQbvQhh-pAN_1nUfUGYhkVcg/edit?usp=sharing
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
-                    answer[i] = datavar[i].Answers;
+                    answer[i] = datavar[i].Answers[i].Answer;
                     console.log(PossibleQuestions[i], answer[i]);
                 } else {
                     console.log("Question "+i+1+" not found");
@@ -207,17 +209,16 @@ function QuestionCreate() {
 
                 AddSpanId = document.getElementById(AddSpan.id);
 
-                for (let i = 0; i < 4; i++){
                     if(datavar[i].id == ("Q" + (i + 1))) {
                         
                         let h1a = document.createElement("h1");
                         h1a.innerHTML = answer[i];
+                        h1a.style = "color:black; font-size: 35px;"
                         AddSpanId.appendChild(h1a); 
         
                     } else {
                         console.log("Question "+i+1+" not found");
                     }
-                }   
 
 
                 //Checkboxes

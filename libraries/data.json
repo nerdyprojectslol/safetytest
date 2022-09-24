@@ -88,7 +88,29 @@
             "Question": "In what situations do you need proper ventilation?",
             "Answers":[
                 {
-                    
+                    "id": "Q3_a1",
+                    "Answer":"When working with chemicals",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q3_a2",
+                    "Answer": "When soldering",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q3_a3",
+                    "Answer": "When bolting",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q3_a4",
+                    "Answer": "When welding",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q3_a5",
+                    "Answer": "When bolting",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -97,7 +119,31 @@
             "id": "Q4",
             "Question": "In what situations do you need to wear a filter mask?",
             "Answers":[
-                
+                {
+                    "id": "Q4_a1",
+                    "Answer":"When working with chemicals",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q4_a2",
+                    "Answer": "When soldering",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a3",
+                    "Answer": "When bolting",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a4",
+                    "Answer": "When welding",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q4_a5",
+                    "Answer": "When bolting",
+                    "IsCorrect":false
+                }
             ]
         },
 
@@ -105,7 +151,31 @@
             "id": "Q5",
             "Question": "What are the most important attributes for safety?",
             "Answers":[
-                
+                {
+                    "id": "Q5_a1",
+                    "Answer":"Common sense",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a2",
+                    "Answer": "Knowledge",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a3",
+                    "Answer": "Experience",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a4",
+                    "Answer": "Skills",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a5",
+                    "Answer": "Tools",
+                    "IsCorrect":false
+                }
             ]
         },
 
@@ -113,23 +183,151 @@
             "id": "Q6",
             "Question": "Which of the following should always be available?",
             "Answers":[
+                {
+                    "id": "Q6_a1",
+                    "Answer":"Fire extinguisher",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q6_a2",
+                    "Answer": "First aid kit",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q6_a3",
+                    "Answer": "Safety glasses",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q6_a4",
+                    "Answer": "Spare ear buds",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a5",
+                    "Answer": "Duct Tape",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a6",
+                    "Answer": "Fire materials",
+                    "IsCorrect":false
+                }
                 
             ]
         },
 
         {
             "id": "Q7",
-            "Question": "What is a MSDS?",
+            "Question": "What is the unabbreviated form of MSDS?",
             "Answers":[
-                
+                {
+                    "id": "Q7_a1",
+                    "Answer": "Material Safety Data Sheet",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q7_a2",
+                    "Answer": "Mechanized Software Distribution Safety",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a3",
+                    "Answer": "Mechanical System Distribution Safety",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a4",
+                    "Answer": "Mostly Simpleminded Derpy Students",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a5",
+                    "Answer": "Modified Security Derivitive System",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a6",
+                    "Answer": "Mechanized Software Distribution Safety",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a6",
+                    "Answer": "Mechanized Software Distribution Safety",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a7",
+                    "Answer": "Modem Software Delivery System",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a7",
+                    "Answer": "Mostly Software Data Sheet",
+                    "IsCorrect":false
+                }
             ]
-        },
+        },  
+        
 
         {
             "id": "Q8",
-            "Question": "Which of the following things should always be followed?",
+            "Question": "When do you have to be wearing safety glasses?",
             "Answers":[
-                
+                {
+                    "id": "Q8_a1",
+                    "Answer": "In the workshop",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a2",
+                    "Answer": "When working on the robot",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a3",
+                    "Answer": "When eating",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q8_a4",
+                    "Answer": "When scouting",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q8_a5",
+                    "Answer": "When signing into the workday",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a6",
+                    "Answer": "When talking to someone",
+                    "IsCorrect":false
+                },                {
+                    "id": "Q8_a7",
+                    "Answer": "When working on the robot",
+                    "IsCorrect":true
+                }
+                ,                {
+                    "id": "Q8_a8",
+                    "Answer": "When talking to someone",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q8_a9",
+                    "Answer": "When working on software",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a10",
+                    "Answer": "When working on mechanical",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a11",
+                    "Answer": "When working on electrical",
+                    "IsCorrect":true
+                }
             ]
         },
 
@@ -137,7 +335,41 @@
             "id": "Q9",
             "Question": "What risks are inherent in lead-acid batteries?",
             "Answers":[
-                
+                {
+                    "id": "Q9_a1",
+                    "Answer": "Explosive",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q9_a2",
+                    "Answer": "Flammable",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q9_a3",
+                    "Answer": "Corrosive",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q9_a4",
+                    "Answer": "Acidity",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q9_a5",
+                    "Answer": "Boredom",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q9_a6",
+                    "Answer": "Overheating",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q9_a7",
+                    "Answer": "Tiredness",
+                    "IsCorrect": false
+                }
             ]
         },
 
@@ -145,7 +377,41 @@
             "id": "Q10",
             "Question": "What is the job of the Safety Captain?",
             "Answers":[
-                
+                {
+                    "id": "Q10_a1",
+                    "Answer": "To make sure everyone is safe",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q10_a2",
+                    "Answer": "Ruling with an iron fist",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q10_a3",
+                    "Answer": "To manage finances",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q10_a4",
+                    "Answer": "Interacts with the media",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q10_a5",
+                    "Answer": "Compares progress to schedule",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q10_a6",
+                    "Answer": "Approves purchase requests",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q10_a7",
+                    "Answer": "Interacts with mentors and safety advisors",
+                    "IsCorrect":true
+                }
             ]
         },
 
@@ -190,7 +456,66 @@
             "id": "Q12",
             "Question": "Which of the following are proper PPE for usage of an angle grinder?",
             "Answers":[
-                
+                {
+                    "id": "Q12_a1",
+                    "Answer": "Safety glasses",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a2",
+                    "Answer": "Ear pods",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q12_a3",
+                    "Answer": "Gloves",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a4",
+                    "Answer": "Long pants",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a5",
+                    "Answer": "Long sleeves",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a6",
+                    "Answer": "Safety shoes",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a7",
+                    "Answer": "A helmet",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a8",
+                    "Answer": "A face shield",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q12_a9",
+                    "Answer": "A tie",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q12_a10",
+                    "Answer": "A computer",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q12_a11",
+                    "Answer": "A phone",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q12_a12",
+                    "Answer": "A watch",
+                    "IsCorrect": false
+                }
             ]
         },
 
@@ -198,7 +523,76 @@
             "id": "Q13",
             "Question": "Which of the following are adequate PPE for normal robot assembly?",
             "Answers":[
-                
+                {
+                    "id": "Q13_a1",
+                    "Answer": "Safety glasses",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a2",
+                    "Answer": "Ear pods",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q13_a3",
+                    "Answer": "Gloves",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a4",
+                    "Answer": "Long pants",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a5",
+                    "Answer": "Long sleeves",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a6",
+                    "Answer": "Safety shoes",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a7",
+                    "Answer": "A helmet",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a8",
+                    "Answer": "A face shield",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q13_a9",
+                    "Answer": "A tie",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q13_a10",
+                    "Answer": "A computer",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q13_a11",
+                    "Answer": "A phone",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q13_a12",
+                    "Answer": "A watch",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q13_a13",
+                    "Answer": "A hat",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q13_a14",
+                    "Answer": "Sandals",
+                    "IsCorrect": false
+                }
             ]
         },
 
@@ -206,15 +600,68 @@
             "id": "Q14",
             "Question": "What items should go in the Safety Binder?",
             "Answers":[
-                
+                {
+                    "id": "Q14_a1",
+                    "Answer": "Incident Reports",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q14_a2",
+                    "Answer": "Safety Training",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q14_a3",
+                    "Answer": "Audit Results",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q14_a4",
+                    "Answer": "Build Schedules",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q14_a5",
+                    "Answer": "Safety Manuals",
+                    "IsCorrect":false
+                }
             ]
         },
 
         {
             "id": "Q15",
-            "Question": "What shouldn't be done for proper electicity use?",
+            "Question": "What SHOULDN'T be done for proper electicity use?",
             "Answers":[
-                
+                {
+                    "id": "Q15_a1",
+                    "Answer": "Breaking off the ground prong on the plug",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q15_a2",
+                    "Answer": "Not wearing your safety glasses next to a power tool",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q15_a3",
+                    "Answer": "Using a power tool with a damaged cord",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q15_a4",
+                    "Answer": "Using a power tool with a damaged plug",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q15_a5",
+                    "Answer": "Walking next to people wielding power tools",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q15_a6",
+                    "Answer": "Communication",
+                    "IsCorrect":false 
+                }
             ]
         },
 
@@ -222,7 +669,46 @@
             "id": "Q16",
             "Question": "Which of the following items should always be available?",
             "Answers":[
-                
+                {
+                    "id": "Q16_a1",
+                    "Answer": "A fire extinguisher",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q16_a2",
+                    "Answer": "A first aid kit",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q16_a3",
+                    "Answer": "A safety binder",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q16_a4",
+                    "Answer": "Ear buds",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q16_a5",
+                    "Answer": "A phone",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q16_a6",
+                    "Answer": "A computer",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q16_a7",
+                    "Answer": "A watch",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q16_a8",
+                    "Answer": "A tie",
+                    "IsCorrect":false
+                }
             ]
         },
 
@@ -230,7 +716,41 @@
             "id": "Q17",
             "Question": "What items should be noted on a MSDS?",
             "Answers":[
-                
+                {
+                    "id": "Q17_a1",
+                    "Answer": "Chemicals",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q17_a2",
+                    "Answer": "Metal pieces",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q17_a3",
+                    "Answer": "Wood pieces",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q17_a4",
+                    "Answer": "Software",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q17_a5",
+                    "Answer": "Electronics",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q17_a6",
+                    "Answer": "Plastic pieces",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q17_a7",
+                    "Answer": "Corrosives",
+                    "IsCorrect":true
+                }
             ]
         },
         
@@ -238,8 +758,116 @@
             "id": "Q18",
             "Question": "What person should you go to for safety guidance/instruction?",
             "Answers":[
-                
+                {
+                    "id": "Q18_a1",
+                    "Answer": "Your supervisor",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q18_a2",
+                    "Answer": "A random person online",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q18_a3",
+                    "Answer": "Your friend",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q18_a4",
+                    "Answer": "Your neighbor",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q18_a5",
+                    "Answer": "Your family member",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q18_a6",
+                    "Answer": "The safety captain",
+                    "IsCorrect":true
+                }
             ]
-        }   
+        },
+        
+        {
+            "id": "Q19",
+            "Question": "What should you do if you are unsure of how to use a tool?",
+            "Answers":[
+                {
+                    "id": "Q19_a1",
+                    "Answer": "Ask your supervisor",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q19_a2",
+                    "Answer": "Ask your friend",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q19_a3",
+                    "Answer": "Ask your neighbor",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q19_a4",
+                    "Answer": "Ask your family member",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q19_a5",
+                    "Answer": "Ask a random person online",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q19_a6",
+                    "Answer": "Ask the safety captain",
+                    "IsCorrect":true
+                }
+            ]
+        },
+
+        {
+            "id": "Q20",
+            "Question": "What are bad ideas for safe electricity use?",
+            "Answers":[
+                {
+                    "id": "Q20_a1",
+                    "Answer": "Using a power tool with a damaged cord",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q20_a2",
+                    "Answer": "Using a power tool with a damaged plug",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q20_a3",
+                    "Answer": "Breaking off the ground prong on the plug",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q20_a4",
+                    "Answer": "Not wearing your safety glasses next to a power tool",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q20_a5",
+                    "Answer": "Walking next to people wielding power tools",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q20_a6",
+                    "Answer": "Communication",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q20_a7",
+                    "Answer": "Being mean to people",
+                    "IsCorrect":false
+                }
+            ]
+        }
     ]
 }
