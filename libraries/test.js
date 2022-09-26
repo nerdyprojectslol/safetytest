@@ -139,10 +139,7 @@ function QuestionCreate() {
                 //https://docs.google.com/document/d/1FgRlnSqRrApEkwcvM0OiQbvQhh-pAN_1nUfUGYhkVcg/edit?usp=sharing
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
-                    //Array randomizes PossibleQuestions array and not with answer array so it turns out random
-                    //PLS FIX THIS EVENTUALLY
-                    answer[i] = datavar[i].Answers[1].Answer;
-                    console.log("Question: "+ PossibleQuestions[i], ", Answer: " + answer[i]);
+                    console.log("Question: "+ PossibleQuestions[i]);
                 } else {
                     console.log("Question "+i+1+" not found");
                 }
@@ -234,7 +231,7 @@ function QuestionCreate() {
                         
                         let h1a = document.createElement("h1");
                         h1a.id = "QAnswer"+ArrayCount+"_"+j;
-                        h1a.innerHTML = answer[i];
+                        h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[Math.floor(Math.random() * 4)].Answer;
                         h1a.style = "color:black; font-size: 30px;"
                         AddSpanId.appendChild(h1a); 
         
