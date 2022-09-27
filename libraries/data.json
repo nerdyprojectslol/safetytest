@@ -333,26 +333,26 @@
 
         {
             "id": "Q9",
-            "Question": "What risks are inherent in lead-acid batteries?",
+            "Question": "What risks could happen to damaged lead-acid batteries?",
             "Answers":[
                 {
                     "id": "Q9_a1",
-                    "Answer": "Explosive",
+                    "Answer": "Explosions",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q9_a2",
-                    "Answer": "Flammable",
+                    "Answer": "Fires",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q9_a3",
-                    "Answer": "Corrosive",
+                    "Answer": "Corrosion",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q9_a4",
-                    "Answer": "Acidity",
+                    "Answer": "Sparks",
                     "IsCorrect":true
                 },
                 {
@@ -368,6 +368,96 @@
                 {
                     "id": "Q9_a7",
                     "Answer": "Tiredness",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a8",
+                    "Answer": "Dizziness",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a9",
+                    "Answer": "Nausea",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a10",
+                    "Answer": "Headaches",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a11",
+                    "Answer": "Vomiting",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a12",
+                    "Answer": "Drowsiness",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a13",
+                    "Answer": "Confusion",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a14",
+                    "Answer": "Irritation",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a15",
+                    "Answer": "Coughing",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a16",
+                    "Answer": "Shortness of breath",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a17",
+                    "Answer": "Chest pain",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a18",
+                    "Answer": "Weakness",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a19",
+                    "Answer": "Dizziness",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a20",
+                    "Answer": "Nausea",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a21",
+                    "Answer": "Headaches",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a22",
+                    "Answer": "Vomiting",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a23",
+                    "Answer": "Drowsiness",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a24",
+                    "Answer": "Confusion",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q9_a8",
+                    "Answer": "Dizziness",
                     "IsCorrect": false
                 }
             ]

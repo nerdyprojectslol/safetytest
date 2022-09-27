@@ -4,7 +4,7 @@ let PossibleQuestionsCount = 16;
 
 let PossibleQuestions = new Array(20);
 let answer = new Array(PossibleQuestions);
-
+let anschoices = 4;
 
 
 //Answers to each question held
@@ -51,9 +51,20 @@ function QuestionCor() {
     const AddQuestions = document.getElementById("Questions1");
 
     //Checks if the answer is correct
-    //if (PossibleQuestions.answer = fs.readFileSync("corectans.txt")) {
-      //  score = score + 0.25;
-    //}
+    for(let Q = 0; Q < PossibleQuestions.length; Q++){
+        for(var A = 0; A < anschoices; A++)
+                //var checkansh1 = document.getElementById("QAnswer"+Q+"_"+A);
+                var checkanschecked = document.getElementById("AnsInp"+Q+"_"+A);
+                var bool = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[A].IsCorrect;
+                if(checkanschecked.checked == bool){
+                        score = score + 0.25;
+                        console.log(checkanschecked);   
+                    } else {
+                        console.log("A possible score could not be determined");
+                    }
+
+            }
+
 
     //Replaces the scoreboard
     if (document.getElementById("scoringdiv")) {
@@ -98,13 +109,14 @@ let ArrayCount = 0;
 let QuestionArrayAt = 0;
 let PossibleQuestions1;
 let AnswersData;
+let datavar;
 
 //let PossibleQuestions2;
 
 //Question Creation Function
 function QuestionCreate() {
             
-            let datavar;
+            
             //Random Questions Function
             function QuestionRan(array) {
                 let currentIndex = array.length, randomIndex;;
@@ -132,24 +144,18 @@ function QuestionCreate() {
         .then(data => data.json())
         .then(data => {
             datavar = data.PossibleQuestions;
-            console.log(datavar);
 
             for (var i = 0; i < datavar.length; i++){
                 //Document for my thought process in calulating questions and answers
                 //https://docs.google.com/document/d/1FgRlnSqRrApEkwcvM0OiQbvQhh-pAN_1nUfUGYhkVcg/edit?usp=sharing
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
-                    //Array randomizes PossibleQuestions array and not with answer array so it turns out random
-                    //PLS FIX THIS EVENTUALLY
-                    answer[i] = datavar[i].Answers[1].Answer;
-                    console.log("Question: "+ PossibleQuestions[i], ", Answer: " + answer[i]);
                 } else {
                     console.log("Question "+i+1+" not found");
                 }
             }   
                 
             QuestionRan(PossibleQuestions);
-            console.log("Questions: "+ PossibleQuestions, ", Answers: " + answer);
             });
 
         
@@ -200,7 +206,7 @@ function QuestionCreate() {
 
 
             //Inputs
-            for (let j = 0; j < 4; j++) {
+            for (let j = 0; j < anschoices; j++) {
  
 
                 //Creates a new span for each answer
@@ -212,35 +218,29 @@ function QuestionCreate() {
 
                 AddSpanId = document.getElementById(AddSpan.id);
 
-
+                //Creates a new label for each answer
+                let AddLabel = document.createElement("label");
+                AddLabel.id = "Label_" + QuestionArrayAt + "_" + j;
+                AddLabel.className = "form-check-label";
+                AddLabel.for = "PQ" + QuestionArrayAt + "_" + j;
+                AddLabel.style = "color: black; font-size: auto; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: center;";
+                AddSpanId.appendChild(AddLabel);
 
                 //Checkboxes
                 let Checkboxes = document.createElement('input');
-                Checkboxes.id = "PQ" + QuestionArrayAt + "_" + j;
+                Checkboxes.id = "AnsInp" + QuestionArrayAt + "_" + j;
                 Checkboxes.type = "checkbox";
                 Checkboxes.style = "float: left;";
+                Checkboxes.value = "yes";
 
-                AddSpanId.appendChild(Checkboxes);
+                AddLabel.appendChild(Checkboxes);
                 
-                    //Answer HTML
-                    //h1a = document.createElement("h1");
-                    //h1a.style = "font-size: 20px;"
-                    //
-                    //h1a.html = datavar[QuestionArrayAt].Answers;
-                    //console.log(datavar[QuestionArrayAt].Answers[QuestionArrayAt].Answer);
-                    //AddSpanId.appendChild(h1a);
-
-                    if(datavar[i].id == ("Q" + (i + 1))) {
-                        
-                        let h1a = document.createElement("h1");
-                        h1a.id = "QAnswer"+ArrayCount+"_"+j;
-                        h1a.innerHTML = answer[i];
-                        h1a.style = "color:black; font-size: 30px;"
-                        AddSpanId.appendChild(h1a); 
+                let h1a = document.createElement("h1");
+                h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[j].Answer;
+                h1a.style = "color:black; font-size: 30px;"
+                AddLabel.appendChild(h1a); 
         
-                    } else {
-                        console.log("Question "+i+1+" not found");
-                    }
 
 
                 Checkboxesid = Checkboxes.id;
