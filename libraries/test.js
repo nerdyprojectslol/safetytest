@@ -150,6 +150,10 @@ function QuestionCreate() {
                 //https://docs.google.com/document/d/1FgRlnSqRrApEkwcvM0OiQbvQhh-pAN_1nUfUGYhkVcg/edit?usp=sharing
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
+<<<<<<< HEAD
+=======
+                    console.log("Question: "+ PossibleQuestions[i]);
+>>>>>>> 73c31a655ee866685e1d2a37db91fb55dd85a8be
                 } else {
                     console.log("Question "+i+1+" not found");
                 }
