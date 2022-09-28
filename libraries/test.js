@@ -10,7 +10,46 @@ let anschoices = 4;
 //Answers to each question held
 
 
+function sendJSONbeta() {
+    let pass = false;
+    if (score = 16){
+        pass = true;
+    }
+    let user = localStorage.getItem("username");
+    let team = localStorage.getItem("Team");
+    let data = {
+        "Username": user,
+        "Score": score,
+        "Pass": pass,
+        "Team": team
+    }
 
+                // Creating a XHR object
+                let xhr = new XMLHttpRequest();
+                let url = "/libraries/passing.json/";
+
+                // open a connection
+                xhr.open("POST", url, true);
+     
+                // Set the request header i.e. which type of content you are sending
+                xhr.setRequestHeader("Content-Type", "application/json");
+     
+                // Create a state change callback
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+     
+                        // Print received data from server
+                        result.innerHTML = this.responseText;
+     
+                    }
+                };
+     
+                // Converting JSON data to string
+                let dataString = JSON.stringify(data);
+     
+                // Sending data with the request
+                xhr.send(dataString);
+            }
 
 
 let score = 0;
@@ -47,29 +86,28 @@ function saveUser() {
 
 //Calculating the total score
 function QuestionCor() {
-
-    const AddQuestions = document.getElementById("Questions1");
-
-    //Checks if the answer is correct
-    for(let Q = 0; Q < PossibleQuestions.length; Q++){
-        for(var A = 0; A < anschoices; A++)
-                //var checkansh1 = document.getElementById("QAnswer"+Q+"_"+A);
-                var checkanschecked = document.getElementById("AnsInp"+Q+"_"+A);
-                var bool = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[A].IsCorrect;
-                if(checkanschecked.checked == bool){
-                        score = score + 0.25;
-                        console.log(checkanschecked);   
-                    } else {
-                        console.log("A possible score could not be determined");
-                    }
-
-            }
-
-
     //Replaces the scoreboard
     if (document.getElementById("scoringdiv")) {
         document.getElementById("scoringdiv").remove();
     }
+    
+    const AddQuestions = document.getElementById("Questions1");
+    score = 0;
+    //Checks if the answer is correct
+    for(let Q = 0; Q < PossibleQuestionsCount - 1; Q++){
+        for(var a = 0; a < anschoices; a++) {
+                //var checkansh1 = document.getElementById("QAnswer"+Q+"_"+A);
+                var checkanschecked = document.getElementById("AnsInp"+Q+"_"+a);
+                var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[a].IsCorrect;
+                if(checkanschecked.checked == IsCor){
+                        score = score + 0.25;
+                    }else if(checkanschecked.checked != IsCor){
+                        score = score;
+                    } else {
+                        console.log("A possible score could not be determined");
+                    }
+                }
+            }
 
     //Username
     var user = localStorage.getItem("username");
@@ -92,6 +130,11 @@ function QuestionCor() {
     scoreh1.innerHTML = "Score: " + score;
     scoreh1.style = "font-size: 100px; color: black; text-align: center; position: absolute; top: 30%; left: 5%;"
     scoredivid.appendChild(scoreh1);
+
+    //Save to JSON
+    //if (score = 16){
+        sendJSONbeta();
+    //}
 }
 
 
@@ -156,6 +199,7 @@ function QuestionCreate() {
             }   
                 
             QuestionRan(PossibleQuestions);
+            asyncisannoying();
             });
 
         
@@ -167,7 +211,7 @@ function QuestionCreate() {
 
 
     //for loop to create questions answers
-    setTimeout(function(){
+    async function asyncisannoying() {
     for (let i = 0; i < PossibleQuestionsCount; i++) {
         var divid = "Question_" + i+1;
         
@@ -235,8 +279,11 @@ function QuestionCreate() {
 
                 AddLabel.appendChild(Checkboxes);
                 
+                answerslength = Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length;
+
                 let h1a = document.createElement("h1");
                 h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
                 h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[j].Answer;
                 h1a.style = "color:black; font-size: 30px;"
                 AddLabel.appendChild(h1a); 
@@ -249,7 +296,6 @@ function QuestionCreate() {
 
                 }
             QuestionArrayAt = QuestionArrayAt + 1;
-
+            }
         }
-    }, 1000);
     }
