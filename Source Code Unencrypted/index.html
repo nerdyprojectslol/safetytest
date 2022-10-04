@@ -1,0 +1,130 @@
+<html>
+
+    <head>
+        <!-- Page Title -->
+        <meta charset="UTF-8"/>
+        <title>OA Robotics General Safety Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="/MainSafetyTest/4079.png" type="image/x-icon">
+
+        <!-- Libaries -->
+        <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/libraries/test.js"></script>
+    </head>
+
+    <!-- Main Program -->
+
+    <body>
+        <!-- Positions the page in the center -->
+            <center>
+                <h1 class="header" style="font-family: Arial, Helvetica, sans-serif">	
+                    OA Robotics General Safety Test
+            </h1>
+
+            <!-- The white box and it's contents are here up until </div> -->
+                <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+                <img src="MainSafetyTest/4079.png" class="logo">
+                
+                    <h3 id="Heading1" style="font-family: 'Times New Roman', Times, serif;">This short quiz has 16 questions</h3>
+                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 10-3-2022</h4>
+                    <div class="form-group">
+                        <br><br>
+                    <label id="MainHeadingBox">Enter FULL Name in Input Box</label>
+
+                    <!-- Username Input -->
+
+                        <input type="text" id="user" class="form-control" placeholder="Erick Tran">
+                    </div>
+
+                    <!-- Name Save button -->
+                    <button id="login_button" class="btn btn-primary" onclick="saveUser()">Start</button>
+                    <br><br>
+                </div>
+                <br><br><br><br><br>
+                <h1 id="Email">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
+                <br><br><br><br><br>
+                <h3 id="Credit">Designed and programmed by Erick Tran</h3>
+                <br>
+                <br>
+                <br>
+            </center>
+
+            <!-- Page Looks/Front End -->
+
+        <style>
+            #Credit{
+                font-family: 'Times New Roman', Times, serif;
+                color: black;
+            }
+            .header img
+            {
+	            width: 80px;
+            }
+            body
+            {
+                background-image: linear-gradient(to right top, #3a4146, #171a1c, #282b2c, #363a39,#434752);
+            }
+            .header
+            {
+                color: white;
+                font-family: 'Yeon Sung';
+                font-size: 45px;
+                margin-top: 80px;
+            }
+
+            .login_div
+            {
+                background: rgba(255,255,255,0.8);
+                float: none;
+                border-radius: 15px;
+            }
+
+            #login_button
+            {
+                width:250px;
+                font-size: 200%;
+            }
+
+            .logo
+            {
+                width: 80px;
+                margin-top: 30px;
+                width: 80%;
+                border-radius: 15px;
+            }
+            #Email
+            {
+                color: red;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #Email2
+            {
+                color:aqua;
+            }
+
+            /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+            @media (max-width: 720px) {
+
+            .login_div
+            {
+                width: 18.5em;
+            }
+
+            #Email
+            {
+                font-size: 10px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #Email2
+            {
+                color:aqua;
+            }
+            }
+        </style>
+
+    </body>
+</html>
