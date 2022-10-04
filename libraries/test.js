@@ -18,7 +18,7 @@ let Pass = false;
 window.addEventListener("load", function() {
     const form = document.getElementById('QForm');
     form.addEventListener('submit', function(e) {
-
+        e.preventDefault();
       
       //Data
       const data = new FormData();
@@ -36,10 +36,6 @@ window.addEventListener("load", function() {
             method: 'POST',
             body: data,
           })
-
-          .then(() => {
-            Score = 0;
-        });
       } else {
 
       data.append('Name', NameLocal);
@@ -56,9 +52,6 @@ window.addEventListener("load", function() {
         body: data,
       })
 
-      .then(() => {
-        Score = 0;
-    });
     }
     });
   });
@@ -148,22 +141,26 @@ function QuestionCor() {
     const br = document.createElement("br");
     scoredivid.appendChild(br);
 
+    //Pass or Fail H1
+    const didpass = document.createElement("h1");
+    didpass.style = "font-size: 25px; color: black; text-align: center; position: absolute; top: 60%; left: 15%;"
+    
+    //Brs
     const br2 = document.createElement("br");
     scoredivid.appendChild(br2);
 
     const br3 = document.createElement("br");
     scoredivid.appendChild(br3);
 
-    //Pass or Fail H1
-    const didpass = document.createElement("h1");
-    didpass.style = "font-size: 25px; color: black; text-align: center; position: absolute; top: 60%; left: 15%;"
-    
+    const h12 = document.createElement("h1");
+    h12.innerHTML = "Known bug: You have to press the submit button twice to submit your score.";
+    h12.style = "font-size: 15px; color: black; text-align: center; position: absolute; top: 80%; left: 5%;"
+    scoredivid.appendChild(h12);
     
     if (Score == PossibleQuestionsCount) {
         Pass = true;
         didpass.innerHTML = "You Passed!";
         scoredivid.appendChild(didpass);
-        SendData();
     } else {
         Pass = false;
         didpass.innerHTML = "You did not pass, please try again.";
