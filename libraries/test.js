@@ -6,53 +6,65 @@ let PossibleQuestions = new Array(20);
 let answer = new Array(PossibleQuestions);
 let anschoices = 4;
 
+let lng = [];
 
 //Answers to each question held
 
+let Pass = false;
 
-function sendJSONbeta() {
-    let pass = false;
-    if (score = 16){
-        pass = true;
+
+
+//Pass values to Google Sheets
+window.addEventListener("load", function() {
+    const form = document.getElementById('QForm');
+    form.addEventListener('submit', function(e) {
+
+      
+      //Data
+      const data = new FormData();
+      const dateLocal = new Date();
+      const NameLocal = localStorage.getItem("username");
+      const TeamLocal = localStorage.getItem("Team");
+
+      if((data.get('Name') == localStorage.getItem("username")) && (data.get('Team') == localStorage.getItem("Team"))){
+        data.set("Name", localStorage.getItem("username"));
+        data.set("Team", localStorage.getItem("Team"));
+        data.set("Date", dateLocal);
+        data.set("Score", Score);
+
+        fetch(action, {
+            method: 'POST',
+            body: data,
+          })
+
+          .then(() => {
+            Score = 0;
+        });
+      } else {
+
+      data.append('Name', NameLocal);
+      data.append('Team', TeamLocal);
+      data.append('Pass', Pass);
+      data.append('Score', Score);
+      data.append('Time', dateLocal);
+      const action = e.target.action;
+
+      
+      //Fetch
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+
+      .then(() => {
+        Score = 0;
+    });
     }
-    let user = localStorage.getItem("username");
-    let team = localStorage.getItem("Team");
-    let data = {
-        "Username": user,
-        "Score": score,
-        "Pass": pass,
-        "Team": team
-    }
-
-                // Creating a XHR object
-                let xhr = new XMLHttpRequest();
-                let url = "/libraries/passing.json/";
-
-                // open a connection
-                xhr.open("POST", url, true);
-     
-                // Set the request header i.e. which type of content you are sending
-                xhr.setRequestHeader("Content-Type", "application/json");
-     
-                // Create a state change callback
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-     
-                        // Print received data from server
-                        result.innerHTML = this.responseText;
-     
-                    }
-                };
-     
-                // Converting JSON data to string
-                let dataString = JSON.stringify(data);
-     
-                // Sending data with the request
-                xhr.send(dataString);
-            }
+    });
+  });
+var Score = 0;
 
 
-let score = 0;
 
 //Save Username in index.html
 function saveUser() {
@@ -86,31 +98,32 @@ function saveUser() {
 
 //Calculating the total score
 function QuestionCor() {
-    //Replaces the scoreboard
-    if (document.getElementById("scoringdiv")) {
-        document.getElementById("scoringdiv").remove();
-    }
-    
     const AddQuestions = document.getElementById("Questions1");
-    score = 0;
+    Score = 0;
+
     //Checks if the answer is correct
-    for(let Q = 0; Q < PossibleQuestionsCount - 1; Q++){
+    for(let Q = 0; Q < PossibleQuestionsCount; Q++){
         for(var a = 0; a < anschoices; a++) {
-                //var checkansh1 = document.getElementById("QAnswer"+Q+"_"+A);
                 var checkanschecked = document.getElementById("AnsInp"+Q+"_"+a);
                 var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[a].IsCorrect;
+
                 if(checkanschecked.checked == IsCor){
-                        score = score + 0.25;
+                        Score = Score + 0.25;
                     }else if(checkanschecked.checked != IsCor){
-                        score = score;
+                        Score = Score;
                     } else {
                         console.log("A possible score could not be determined");
                     }
                 }
             }
 
+    //Replaces the scoreboard
+    if (document.getElementById("scoringdiv")) {
+        document.getElementById("scoringdiv").remove();
+    }
+
     //Username
-    var user = localStorage.getItem("username");
+    let user = localStorage.getItem("username");
 
     //Score Div
     let scorediv = document.createElement("div");
@@ -127,14 +140,36 @@ function QuestionCor() {
 
     //Score H1
     const scoreh1 = document.createElement("h1");
-    scoreh1.innerHTML = "Score: " + score;
-    scoreh1.style = "font-size: 100px; color: black; text-align: center; position: absolute; top: 30%; left: 5%;"
+    scoreh1.innerHTML = "Score: " + Score;
+    scoreh1.style = "font-size: 80px; color: black; text-align: center; position: absolute; top: 30%; left: 5%;"
     scoredivid.appendChild(scoreh1);
 
-    //Save to JSON
-    //if (score = 16){
-        sendJSONbeta();
-    //}
+    //Brs
+    const br = document.createElement("br");
+    scoredivid.appendChild(br);
+
+    const br2 = document.createElement("br");
+    scoredivid.appendChild(br2);
+
+    const br3 = document.createElement("br");
+    scoredivid.appendChild(br3);
+
+    //Pass or Fail H1
+    const didpass = document.createElement("h1");
+    didpass.style = "font-size: 25px; color: black; text-align: center; position: absolute; top: 60%; left: 15%;"
+    
+    
+    if (Score == PossibleQuestionsCount) {
+        Pass = true;
+        didpass.innerHTML = "You Passed!";
+        scoredivid.appendChild(didpass);
+        SendData();
+    } else {
+        Pass = false;
+        didpass.innerHTML = "You did not pass, please try again.";
+        scoredivid.appendChild(didpass);
+    }
+
 }
 
 
@@ -163,7 +198,7 @@ function QuestionCreate() {
             //Random Questions Function
             function QuestionRan(array) {
                 let currentIndex = array.length, randomIndex;;
-      
+
                 // While there remain elements to shuffle.
                 while (currentIndex != 0) {
       
@@ -247,11 +282,29 @@ function QuestionCreate() {
         //Updating Variables
         ArrayCount = ArrayCount + 1;
 
+        let answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+        let answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+        let answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+        let answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+        
+        lng.push(answerslength1);
+        lng.push(answerslength2);
+        lng.push(answerslength3);
+        lng.push(answerslength4);
 
+        //Making sure of no repeats
+        while (answerslength1 == answerslength2 || answerslength1 == answerslength3 || answerslength1 == answerslength4 || answerslength2 == answerslength3 || answerslength2 == answerslength4 || answerslength3 == answerslength4) {
+            answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+        }
 
             //Inputs
             for (let j = 0; j < anschoices; j++) {
  
+
+                randomVal = [answerslength1, answerslength2, answerslength3, answerslength4];
 
                 //Creates a new span for each answer
 
@@ -279,12 +332,10 @@ function QuestionCreate() {
 
                 AddLabel.appendChild(Checkboxes);
                 
-                answerslength = Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length;
-
                 let h1a = document.createElement("h1");
-                h1a.id = "QAnswer"+ArrayCount+"_"+j;
+                h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
                 //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
-                h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[j].Answer;
+                h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
                 h1a.style = "color:black; font-size: 30px;"
                 AddLabel.appendChild(h1a); 
         
