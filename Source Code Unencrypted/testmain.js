@@ -88,7 +88,7 @@ function saveUser() {
 }
 
 
-
+let LNGNum = 0;
 //Calculating the total score
 function QuestionCor() {
     const AddQuestions = document.getElementById("Questions1");
@@ -98,8 +98,8 @@ function QuestionCor() {
     for(let Q = 0; Q < PossibleQuestionsCount; Q++){
         for(var a = 0; a < anschoices; a++) {
                 var checkanschecked = document.getElementById("AnsInp"+Q+"_"+a);
-                var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[a].IsCorrect;
-
+                var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
+                LNGNum++;
                 if(checkanschecked.checked == IsCor){
                         Score = Score + 0.25;
                     }else if(checkanschecked.checked != IsCor){
@@ -156,7 +156,7 @@ function QuestionCor() {
     h12.innerHTML = "Known bug: You have to press the submit button twice to submit your score.";
     h12.style = "font-size: 15px; color: black; text-align: center; position: absolute; top: 80%; left: 5%;"
     scoredivid.appendChild(h12);
-    
+    LNGNum = 0;
     if (Score == PossibleQuestionsCount) {
         Pass = true;
         didpass.innerHTML = "You Passed!";
@@ -284,11 +284,6 @@ function QuestionCreate() {
         let answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
         let answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
         
-        lng.push(answerslength1);
-        lng.push(answerslength2);
-        lng.push(answerslength3);
-        lng.push(answerslength4);
-
         //Making sure of no repeats
         while (answerslength1 == answerslength2 || answerslength1 == answerslength3 || answerslength1 == answerslength4 || answerslength2 == answerslength3 || answerslength2 == answerslength4 || answerslength3 == answerslength4) {
             answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
@@ -296,6 +291,12 @@ function QuestionCreate() {
             answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
             answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
         }
+
+        lng.push(answerslength1);
+        lng.push(answerslength2);
+        lng.push(answerslength3);
+        lng.push(answerslength4);
+
 
             //Inputs
             for (let j = 0; j < anschoices; j++) {

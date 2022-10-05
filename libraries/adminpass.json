@@ -1,0 +1,11 @@
+{
+    "Administrators": [
+        {
+            "Name": "Erick1 Tran",
+            "Password": "asd111",
+            "PasswordHash": "password",
+            "PasswordSalt": "password",
+            "TwoFactorEnabled": false
+        }
+    ]
+}
