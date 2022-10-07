@@ -1,5 +1,9 @@
 # OA-Robotics-Safety-Test
-This is a repository for an updated version of the OA Robotics Safety Test available for public use.
+This is a repository for an updated version of the OA Robotics Safety Test available.
+
+
+
+
 
 
 Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a repository for the OA Robotics Safety Test I made.
@@ -31,7 +35,7 @@ make different types of safety tests compared to the standard ones found at the 
         
 A: It started as a fun project. I was bored one day so I couldn't help myself not to do something productive, as well as to advance my HTML skills.
 It was only when I showed it to the rest of cabinet and the leads that I thought that this might have been a real thing that we could have done.
-I believe, so far on the day that I am making this (9/19/22), this took a cumulative 6 days of time, spread over about 4 weeks. It was mainly because I was bored,
+I believe, so far on the day that I am making this (10/6/22), this took a cumulative 8 days of time, spread over about 6 weeks. It was mainly because I was bored,
 but it did become a real thing that did happen.
 
 
