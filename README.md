@@ -2,7 +2,11 @@
 This is a repository for an updated version of the OA Robotics Safety Test available.
 
 
+THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
+---RELEASE 5.24--- 
+
+(Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
 
 
