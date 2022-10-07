@@ -265,7 +265,7 @@ function QuestionCreate() {
 
         let H1Num = document.createElement("h1");
         H1Num.innerHTML = i+1 + ". " + PossibleQuestions[i + 1];
-        H1Num.style = "color: black; font-size: 20px; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: left;";
+        H1Num.style = "color: black; font-size: 20px; font-weight: 300; text-align: left;";
         AddQuestionsDiv1.appendChild(H1Num);
 
         
@@ -318,7 +318,7 @@ function QuestionCreate() {
                 AddLabel.id = "Label_" + QuestionArrayAt + "_" + j;
                 AddLabel.className = "form-check-label";
                 AddLabel.for = "PQ" + QuestionArrayAt + "_" + j;
-                AddLabel.style = "color: black; font-size: auto; font-family: 'Times New Roman', sans-serif; font-weight: 300; text-align: center;";
+                AddLabel.style = "color: black; font-weight: 300; text-align: center;";
                 AddSpanId.appendChild(AddLabel);
 
                 //Checkboxes
@@ -334,7 +334,7 @@ function QuestionCreate() {
                 h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
                 //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
                 h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
-                h1a.style = "color:black; font-size: 30px;"
+                h1a.style = "color:black;"
                 AddLabel.appendChild(h1a); 
         
 

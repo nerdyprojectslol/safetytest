@@ -1,54 +1,52 @@
 <html>
-<head>
-<meta charset="UTF-8"/>
-<title>Main Safety Test</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="4079.png" type="image/x-icon">
-<script type="application/json" src="/libraries/data.json"></script>
-<script type="text/javascript" src="/libraries/test.js"></script>
-</head>
-<body onload="QuestionCreate()">
-<center id="center">
-<h1 class="header" style="font-family:Arial,Helvetica,sans-serif">
-OA Robotics General Safety Test
-</h1>
-<br>
-<h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Safety Test Release 5.1</h1>
-<br>
-<h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">Placeholder</h2>
-<br>
-<img id="logo" src="4079.png">
-<br><br>
-<a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8" target="_blank" style="color:rgba(29,185,202,0.75)"><h1 style="font-size:x-large;letter-spacing:2px" style="color:rgba(29, 185, 202, 0.75)">If you haven't, please go through the safety slides</h1></a>
-<br><br>
-<div id="TeamChoose">
-<h1 style="font-size:x-large;letter-spacing:2px">Are you a FRC, FTC, or VEX member?</h1>
-<br>
-<button id="FRC" onclick="FRC()">FRC</button>
-<button id="FTC" onclick="FTC()">FTC</button>
-<button id="VEX" onclick="VEX()">VEX</button>
-<br>
-<br>
-</div>
-<form id="QForm" method="post" action="https://script.google.com/macros/s/AKfycbxE4I4zhOUBAPtFCbpKXxlL1osRKmmKvfmDthtILHsmYom8i5QQsPiK9ksgc90xcD4X/exec">
-<div id="Questions1" style="font-family: Arial, Helvetica, sans-serif;">
-<br><br>
-</div>
-<br><br><br><br><br>
-<div id="SubmitClear">
-<button type='submit' id="Submit" onmousedown="QuestionCor()">Submit</button>
-<button id="Clear" onmousedown="Clear()">Clear</button>
-</div>
-</form>
-<br><br>
-<div id="ScoreBox"></div>
-<br><br><br><br><br>
-<h1 id="BottomThing">If you have any questions, contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
-<br><br><br><br><br>
-<h3 id="Credit">Designed and programmed by Erick Tran</h3>
-</center>
-<style>
-    body{
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Main Safety Test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="4079.png" type="image/x-icon">
+        <script type="application/json" src="/libraries/data.json"></script>
+        <script type="text/javascript" src="/libraries/test.js"></script>
+    </head>
+    <body onload="QuestionCreate()">
+        <center id="center">
+            <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">OA Robotics General Safety Test</h1>
+            <br>
+            <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Safety Test Release 5.21</h1>
+            <br>
+            <h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">Placeholder</h2>
+            <br>
+            <img id="logo" src="4079.png">
+            <br><br>
+            <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8" target="_blank" style="color:rgba(29,185,202,0.75)"><h1 style="font-size:x-large;letter-spacing:2px" style="color:rgba(29, 185, 202, 0.75)">If you haven't, please go through the safety slides</h1></a>
+            <br><br>
+                <div id="TeamChoose">
+                    <h1 style="font-size:x-large;letter-spacing:2px">Are you a FRC, FTC, or VEX member?</h1>
+                    <br>
+                    <button id="FRC" onclick="FRC()">FRC</button>
+                    <button id="FTC" onclick="FTC()">FTC</button>
+                    <button id="VEX" onclick="VEX()">VEX</button>
+                    <br>
+                    <br>
+                </div>
+            <form id="QForm" method="post" action="https://script.google.com/macros/s/AKfycbxE4I4zhOUBAPtFCbpKXxlL1osRKmmKvfmDthtILHsmYom8i5QQsPiK9ksgc90xcD4X/exec">
+                <div id="Questions1" style="font-family: Arial, Helvetica, sans-serif;">
+                    <br><br>
+                </div>
+            <br><br><br><br><br>
+                <div id="SubmitClear">
+                    <button type='submit' id="Submit" onmousedown="QuestionCor()">Submit</button>
+                    <button id="Clear" onmousedown="Clear()">Clear</button>
+                </div>
+        </form>
+        <br><br>
+            <div id="ScoreBox"></div>
+        <br><br><br><br><br>
+        <h1 id="BottomThing">If you have any questions, contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
+            <br><br><br><br><br>
+            <h3 id="Credit">Designed and programmed by Erick Tran</h3>
+        </center>
+    <style>
+        body{
         background-image:linear-gradient(to right top,#3a4146,#171a1c,#282b2c,#363a39,#434752)
     }
     .header{
@@ -71,7 +69,8 @@ OA Robotics General Safety Test
         width:550px;
         position:relative;
         left:10px;
-        line-height:20px
+        line-height:20px;
+        font-size: 13px;
     }
     #logo{
         width:10px;
@@ -85,7 +84,7 @@ OA Robotics General Safety Test
         border-radius:100px;
         font-size:25px;
         background:rgba(255,255,255,0.75);
-        font-family:'Yeon Sung'
+        font-family: Arial, Helvetica, sans-serif;
     }
     #FRC,#FTC,#VEX{
         height:150px;
@@ -93,7 +92,18 @@ OA Robotics General Safety Test
         border-radius:35px;
         font-size:35px;
         background-image:linear-gradient(to right top,#969fa5,#76838c,#7e8789,#a5aeab,#b6bac2);
-        font-family: "sans serif"
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #Credit {
+        color:rgba(255,255,255,0.75);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+    #BottomThing {
+        color:rgba(255,255,255,0.75);
+        font-family: Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
     }
     @media(max-width:700px){
         #Compendium1{
@@ -122,17 +132,18 @@ OA Robotics General Safety Test
             border-radius:100px;
             font-size:25px;
             background:rgba(255,255,255,0.75);
-            font-family:'Times New Roman',Times,serif
+            font-family: Arial, Helvetica, sans-serif;
         }
         #Questions1 div,#TeamChoose{
             background:rgba(255,255,255,0.5);
             float:none;
             border-radius:5px;
+            font-size:15px;
             height:500px;
             width:650px;
             position:relative;
             left:10px;
-            line-height:20px
+            line-height:25px;
         }
     }
     </style>
