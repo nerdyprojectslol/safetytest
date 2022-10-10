@@ -29,11 +29,11 @@
                 <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
                 <img src="MainSafetyTest/4079.png" class="logo">
                 
-                    <h3 id="Heading1" style="font-family: 'Times New Roman', Times, serif;">This short quiz has 16 questions</h3>
-                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 10-6-2022</h4>
+                    <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">Placeholder</h3>
+                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 10-10-2022</h4>
                     <div class="form-group">
                         <br><br>
-                    <label id="MainHeadingBox">Enter FULL Name in Input Box</label>
+                    <label id="MainHeadingBox">Enter First and Last Names in Input Box</label>
 
                     <!-- Username Input -->
 
@@ -45,7 +45,7 @@
                     <br><br>
                 </div>
                 <br><br><br><br><br>
-                <h1 id="Email">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank">frc4079.org/cabinet.</a></h1>
+                <h1 id="Email">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq" target="_blank">cabinet@frc4079.org.</a></h1>
                 <br><br><br><br><br>
                 <h3 id="Credit">Designed and programmed by Erick Tran</h3>
                 <br>
@@ -125,6 +125,27 @@
             }
             }
         </style>
-
+    <script>
+        //Sets question amount in index.html
+        function H3Value() {
+            //If the question amount is equal to 1, then it will display "question" instead of "questions"
+            if (PossibleQuestionsCount == 1) {
+                document.getElementById("QuestionAmountH3").innerHTML = "There is " + PossibleQuestionsCount + " question in this test.";
+                //If the question amount is greater than one, then it will display "questions" instead of "question (Normal Behavior)"
+            } else if (PossibleQuestionsCount > 1){
+                document.getElementById("QuestionAmountH3").innerHTML = "There are " + PossibleQuestionsCount + " questions in this test.";
+                //If the question amount is less than one, then it will display a negative error message
+            } else if (PossibleQuestionsCount < 0) {
+                document.getElementById("QuestionAmountH3").innerHTML = "There is a negative amount of questions in this test. EC: Q-1";
+                //If the question amount is equal to zero, then it will display a zero error message
+            } else if (PossibleQuestionsCount = 0) {
+                document.getElementById("QuestionAmountH3").innerHTML = "There are no questions in this test. Please contact the developer. EC: Q0";
+            } else {
+                //If the question amount is not a number, then it will display a NaN error message
+                document.getElementById("QuestionAmountH3").innerHTML = "A question amount could not be determined. Please contact the developer. EC: NaN";
+            }
+        }
+        H3Value();
+    </script>
     </body>
 </html>
