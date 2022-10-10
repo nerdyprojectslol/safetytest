@@ -1,9 +1,15 @@
+//LICENSED UNDER THE MIT LICENSE
+//Erick Tran
+//Language: Javascript
+//Current FRC 4079 Team Member and Cabinet Member
+//Use the README.md file for more information :)
+
 //Array Counts
 
 let PossibleQuestionsCount = 16;
 
-let PossibleQuestions = new Array(20);
-let answer = new Array(PossibleQuestions);
+let PossibleQuestions = new Array();
+let answer = new Array();
 let anschoices = 4;
 
 let lng = [];
@@ -55,27 +61,27 @@ window.addEventListener("load", function() {
     }
     });
   });
-var Score = 0;
+let Score = 0;
 
 
 
 //Save Username in index.html
 function saveUser() {
     
-    var usernameinput = document.getElementById("user").value;
+    let usernameinput = document.getElementById("user").value;
 
     //Returns error if box is empty
     if(usernameinput == ""){
         document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
         setTimeout(function(){
-            document.getElementById("MainHeadingBox").innerHTML = "Enter FULL Name in Input Box";
+            document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
         }, 3000);
 
         //Checks if the username contains a space
     }else if(usernameinput.includes(" ") == false) {
-        document.getElementById("MainHeadingBox").innerHTML = "Your username MUST contain a space.";
+        document.getElementById("MainHeadingBox").innerHTML = "You must input both your first and last names in the box";
         setTimeout(function(){
-            document.getElementById("MainHeadingBox").innerHTML = "Enter FULL Name in Input Box";
+            document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
         }, 3000);
 
         //If the username is valid
@@ -169,8 +175,6 @@ function QuestionCor() {
 
 }
 
-
-
 //Clear all inputs
 function Clear() {
     document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
@@ -244,6 +248,14 @@ function QuestionCreate() {
 
     //for loop to create questions answers
     async function asyncisannoying() {
+
+    if(PossibleQuestionsCount < 0){
+        console.log("EC: Q-1");
+        const abortController = new AbortController();
+        abortController.abort();
+        return;
+    }
+
     for (let i = 0; i < PossibleQuestionsCount; i++) {
         var divid = "Question_" + i+1;
         
@@ -292,6 +304,7 @@ function QuestionCreate() {
             answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
         }
 
+        //Adding value of answers to array
         lng.push(answerslength1);
         lng.push(answerslength2);
         lng.push(answerslength3);
@@ -331,12 +344,18 @@ function QuestionCreate() {
                 AddLabel.appendChild(Checkboxes);
                 
                 let h1a = document.createElement("h1");
-                h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
-                //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
-                h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
-                h1a.style = "color:black;"
-                AddLabel.appendChild(h1a); 
-        
+                if (datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id) {
+                    h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
+                    //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
+                    h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
+                    h1a.style = "color:black;"
+                    AddLabel.appendChild(h1a); 
+                } else {
+                    h1a.id = "NoQId";
+                    h1a.innerHTML = "No Question Response Available";
+                    h1a.style = "color:black;"
+                    AddLabel.appendChild(h1a);
+                }
 
 
                 Checkboxesid = Checkboxes.id;

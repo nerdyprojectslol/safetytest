@@ -185,6 +185,26 @@
                     "id": "Q5_a5",
                     "Answer": "Tools",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a6",
+                    "Answer": "Excitement",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a7",
+                    "Answer": "Joy",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a8",
+                    "Answer": "Communication",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a9",
+                    "Answer": "Eagerness",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -222,8 +242,22 @@
                     "id": "Q6_a6",
                     "Answer": "Fire materials",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a7",
+                    "Answer": "Money",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a8",
+                    "Answer": "A whiteboard",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a9",
+                    "Answer": "Paint",
+                    "IsCorrect":false
                 }
-                
             ]
         },
 
@@ -275,6 +309,16 @@
                     "id": "Q7_a9",
                     "Answer": "Mostly Software Data Sheet",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a10",
+                    "Answer": "Modern Safety Data Sheet",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q7_a11",
+                    "Answer": "Material Safety Data Skills",
+                    "IsCorrect": false
                 }
             ]
         },  
@@ -307,18 +351,19 @@
                 {
                     "id": "Q8_a5",
                     "Answer": "When signing into the workday",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q8_a6",
                     "Answer": "When talking to someone",
                     "IsCorrect":false
-                },                {
+                },                
+                {
                     "id": "Q8_a7",
                     "Answer": "When working on the robot",
                     "IsCorrect":true
-                }
-                ,                {
+                },                
+                {
                     "id": "Q8_a8",
                     "Answer": "When talking to someone",
                     "IsCorrect":false
@@ -337,6 +382,16 @@
                     "id": "Q8_a11",
                     "Answer": "When working on electrical",
                     "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a12",
+                    "Answer": "In the machine shop",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q8_a13",
+                    "Answer": "While sitting down outside",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -434,41 +489,6 @@
                     "id": "Q9_a18",
                     "Answer": "Weakness",
                     "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a19",
-                    "Answer": "Dizziness",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a20",
-                    "Answer": "Nausea",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a21",
-                    "Answer": "Headaches",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a22",
-                    "Answer": "Vomiting",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a23",
-                    "Answer": "Drowsiness",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a24",
-                    "Answer": "Confusion",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q9_a8",
-                    "Answer": "Dizziness",
-                    "IsCorrect":false
                 }
             ]
         },
@@ -511,6 +531,11 @@
                     "id": "Q10_a7",
                     "Answer": "Interacts with mentors and safety advisors",
                     "IsCorrect":true
+                },
+                {
+                    "id": "Q10_a8",
+                    "Answer": "Talks with students about safety protocol",
+                    "IsCorrect":true
                 }
             ]
         },
@@ -548,6 +573,11 @@
                     "id": "Q11_a6",
                     "Answer": "When you are not sure how to use it",
                     "IsCorrect":true
+                },
+                {
+                    "id": "Q11_a7",
+                    "Answer": "When you are pressured to do it",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -724,6 +754,16 @@
                     "id": "Q14_a5",
                     "Answer": "Safety Manuals",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q14_a6",
+                    "Answer": "Materials",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q14_a7",
+                    "Answer": "Inventory",
+                    "IsCorrect": false
                 }
             ]
         },
@@ -924,6 +964,16 @@
                     "id": "Q19_a6",
                     "Answer": "Ask the safety captain",
                     "IsCorrect":true
+                },
+                {
+                    "id": "Q19_a7",
+                    "Answer": "Search it up online",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q19_a8",
+                    "Answer": "Wing it and hope that you do it right",
+                    "IsCorrect": false
                 }
             ]
         },

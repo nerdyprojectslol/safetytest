@@ -1,13 +1,18 @@
 # OA-Robotics-Safety-Test
 This is a repository for an updated version of the OA Robotics Safety Test available.
 
+FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran 2022
 
 THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
----RELEASE 5.24--- 
+---RELEASE 5.4--- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
+
+General Rule of Thumb for Making Questions or adding responses to Questions:
+There should be at least 4-5 extra questions more than the provided amount of questions (If 16 was the max, 20-21 questions would suffice)
+For every question, there should at least be 5-6 answers.
 
 
 Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a repository for the OA Robotics Safety Test I made.
