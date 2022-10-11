@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8"/>
         <title>Main Safety Test</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="4079.png" type="image/x-icon">
         <script type="application/json" src="/libraries/data.json"></script>
         <script type="text/javascript" src="/libraries/test.js"></script>
@@ -11,7 +11,7 @@
         <center id="center">
             <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">OA Robotics General Safety Test</h1>
             <br>
-            <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Safety Test Release 5.41</h1>
+            <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Safety Test Release 6.0</h1>
             <br>
             <h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">Placeholder</h2>
             <br>
@@ -28,9 +28,16 @@
                     <br>
                     <br>
                 </div>
-            <ul id="ULNavBar">
-                <li class="link"><a href="#"></a></li>
-            </ul>
+                <br><br>
+                <div id="PathChoose">
+                    <h1 style="font-size:x-large;letter-spacing:2px">Are you a mechanical, electrical, or software member?</h1>
+                    <br>
+                    <button id="Mechanical" onclick="Mechanical()">Mechanical</button>
+                    <button id="Electrical" onclick="Electrical()">Electrical</button>
+                    <button id="Software" onclick="Software()">Software</button>
+                    <br>
+                    <br>
+                </div>
             <form id="QForm" method="post" action="https://script.google.com/macros/s/AKfycbxE4I4zhOUBAPtFCbpKXxlL1osRKmmKvfmDthtILHsmYom8i5QQsPiK9ksgc90xcD4X/exec">
                 <div id="Questions1" style="font-family: Arial, Helvetica, sans-serif;">
                     <br><br>
@@ -46,10 +53,10 @@
         <br><br><br><br><br>
         <h1 id="BottomThing">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq" target="_blank">cabinet@frc4079.org.</a></h1>
             <br><br><br><br><br>
-            <h3 id="Credit">Designed and programmed by Erick Tran</h3>
         </center>
+        <h1 id="Credit" style="color: white;position: absolute; font-size: 20px; right: 0%;">By: Erick T.</h3>
     <style>
-        body{
+    body{
         background-image:linear-gradient(to right top,#3a4146,#171a1c,#282b2c,#363a39,#434752);
     }
     .header{
@@ -64,7 +71,7 @@
         width:80px;
         margin-left:-15px
     }
-    #Questions1 div,#TeamChoose{
+    #Questions1 div,#TeamChoose,#PathChoose{
         background:rgba(255,255,255,0.5);
         float:none;
         border-radius:5px;
@@ -97,6 +104,14 @@
         background-image:linear-gradient(to right top,#969fa5,#76838c,#7e8789,#a5aeab,#b6bac2);
         font-family: Arial, Helvetica, sans-serif;
     }
+    #Mechanical,#Electrical,#Software{
+        height:150px;
+        width:150px;
+        border-radius:35px;
+        font-size:25px;
+        background-image:linear-gradient(to right top,#969fa5,#76838c,#7e8789,#a5aeab,#b6bac2);
+        font-family: Arial, Helvetica, sans-serif;
+    }
     #Credit {
         color:rgba(255,255,255,0.75);
         font-family: Arial, Helvetica, sans-serif;
@@ -108,9 +123,16 @@
         font-family: Arial, Helvetica, sans-serif;
         letter-spacing: 2px;
     }
+    #Email2 {
+        color:aqua;
+    }
     @media(max-width:700px){
+        body{
+            width: 200%;
+            background-image:linear-gradient(to right top,#3a4146,#171a1c,#282b2c,#363a39,#434752);
+        }
         #Compendium1{
-            font-size:30px
+            font-size:30px;
         }
         #logo{
             width:50px;
@@ -137,7 +159,7 @@
             background:rgba(255,255,255,0.75);
             font-family: Arial, Helvetica, sans-serif;
         }
-        #Questions1 div,#TeamChoose{
+        #Questions1 div,#TeamChoose,#PathChoose{
             background:rgba(255,255,255,0.5);
             float:none;
             border-radius:5px;
@@ -150,6 +172,85 @@
         }
     }
     </style>
-<script>let thisyear=new Date().getFullYear()-2000;let nextyear=new Date().getFullYear()-1999;function Compendium(){document.getElementById("Compendium1").innerHTML="A safety compendium for the "+thisyear+"-"+nextyear+" school year"}Compendium();function FRC(){if(document.getElementById("h1team")){document.getElementById("h1team").remove()}const a=document.getElementById("TeamChoose");let h1team=document.createElement("h1");h1team.id="h1team";h1team.innerHTML="You have chosen FRC as your team";a.appendChild(h1team);localStorage.setItem("Team","FRC")}function FTC(){if(document.getElementById("h1team")){document.getElementById("h1team").remove()}const a=document.getElementById("TeamChoose");let h1team=document.createElement("h1");h1team.id="h1team";h1team.innerHTML="You have chosen FTC as your team";a.appendChild(h1team);localStorage.setItem("Team","FTC")}function VEX(){if(document.getElementById("h1team")){document.getElementById("h1team").remove()}const a=document.getElementById("TeamChoose");let h1team=document.createElement("h1");h1team.id="h1team";h1team.innerHTML="You have chosen VEX Robotics as your team";a.appendChild(h1team);localStorage.setItem("Team","VEX")};</script>
+<script>
+    let thisyear=new Date().getFullYear()-2000;
+    let nextyear=new Date().getFullYear()-1999;
+    function Compendium(){
+        document.getElementById("Compendium1").innerHTML="A safety compendium for the "+thisyear+"-"+nextyear+" school year";
+    }
+    Compendium();
+    //FRC Function
+    function FRC(){
+        if(document.getElementById("h1team")){
+            document.getElementById("h1team").remove();
+        }
+            const a=document.getElementById("TeamChoose");
+            let h1team=document.createElement("h1");
+            h1team.id="h1team";
+            h1team.innerHTML="You have chosen FRC as your team";
+            a.appendChild(h1team);
+            localStorage.setItem("Team","FRC");
+        }
+    //FTC Function  
+    function FTC(){
+        if(document.getElementById("h1team")){
+            document.getElementById("h1team").remove();
+        }
+            const a=document.getElementById("TeamChoose");
+            let h1team=document.createElement("h1");
+            h1team.id="h1team";
+            h1team.innerHTML="You have chosen FTC as your team";
+            a.appendChild(h1team);
+            localStorage.setItem("Team","FTC");
+        }
+    //VEX Function
+    function VEX(){
+        if(document.getElementById("h1team")){
+            document.getElementById("h1team").remove();
+        }
+            const a=document.getElementById("TeamChoose");
+            let h1team=document.createElement("h1");
+            h1team.id="h1team";
+            h1team.innerHTML="You have chosen VEX Robotics as your team";
+            a.appendChild(h1team);
+            localStorage.setItem("Team","VEX");
+        }
+    //Mechanical Function
+    function Mechanical() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1mechanical=document.createElement("h1");
+            h1mechanical.id="h1category";
+            h1mechanical.innerHTML="You have chosen Mechanical as your category";
+            a.appendChild(h1mechanical);
+            localStorage.setItem("Category","Mechanical");
+        }
+    //Electrical Function
+    function Electrical() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1electrical=document.createElement("h1");
+            h1electrical.id="h1category";
+            h1electrical.innerHTML="You have chosen Electrical as your category";
+            a.appendChild(h1electrical);
+            localStorage.setItem("Category","Electrical");
+        }
+    //Software Function
+    function Software() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1software=document.createElement("h1");
+            h1software.id="h1category";
+            h1software.innerHTML="You have chosen Software as your category";
+            a.appendChild(h1software);
+            localStorage.setItem("Category","Software");
+        }
+    </script>
 </body>
 </html>

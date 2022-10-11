@@ -26,39 +26,56 @@ window.addEventListener("load", function() {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
       
-      //Data
-      const data = new FormData();
-      const dateLocal = new Date();
-      const NameLocal = localStorage.getItem("username");
-      const TeamLocal = localStorage.getItem("Team");
+    //Data to send
+    let data = new FormData();
+    let dateLocal = new Date();
+    let NameLocal = localStorage.getItem("username");
+    let TeamLocal = localStorage.getItem("Team");
+    let CategoryLocal = localStorage.getItem("Category");
 
-      if((data.get('Name') == localStorage.getItem("username")) && (data.get('Team') == localStorage.getItem("Team"))){
-        data.set("Name", localStorage.getItem("username"));
-        data.set("Team", localStorage.getItem("Team"));
-        data.set("Date", dateLocal);
+    //Checks if some of the values are null
+    if (localStorage.getItem("username") == null) {
+        NameLocal = "No Name";
+    }
+    if (localStorage.getItem("Team") == null) {
+        TeamLocal = "No Team Chosen";
+    }
+    if (localStorage.getItem("Category") == null) {
+        CategoryLocal = "No Category Chosen";
+    }
+
+    //Sends data to Google Sheets
+    if((data.get('Name') == localStorage.getItem("username")) && (data.get('Team') == localStorage.getItem("Team")) && (data.get('Category') == localStorage.getItem("Category"))){
+        data.set("Name", NameLocal);
+        data.set("Team", TeamLocal);
+        data.set("Category", CategoryLocal);
+        data.set("Pass", Pass);
         data.set("Score", Score);
+        data.set("Time", dateLocal);
+        const action = e.target.action;
 
         fetch(action, {
             method: 'POST',
             body: data,
-          })
-      } else {
+        })
+    } else {
 
-      data.append('Name', NameLocal);
-      data.append('Team', TeamLocal);
-      data.append('Pass', Pass);
-      data.append('Score', Score);
-      data.append('Time', dateLocal);
-      const action = e.target.action;
+        data.append("Name", NameLocal);
+        data.append("Team", TeamLocal);
+        data.append("Category", CategoryLocal);
+        data.append("Pass", Pass);
+        data.append("Score", Score);
+        data.append("Time", dateLocal);
+        const action = e.target.action;
 
       
-      //Fetch
-      fetch(action, {
-        method: 'POST',
-        body: data,
-      })
+        //Fetch
+        fetch(action, {
+            method: 'POST',
+            body: data,
+        })
 
-    }
+        }
     });
   });
 let Score = 0;
@@ -89,7 +106,7 @@ function saveUser() {
     //Saves user in local storage for test firebase
     username = document.getElementById("user").value;
     localStorage.setItem("username", username);
-    window.location = "MainSafetyTest/safetytest.html";
+    window.location = "MainSafetyTest";
     }
 }
 

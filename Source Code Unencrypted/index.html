@@ -44,22 +44,17 @@
                     <button id="login_button" class="btn btn-primary" onclick="saveUser()">Start</button>
                     <br><br>
                 </div>
-                <br><br><br><br><br>
-                <h1 id="Email">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq" target="_blank">cabinet@frc4079.org.</a></h1>
-                <br><br><br><br><br>
-                <h3 id="Credit">Designed and programmed by Erick Tran</h3>
-                <br>
-                <br>
-                <br>
+                    <br><br><br><br><br>
+                        <h1 id="Email">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq" target="_blank">cabinet@frc4079.org.</a></h1>
+                    <br><br><br><br><br>
             </center>
-
+                <h1 id="Credit" style="color: white;position: absolute; font-size: 20px; right: 0%;">By: Erick T.</h3>
+                <br>
+                <br>
+                <br>
             <!-- Page Looks/Front End -->
 
         <style>
-            #Credit{
-                font-family: 'Times New Roman', Times, serif;
-                color: black;
-            }
             .header img
             {
 	            width: 80px;
@@ -113,7 +108,11 @@
             {
                 width: 18.5em;
             }
-
+            #login_button
+            {
+                width:100%;
+                font-size: 200%;
+            }
             #Email
             {
                 font-size: 10px;
@@ -146,6 +145,14 @@
             }
         }
         H3Value();
+
+        //Enter key press
+        window.addEventListener("keydown", checkKeyPressed, false);
+        function checkKeyPressed(e) {
+            if (e.keyCode == "13") {
+                saveUser();
+            }
+        }
     </script>
     </body>
 </html>
