@@ -38,10 +38,10 @@ window.addEventListener("load", function() {
         NameLocal = "No Name";
     }
     if (localStorage.getItem("Team") == null) {
-        TeamLocal = "No Team Chosen";
+        TeamLocal = "No Team Chosen/General OA Robotics";
     }
     if (localStorage.getItem("Category") == null) {
-        CategoryLocal = "No Category Chosen";
+        CategoryLocal = "No Division Chosen";
     }
 
     //Sends data to Google Sheets

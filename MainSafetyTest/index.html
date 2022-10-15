@@ -11,7 +11,7 @@
         <center id="center">
             <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">OA Robotics General Safety Test</h1>
             <br>
-            <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Note: Not every question may have an answer.</h1>
+            <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Note: Select all that apply</h1>
             <br>
             <h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">Placeholder</h2>
             <br>
@@ -20,21 +20,21 @@
             <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8/edit#slide=id.p1" target="_blank" style="color:rgba(29,185,202,0.75)"><h1 style="font-size:x-large;letter-spacing:2px" style="color:rgba(29, 185, 202, 0.75)">If you haven't, please go through the safety slides</h1></a>
             <br><br>
                 <div id="TeamChoose">
-                    <h1 style="font-size:x-large;letter-spacing:2px">Are you a FRC, FTC, or VEX member?</h1>
+                    <h1 style="font-size:x-large;letter-spacing:2px">What team are you in?</h1>
                     <br>
                     <button id="FRC" onclick="FRC()">FRC</button>
                     <button id="FTC" onclick="FTC()">FTC</button>
-                    <button id="VEX" onclick="VEX()">VEX</button>
                     <br>
                     <br>
                 </div>
                 <br><br>
                 <div id="PathChoose">
-                    <h1 style="font-size:x-large;letter-spacing:2px">Are you a mechanical, electrical, or software member?</h1>
+                    <h1 style="font-size:x-large;letter-spacing:2px">What division are you in?</h1>
                     <br>
                     <button id="Mechanical" onclick="Mechanical()">Mechanical</button>
                     <button id="Electrical" onclick="Electrical()">Electrical</button>
                     <button id="Software" onclick="Software()">Software</button>
+                    <button id="Leadership" onclick="Leadership()">Leadership</button>
                     <br>
                     <br>
                 </div>
@@ -82,6 +82,7 @@
         line-height:20px;
         font-size: 13px;
     }
+    
     #logo{
         width:10px;
         margin-top:30px;
@@ -96,19 +97,19 @@
         background:rgba(255,255,255,0.75);
         font-family: Arial, Helvetica, sans-serif;
     }
-    #FRC,#FTC,#VEX{
+    #FRC,#FTC{
         height:150px;
-        width:150px;
+        width:175px;
         border-radius:35px;
-        font-size:35px;
+        font-size:70px;
         background-image:linear-gradient(to right top,#969fa5,#76838c,#7e8789,#a5aeab,#b6bac2);
         font-family: Arial, Helvetica, sans-serif;
     }
-    #Mechanical,#Electrical,#Software{
-        height:150px;
-        width:150px;
+    #Mechanical,#Electrical,#Software,#Leadership{
+        height:125px;
+        width:125px;
         border-radius:35px;
-        font-size:25px;
+        font-size:20px;
         background-image:linear-gradient(to right top,#969fa5,#76838c,#7e8789,#a5aeab,#b6bac2);
         font-family: Arial, Helvetica, sans-serif;
     }
@@ -203,18 +204,6 @@
             a.appendChild(h1team);
             localStorage.setItem("Team","FTC");
         }
-    //VEX Function
-    function VEX(){
-        if(document.getElementById("h1team")){
-            document.getElementById("h1team").remove();
-        }
-            const a=document.getElementById("TeamChoose");
-            let h1team=document.createElement("h1");
-            h1team.id="h1team";
-            h1team.innerHTML="You have chosen VEX Robotics as your team";
-            a.appendChild(h1team);
-            localStorage.setItem("Team","VEX");
-        }
     //Mechanical Function
     function Mechanical() {
         if(document.getElementById("h1category")){
@@ -250,6 +239,18 @@
             h1software.innerHTML="You have chosen Software as your category";
             a.appendChild(h1software);
             localStorage.setItem("Category","Software");
+        }
+    //Leadership Function
+    function Leadership() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1software=document.createElement("h1");
+            h1software.id="h1category";
+            h1software.innerHTML="You have chosen Leadership as your category";
+            a.appendChild(h1software);
+            localStorage.setItem("Category","Leadership");
         }
     </script>
 </body>
