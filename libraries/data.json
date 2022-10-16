@@ -79,16 +79,6 @@
                     "id":"Q2_a6",
                     "Answer": "Proper Protective Equipment",
                     "IsCorrect":false
-                },
-                {
-                    "id":"Q2_a7",
-                    "Answer": "Protective Pretty Equipment",
-                    "IsCorrect":false
-                },
-                {
-                    "id":"Q2_a8",
-                    "Answer": "Protective Plastic Equipment",
-                    "IsCorrect":false
                 }
             ]
         },
