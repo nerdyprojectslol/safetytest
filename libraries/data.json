@@ -95,7 +95,7 @@
                 {
                     "id": "Q3_a2",
                     "Answer": "When soldering",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q3_a3",
@@ -105,11 +105,21 @@
                 {
                     "id": "Q3_a4",
                     "Answer": "When welding",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q3_a5",
                     "Answer": "When eating",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q3_a6",
+                    "Answer": "While sanding",
+                    "IsCorrect":false
+                },
+                {
+                    "id":"Q3_a6",
+                    "Answer": "While sawing wood/metal",
                     "IsCorrect":false
                 }
             ]
@@ -142,6 +152,11 @@
                 {
                     "id": "Q4_a5",
                     "Answer": "When using a saw",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a6",
+                    "Answer": "When walking outside",
                     "IsCorrect":false
                 }
             ]
@@ -195,6 +210,11 @@
                     "id": "Q5_a9",
                     "Answer": "Eagerness",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a10",
+                    "Answer": "Adventure",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -247,6 +267,11 @@
                     "id": "Q6_a9",
                     "Answer": "Paint",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a10",
+                    "Answer": "Power tools",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -282,31 +307,21 @@
                 },
                 {
                     "id": "Q7_a6",
-                    "Answer": "Mechanized Software Distribution Safety",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q7_a7",
-                    "Answer": "Mechanized Software Distribution Safety",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q7_a8",
                     "Answer": "Modem Software Delivery System",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q7_a9",
+                    "id": "Q7_a7",
                     "Answer": "Mostly Software Data Sheet",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q7_a10",
+                    "id": "Q7_a8",
                     "Answer": "Modern Safety Data Sheet",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q7_a11",
+                    "id": "Q7_a9",
                     "Answer": "Material Safety Data Skills",
                     "IsCorrect": false
                 }
@@ -352,16 +367,11 @@
                     "id": "Q8_a7",
                     "Answer": "When working on the robot",
                     "IsCorrect":true
-                },                
-                {
-                    "id": "Q8_a8",
-                    "Answer": "When talking to someone",
-                    "IsCorrect":false
                 },
                 {
                     "id": "Q8_a9",
                     "Answer": "When working on software",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q8_a10",
@@ -382,6 +392,11 @@
                     "id": "Q8_a13",
                     "Answer": "While sitting down outside",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q8_a14",
+                    "Answer":" While using a saw",
+                    "IsCorrect":true
                 }
             ]
         },
@@ -458,7 +473,7 @@
                 {
                     "id": "Q9_a14",
                     "Answer": "Irritation",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q9_a15",
@@ -526,6 +541,11 @@
                     "id": "Q10_a8",
                     "Answer": "Talks with students about safety protocol",
                     "IsCorrect":true
+                },
+                {
+                    "id": "Q10_a9",
+                    "Answer": "Works on mechanical",
+                    "IsCorrect": false
                 }
             ]
         },
@@ -542,7 +562,7 @@
                 {
                     "id": "Q11_a2",
                     "Answer": "When it requires electricity",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q11_a3",
@@ -567,7 +587,12 @@
                 {
                     "id": "Q11_a7",
                     "Answer": "When you are pressured to do it",
-                    "IsCorrect":false
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q11_a8",
+                    "Answer": "When leads say you have to",
+                    "IsCorrect":true
                 }
             ]
         },
@@ -603,13 +628,13 @@
                 },
                 {
                     "id": "Q12_a6",
-                    "Answer": "Safety shoes",
+                    "Answer": "Shoes",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q12_a7",
                     "Answer": "A helmet",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q12_a8",
@@ -638,7 +663,6 @@
                 }
             ]
         },
-
         {
             "id": "Q13",
             "Question": "Which of the following are adequate PPE for normal robot assembly?",
@@ -670,18 +694,18 @@
                 },
                 {
                     "id": "Q13_a6",
-                    "Answer": "Safety shoes",
+                    "Answer": "Shoes",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q13_a7",
                     "Answer": "A helmet",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q13_a8",
                     "Answer": "A face shield",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q13_a9",
@@ -791,6 +815,11 @@
                     "id": "Q15_a6",
                     "Answer": "Communication",
                     "IsCorrect":false 
+                },
+                {
+                    "id": "Q15_a7",
+                    "Answer": "Pouring water into an outlet",
+                    "IsCorrect":true
                 }
             ]
         },
@@ -837,6 +866,11 @@
                 {
                     "id": "Q16_a8",
                     "Answer": "A tie",
+                    "IsCorrect":false
+                },
+                {
+                    "id":"Q16_a9",
+                    "Answer": "A sandwich",
                     "IsCorrect":false
                 }
             ]
@@ -964,48 +998,6 @@
                     "id": "Q19_a8",
                     "Answer": "Wing it and hope that you do it right",
                     "IsCorrect": false
-                }
-            ]
-        },
-
-        {
-            "id": "Q20",
-            "Question": "What are bad ideas for safe electricity use?",
-            "Answers":[
-                {
-                    "id": "Q20_a1",
-                    "Answer": "Using a power tool with a damaged cord",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q20_a2",
-                    "Answer": "Using a power tool with a damaged plug",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q20_a3",
-                    "Answer": "Breaking off the ground prong on the plug",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q20_a4",
-                    "Answer": "Not wearing your safety glasses next to a power tool",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q20_a5",
-                    "Answer": "Walking next to people wielding power tools",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q20_a6",
-                    "Answer": "Communication",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q20_a7",
-                    "Answer": "Being mean to people",
-                    "IsCorrect":false
                 }
             ]
         }
