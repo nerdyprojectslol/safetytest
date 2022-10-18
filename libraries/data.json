@@ -22,7 +22,7 @@
                 {
                     "id": "Q1_a4",
                     "Answer":"Injuries",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q1_a5",
@@ -42,6 +42,11 @@
                 {
                     "id": "Q1_a8",
                     "Answer": "Chemicals",
+                    "IsCorrect":true
+                },
+                {
+                    "id":"Q1_a9",
+                    "Answer": "Toxic Gases",
                     "IsCorrect":true
                 }
             ]
@@ -115,7 +120,7 @@
                 {
                     "id": "Q3_a6",
                     "Answer": "While sanding",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id":"Q3_a6",
@@ -183,7 +188,7 @@
                 },
                 {
                     "id": "Q5_a4",
-                    "Answer": "Skills",
+                    "Answer": "Skill",
                     "IsCorrect":true
                 },
                 {
@@ -215,6 +220,11 @@
                     "id": "Q5_a10",
                     "Answer": "Adventure",
                     "IsCorrect":false
+                },
+                {
+                    "id":"Q5_a11",
+                    "Answer": "Training",
+                    "IsCorrect":true
                 }
             ]
         },
@@ -403,7 +413,7 @@
 
         {
             "id": "Q9",
-            "Question": "What risks could happen to damaged lead-acid batteries?",
+            "Question": "What are inherit risks of lead-acid batteries?",
             "Answers":[
                 {
                     "id": "Q9_a1",
@@ -544,7 +554,12 @@
                 },
                 {
                     "id": "Q10_a9",
-                    "Answer": "Works on mechanical",
+                    "Answer": "Works on mechanical stuff",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q10_a10",
+                    "Answer": "Works on scouting matches",
                     "IsCorrect": false
                 }
             ]
@@ -591,7 +606,12 @@
                 },
                 {
                     "id": "Q11_a8",
-                    "Answer": "When leads say you have to",
+                    "Answer": "When leads say you have to, even if you don't want to",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q11_a9",
+                    "Answer": "When you are not sure if it is safe",
                     "IsCorrect":true
                 }
             ]
@@ -757,7 +777,7 @@
                 {
                     "id": "Q14_a3",
                     "Answer": "Audit Results",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q14_a4",
@@ -803,7 +823,7 @@
                 },
                 {
                     "id": "Q15_a4",
-                    "Answer": "Using a power tool with a damaged plug",
+                    "Answer": "Using a damaged power tool",
                     "IsCorrect":true
                 },
                 {
@@ -820,6 +840,11 @@
                     "id": "Q15_a7",
                     "Answer": "Pouring water into an outlet",
                     "IsCorrect":true
+                },
+                {
+                    "id": "Q15_a8",
+                    "Answer": "Collaboration",
+                    "IsCorrect":false
                 }
             ]
         },
@@ -872,59 +897,63 @@
                     "id":"Q16_a9",
                     "Answer": "A sandwich",
                     "IsCorrect":false
+                },
+                {
+                    "id":"Q16_a10",
+                    "Answer": "A battery disposal kit",
+                    "IsCorrect":true
                 }
             ]
         },
 
         {
             "id": "Q17",
-            "Question": "What items should be noted on a MSDS?",
+            "Question": "What do you do if a battery explodes?",
             "Answers":[
                 {
                     "id": "Q17_a1",
-                    "Answer": "Chemicals",
+                    "Answer": "Back away from it",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q17_a2",
-                    "Answer": "Metal pieces",
+                    "Answer": "Touch it",
                     "IsCorrect":false
                 },
                 {
                     "id": "Q17_a3",
-                    "Answer": "Wood pieces",
+                    "Answer": "Throw it",
                     "IsCorrect":false
                 },
                 {
                     "id": "Q17_a4",
-                    "Answer": "Software",
-                    "IsCorrect":false
+                    "Answer": "Neutralize it",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q17_a5",
-                    "Answer": "Electronics",
-                    "IsCorrect":false
+                    "Answer": "Get someone to help you",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q17_a6",
-                    "Answer": "Plastic pieces",
-                    "IsCorrect":false
+                    "Answer":"Get the battery disposal kit",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q17_a7",
-                    "Answer": "Corrosives",
-                    "IsCorrect":true
+                    "Answer": "Pour water on it",
+                    "IsCorrect":false
                 }
             ]
         },
-        
         {
             "id": "Q18",
             "Question": "What person should you go to for safety guidance/instruction?",
             "Answers":[
                 {
                     "id": "Q18_a1",
-                    "Answer": "Your supervisor",
+                    "Answer": "Your mentor",
                     "IsCorrect":true
                 },
                 {
@@ -961,7 +990,7 @@
             "Answers":[
                 {
                     "id": "Q19_a1",
-                    "Answer": "Ask your supervisor",
+                    "Answer": "Ask your mentor",
                     "IsCorrect":true
                 },
                 {
@@ -997,6 +1026,47 @@
                 {
                     "id": "Q19_a8",
                     "Answer": "Wing it and hope that you do it right",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q19_a9",
+                    "Answer": "Don't say anything and hope that no one notices",
+                    "IsCorrect": false
+                }
+            ]
+        },
+        {
+            "id":"Q20",
+            "Question": "Where should the safety binder be kept?",
+            "Answers": [
+                {
+                    "id": "Q20_a1",
+                    "Answer": "In the restroom",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q20_a2",
+                    "Answer": "In the pit",
+                    "IsCorrect": true
+                },
+                {
+                    "id": "Q20_a3",
+                    "Answer": "In the workshop",
+                    "IsCorrect": true
+                },
+                {
+                    "id": "Q20_a4",
+                    "Answer": "Taken home",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q20_a5",
+                    "Answer": "Lost somewhere",
+                    "IsCorrect": false
+                },
+                {
+                    "id": "Q20_a6",
+                    "Answer": "Where you can't find it",
                     "IsCorrect": false
                 }
             ]
