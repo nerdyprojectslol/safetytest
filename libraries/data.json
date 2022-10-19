@@ -17,7 +17,7 @@
                 {
                     "id": "Q1_a3",
                     "Answer":"Metal pieces",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q1_a4",
@@ -125,6 +125,11 @@
                 {
                     "id":"Q3_a6",
                     "Answer": "While sawing wood/metal",
+                    "IsCorrect":true
+                },
+                {
+                    "id":"Q3_a7",
+                    "Answer": "While using your phone",
                     "IsCorrect":false
                 }
             ]
@@ -142,7 +147,7 @@
                 {
                     "id": "Q4_a2",
                     "Answer": "When soldering",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q4_a3",
@@ -260,7 +265,7 @@
                 },
                 {
                     "id": "Q6_a6",
-                    "Answer": "Fire materials",
+                    "Answer": "Materials to make a fire",
                     "IsCorrect":false
                 },
                 {
@@ -507,7 +512,6 @@
                 }
             ]
         },
-
         {
             "id": "Q10",
             "Question": "What is the job of the Safety Captain?",
@@ -601,7 +605,7 @@
                 },
                 {
                     "id": "Q11_a7",
-                    "Answer": "When you are pressured to do it",
+                    "Answer": "When you are pressured to do it by others",
                     "IsCorrect":true
                 },
                 {
@@ -628,7 +632,7 @@
                 },
                 {
                     "id": "Q12_a2",
-                    "Answer": "Ear pods",
+                    "Answer": "Ear pods (for music)",
                     "IsCorrect":false
                 },
                 {
@@ -694,7 +698,7 @@
                 },
                 {
                     "id": "Q13_a2",
-                    "Answer": "Ear pods",
+                    "Answer": "Ear pods (for music)",
                     "IsCorrect":false
                 },
                 {
@@ -756,6 +760,11 @@
                     "id": "Q13_a14",
                     "Answer": "Sandals",
                     "IsCorrect": false
+                },
+                {
+                    "id": "Q13_a15",
+                    "Answer": "Ear protectors",
+                    "IsCorrect": true
                 }
             ]
         },
@@ -787,7 +796,7 @@
                 {
                     "id": "Q14_a5",
                     "Answer": "Safety Manuals",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q14_a6",
@@ -828,8 +837,8 @@
                 },
                 {
                     "id": "Q15_a5",
-                    "Answer": "Walking next to people wielding power tools",
-                    "IsCorrect":false
+                    "Answer": "Walking next to people wielding power tools without safety googles",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q15_a6",
@@ -870,7 +879,7 @@
                 },
                 {
                     "id": "Q16_a4",
-                    "Answer": "Ear buds",
+                    "Answer": "Ear pods (for music)",
                     "IsCorrect":false
                 },
                 {
@@ -905,7 +914,6 @@
                 }
             ]
         },
-
         {
             "id": "Q17",
             "Question": "What do you do if a battery explodes?",
@@ -1016,7 +1024,7 @@
                 {
                     "id": "Q19_a6",
                     "Answer": "Ask the safety captain",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q19_a7",
