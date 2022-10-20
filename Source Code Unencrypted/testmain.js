@@ -150,14 +150,15 @@ function QuestionCor() {
 
     //Username in Test
     const name = document.createElement("h1");
-    name.style = "font-size: 40px; color: black; text-align: center; position: absolute; top: 2%; left: 20%;"
+    name.style = "font-size: 40px; color: black; text-align: center; position: relative; top: 2%;"
     name.innerHTML = user + "'s Score is:";
     scoredivid.appendChild(name);
 
     //Score H1
     const scoreh1 = document.createElement("h1");
+    scoreh1.id = "scoreh1";
     scoreh1.innerHTML = "Score: " + Score;
-    scoreh1.style = "font-size: 80px; color: black; text-align: center; position: absolute; top: 30%; left: 5%;"
+    scoreh1.style = "font-size: 80px; color: black; text-align: center; position: absolute; top: 25%; left: 5%; @media (max-width: 719px) {font-size: 40px;}";
     scoredivid.appendChild(scoreh1);
 
     //Brs
