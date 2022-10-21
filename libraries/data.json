@@ -12,7 +12,7 @@
                 {
                     "id": "Q1_a2",
                     "Answer":"Paint",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q1_a3",
@@ -27,7 +27,7 @@
                 {
                     "id": "Q1_a5",
                     "Answer":"Electrical components",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q1_a6",
@@ -162,7 +162,7 @@
                 {
                     "id": "Q4_a5",
                     "Answer": "When using a saw",
-                    "IsCorrect":false
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q4_a6",
@@ -255,7 +255,7 @@
                 },
                 {
                     "id": "Q6_a4",
-                    "Answer": "Spare ear buds",
+                    "Answer": "Spare ear pods (for music)",
                     "IsCorrect":false
                 },
                 {
@@ -385,8 +385,8 @@
                 },
                 {
                     "id": "Q8_a9",
-                    "Answer": "When working on software",
-                    "IsCorrect":false
+                    "Answer": "In the machine shop",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q8_a10",
@@ -610,7 +610,7 @@
                 },
                 {
                     "id": "Q11_a8",
-                    "Answer": "When leads say you have to, even if you don't want to",
+                    "Answer": "When the wall plug is broken",
                     "IsCorrect":true
                 },
                 {
@@ -1040,6 +1040,11 @@
                     "id": "Q19_a9",
                     "Answer": "Don't say anything and hope that no one notices",
                     "IsCorrect": false
+                },
+                {
+                    "id": "Q19_a10",
+                    "Answer": "Ask a qualified individual",
+                    "IsCorrect": true
                 }
             ]
         },
