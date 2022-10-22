@@ -144,7 +144,7 @@ Question 13: Which of the following are adequate PPE for normal robot assembly?
   + Safety glasses
   - Ear pods (for music)
   - Gloves
-  + Long pants
+  - Long pants
   + Long sleeves
   + Shoes
   - A helmet
@@ -155,7 +155,7 @@ Question 13: Which of the following are adequate PPE for normal robot assembly?
   - A watch
   - A hat
   - Sandals
-  + Ear protectors
+  - Ear protectors
 
 Question 14: What items should go in the Safety Binder?
   + Incident Reports
