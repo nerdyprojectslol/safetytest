@@ -161,7 +161,7 @@
                 },
                 {
                     "id": "Q4_a5",
-                    "Answer": "When using a saw",
+                    "Answer": "When using a miter saw",
                     "IsCorrect":true
                 },
                 {
@@ -260,7 +260,7 @@
                 },
                 {
                     "id": "Q6_a5",
-                    "Answer": "Duct Tape",
+                    "Answer": "Duct tape",
                     "IsCorrect":false
                 },
                 {
@@ -365,8 +365,8 @@
                 },
                 {
                     "id": "Q8_a4",
-                    "Answer": "When scouting",
-                    "IsCorrect":false
+                    "Answer": "When pit scouting",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q8_a5",
@@ -377,40 +377,30 @@
                     "id": "Q8_a6",
                     "Answer": "When talking to someone",
                     "IsCorrect":false
-                },                
-                {
-                    "id": "Q8_a7",
-                    "Answer": "When working on the robot",
-                    "IsCorrect":true
                 },
                 {
-                    "id": "Q8_a9",
+                    "id": "Q8_a7",
                     "Answer": "In the machine shop",
                     "IsCorrect":true
                 },
                 {
-                    "id": "Q8_a10",
+                    "id": "Q8_a8",
                     "Answer": "When working on mechanical",
                     "IsCorrect":true
                 },
                 {
-                    "id": "Q8_a11",
+                    "id": "Q8_a9",
                     "Answer": "When working on electrical",
                     "IsCorrect":true
                 },
                 {
-                    "id": "Q8_a12",
-                    "Answer": "In the machine shop",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q8_a13",
+                    "id": "Q8_a10",
                     "Answer": "While sitting down outside",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q8_a14",
-                    "Answer":" While using a saw",
+                    "id": "Q8_a11",
+                    "Answer":" While using a hacksaw",
                     "IsCorrect":true
                 }
             ]
@@ -704,7 +694,7 @@
                 {
                     "id": "Q13_a3",
                     "Answer": "Gloves",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q13_a4",
