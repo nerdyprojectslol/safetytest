@@ -104,7 +104,7 @@
                 },
                 {
                     "id": "Q3_a3",
-                    "Answer": "When bolting",
+                    "Answer": "When bolting metal parts",
                     "IsCorrect":false
                 },
                 {
@@ -142,22 +142,22 @@
                 {
                     "id": "Q4_a1",
                     "Answer":"When working with chemicals",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q4_a2",
                     "Answer": "When soldering",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q4_a3",
-                    "Answer": "When bolting",
+                    "Answer": "When bolting metal parts",
                     "IsCorrect":false
                 },
                 {
                     "id": "Q4_a4",
                     "Answer": "When welding",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q4_a5",
@@ -168,6 +168,16 @@
                     "id": "Q4_a6",
                     "Answer": "When walking outside",
                     "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a7",
+                    "Answer": "When sanding",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q4_a8",
+                    "Answer": "When painting",
+                    "IsCorrect":true
                 }
             ]
         },
@@ -229,6 +239,11 @@
                 {
                     "id":"Q5_a11",
                     "Answer": "Training",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a12",
+                    "Answer": "Paying attention",
                     "IsCorrect":true
                 }
             ]
@@ -704,7 +719,7 @@
                 {
                     "id": "Q13_a5",
                     "Answer": "Long sleeves",
-                    "IsCorrect":true
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q13_a6",
@@ -770,8 +785,8 @@
                 },
                 {
                     "id": "Q14_a2",
-                    "Answer": "Safety Training",
-                    "IsCorrect":false
+                    "Answer": "Safety Test Results",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q14_a3",
@@ -785,8 +800,8 @@
                 },
                 {
                     "id": "Q14_a5",
-                    "Answer": "Safety Manuals",
-                    "IsCorrect":true
+                    "Answer": "Instruction Manuals (for tools)",
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q14_a6",
@@ -847,135 +862,83 @@
                 }
             ]
         },
-
         {
             "id": "Q16",
-            "Question": "Which of the following items should always be available?",
+            "Question": "What do you do if a battery explodes?",
             "Answers":[
                 {
                     "id": "Q16_a1",
-                    "Answer": "A fire extinguisher",
+                    "Answer": "Back away from it",
                     "IsCorrect":true
                 },
                 {
                     "id": "Q16_a2",
-                    "Answer": "A first aid kit",
-                    "IsCorrect":true
+                    "Answer": "Touch it",
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q16_a3",
-                    "Answer": "A safety binder",
-                    "IsCorrect":true
+                    "Answer": "Throw it",
+                    "IsCorrect":false
                 },
                 {
                     "id": "Q16_a4",
-                    "Answer": "Ear pods (for music)",
-                    "IsCorrect":false
+                    "Answer": "Neutralize it",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q16_a5",
-                    "Answer": "A phone",
-                    "IsCorrect":false
+                    "Answer": "Get someone to help you",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q16_a6",
-                    "Answer": "A computer",
-                    "IsCorrect":false
+                    "Answer":"Get the battery disposal kit",
+                    "IsCorrect":true
                 },
                 {
                     "id": "Q16_a7",
-                    "Answer": "A watch",
+                    "Answer": "Pour water on it",
                     "IsCorrect":false
                 },
                 {
                     "id": "Q16_a8",
-                    "Answer": "A tie",
-                    "IsCorrect":false
-                },
-                {
-                    "id":"Q16_a9",
-                    "Answer": "A sandwich",
-                    "IsCorrect":false
-                },
-                {
-                    "id":"Q16_a10",
-                    "Answer": "A battery disposal kit",
+                    "Answer": "Treat injured people",
                     "IsCorrect":true
                 }
             ]
         },
         {
             "id": "Q17",
-            "Question": "What do you do if a battery explodes?",
-            "Answers":[
-                {
-                    "id": "Q17_a1",
-                    "Answer": "Back away from it",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q17_a2",
-                    "Answer": "Touch it",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q17_a3",
-                    "Answer": "Throw it",
-                    "IsCorrect":false
-                },
-                {
-                    "id": "Q17_a4",
-                    "Answer": "Neutralize it",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q17_a5",
-                    "Answer": "Get someone to help you",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q17_a6",
-                    "Answer":"Get the battery disposal kit",
-                    "IsCorrect":true
-                },
-                {
-                    "id": "Q17_a7",
-                    "Answer": "Pour water on it",
-                    "IsCorrect":false
-                }
-            ]
-        },
-        {
-            "id": "Q18",
             "Question": "What person should you go to for safety guidance/instruction?",
             "Answers":[
                 {
-                    "id": "Q18_a1",
+                    "id": "Q17_a1",
                     "Answer": "Your mentor",
                     "IsCorrect":true
                 },
                 {
-                    "id": "Q18_a2",
+                    "id": "Q17_a2",
                     "Answer": "A random person online",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q18_a3",
+                    "id": "Q17_a3",
                     "Answer": "Your friend",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q18_a4",
+                    "id": "Q17_a4",
                     "Answer": "Your neighbor",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q18_a5",
+                    "id": "Q17_a5",
                     "Answer": "Your family member",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q18_a6",
+                    "id": "Q17_a6",
                     "Answer": "The safety captain",
                     "IsCorrect":true
                 }
@@ -983,92 +946,92 @@
         },
         
         {
-            "id": "Q19",
+            "id": "Q18",
             "Question": "What should you do if you are unsure of how to use a tool?",
             "Answers":[
                 {
-                    "id": "Q19_a1",
+                    "id": "Q18_a1",
                     "Answer": "Ask your mentor",
                     "IsCorrect":true
                 },
                 {
-                    "id": "Q19_a2",
+                    "id": "Q18_a2",
                     "Answer": "Ask your friend",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q19_a3",
+                    "id": "Q18_a3",
                     "Answer": "Ask your neighbor",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q19_a4",
+                    "id": "Q18_a4",
                     "Answer": "Ask your family member",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q19_a5",
+                    "id": "Q18_a5",
                     "Answer": "Ask a random person online",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q19_a6",
+                    "id": "Q18_a6",
                     "Answer": "Ask the safety captain",
                     "IsCorrect":false
                 },
                 {
-                    "id": "Q19_a7",
+                    "id": "Q18_a7",
                     "Answer": "Search it up online",
                     "IsCorrect": false
                 },
                 {
-                    "id": "Q19_a8",
+                    "id": "Q18_a8",
                     "Answer": "Wing it and hope that you do it right",
                     "IsCorrect": false
                 },
                 {
-                    "id": "Q19_a9",
+                    "id": "Q18_a9",
                     "Answer": "Don't say anything and hope that no one notices",
                     "IsCorrect": false
                 },
                 {
-                    "id": "Q19_a10",
+                    "id": "Q18_a10",
                     "Answer": "Ask a qualified individual",
                     "IsCorrect": true
                 }
             ]
         },
         {
-            "id":"Q20",
+            "id":"Q19",
             "Question": "Where should the safety binder be kept?",
             "Answers": [
                 {
-                    "id": "Q20_a1",
+                    "id": "Q19_a1",
                     "Answer": "In the restroom",
                     "IsCorrect": false
                 },
                 {
-                    "id": "Q20_a2",
+                    "id": "Q19_a2",
                     "Answer": "In the pit",
                     "IsCorrect": true
                 },
                 {
-                    "id": "Q20_a3",
+                    "id": "Q19_a3",
                     "Answer": "In the workshop",
                     "IsCorrect": true
                 },
                 {
-                    "id": "Q20_a4",
+                    "id": "Q19_a4",
                     "Answer": "Taken home",
                     "IsCorrect": false
                 },
                 {
-                    "id": "Q20_a5",
+                    "id": "Q19_a5",
                     "Answer": "Lost somewhere",
                     "IsCorrect": false
                 },
                 {
-                    "id": "Q20_a6",
+                    "id": "Q19_a6",
                     "Answer": "Where you can't find it",
                     "IsCorrect": false
                 }

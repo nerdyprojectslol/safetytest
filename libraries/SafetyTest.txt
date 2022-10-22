@@ -20,7 +20,7 @@ Question 2: What is the unabbreviated form of PPE?
 Question 3: In what situations do you need proper ventilation?
   + When working with chemicals
   + When soldering
-  - When bolting
+  - When bolting metal parts
   + When welding
   - When eating
   + While sanding
@@ -28,12 +28,14 @@ Question 3: In what situations do you need proper ventilation?
   - While using your phone
 
 Question 4: In what situations do you need to wear a filter mask?
-  + When working with chemicals
-  + When soldering
-  - When bolting
-  + When welding
+  - When working with chemicals
+  - When soldering
+  - When bolting metal parts
+  - When welding
   + When using a miter saw
   - When walking outside
+  + When sanding
+  + When painting
 
 Question 5: What are the most important attributes for safety?
   + Common sense
@@ -47,6 +49,7 @@ Question 5: What are the most important attributes for safety?
   - Eagerness
   - Adventure
   + Training
+  + Paying attention
 
 Question 6: Which of the following should always be available?
   + Fire extinguisher
@@ -80,7 +83,7 @@ Question 8: When do you have to be wearing safety glasses?
   + In the machine shop
   + When working on mechanical
   + When working on electical
-  + While sitting down outside
+  - While sitting down outside
   + While using a hacksaw
 
 Question 9: What are inherit risks of lead-acid batteries?
@@ -145,7 +148,7 @@ Question 13: Which of the following are adequate PPE for normal robot assembly?
   - Ear pods (for music)
   - Gloves
   - Long pants
-  + Long sleeves
+  - Long sleeves
   + Shoes
   - A helmet
   - A face shield
@@ -159,10 +162,10 @@ Question 13: Which of the following are adequate PPE for normal robot assembly?
 
 Question 14: What items should go in the Safety Binder?
   + Incident Reports
-  - Safety Training
+  + Safety Test Results
   + Audit Results
   - Build Schedules
-  + Safety Manuals
+  - Instruction Manuals (for tools)
   - Materials
   - Inventory
 
@@ -176,18 +179,7 @@ Question 15: What SHOULDN't be done for proper electricity use?
   + Pouring water into an outlet
   - Collaboration
 
-Question 16: Which of the following items should always be available?
-  + A fire extinguisher
-  + A first aid kit
-  - Ear pods (for music)
-  - A phone
-  - A computer
-  - A watch
-  - A tie
-  - A sandwich
-  + A battery disposal kit
-
-Question 17: What do you do if a battery explodes?
+Question 16: What do you do if a battery explodes?
   + Back away from it
   - Touch it
   - Throw it
@@ -195,8 +187,9 @@ Question 17: What do you do if a battery explodes?
   + Get someone to help you
   + Get the battery disposal kit
   - Pour water on it
+  + Treat injured people
 
-Question 18: What person should you go to for safety guidance/instruction?
+Question 17: What person should you go to for safety guidance/instruction?
   + Your mentor
   - A random person online
   - Your friend
@@ -204,7 +197,7 @@ Question 18: What person should you go to for safety guidance/instruction?
   - Your family member
   + The safety captain
 
-Question 19: What should you do if you are unsure of how to use a tool?
+Question 18: What should you do if you are unsure of how to use a tool?
   + Ask your mentor
   - Ask your friend
   - Ask your neighbor
@@ -215,7 +208,7 @@ Question 19: What should you do if you are unsure of how to use a tool?
   - Wing it and hope that you do it right
   - Don't say anything and hope that no one notices
 
-Question 20: Where should the safety binder be kept?
+Question 19: Where should the safety binder be kept?
   - In the restroom
   + In the pit
   + In the workshop
