@@ -67,7 +67,7 @@ Question 7: What is the unabbreviated form of MSDS?
   + Material Safety Data Sheet
   - Mechanized System Distribution Safety
   - Mostly Simpleminded Derpy Students
-  - Modified Security Deerivitive System
+  - Modified Security Derivative System
   - Modem Software Delivery System
   - Mostly Software Data Sheet
   - Modern Safety Data Sheet
