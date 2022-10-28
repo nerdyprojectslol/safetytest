@@ -13,11 +13,12 @@
             <br>
             <h1 class="header" style="font-family:Arial,Helvetica,sans-serif">Note: Select all that apply</h1>
             <br>
+            <h2 class="header" style="font-family:Arial,Helvetica,sans-serif">Some questions may not have answers</h1>
             <h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">Placeholder</h2>
             <br>
             <img id="logo" src="4079.png">
             <br><br>
-            <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8/edit#slide=id.p1" target="_blank" style="color:rgba(29,185,202,0.75)"><h1 style="font-size:x-large;letter-spacing:2px" style="color:rgba(29, 185, 202, 0.75)">If you haven't, please go through the safety slides</h1></a>
+            <a href="https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8/edit#slide=id.p1" target="_blank" style="color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;" ><h1 style="font-size:x-large;letter-spacing:2px" style="color:rgba(29, 185, 202, 0.75)">If you haven't, please go through the safety slides</h1></a>
             <br><br>
                 <div id="TeamChoose">
                     <h1 style="font-size:x-large;letter-spacing:2px">What team are you in?</h1>
@@ -220,78 +221,6 @@
         document.getElementById("Compendium1").innerHTML="A safety compendium for the "+thisyear+"-"+nextyear+" school year";
     }
     Compendium();
-    //FRC Function
-    function FRC(){
-        if(document.getElementById("h1team")){
-            document.getElementById("h1team").remove();
-        }
-            const a=document.getElementById("TeamChoose");
-            let h1team=document.createElement("h1");
-            h1team.id="h1team";
-            h1team.innerHTML="You have chosen FRC as your team";
-            a.appendChild(h1team);
-            localStorage.setItem("Team","FRC");
-        }
-    //FTC Function  
-    function FTC(){
-        if(document.getElementById("h1team")){
-            document.getElementById("h1team").remove();
-        }
-            const a=document.getElementById("TeamChoose");
-            let h1team=document.createElement("h1");
-            h1team.id="h1team";
-            h1team.innerHTML="You have chosen FTC as your team";
-            a.appendChild(h1team);
-            localStorage.setItem("Team","FTC");
-        }
-    //Mechanical Function
-    function Mechanical() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1mechanical=document.createElement("h1");
-            h1mechanical.id="h1category";
-            h1mechanical.innerHTML="You have chosen Mechanical as your category";
-            a.appendChild(h1mechanical);
-            localStorage.setItem("Category","Mechanical");
-        }
-    //Electrical Function
-    function Electrical() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1electrical=document.createElement("h1");
-            h1electrical.id="h1category";
-            h1electrical.innerHTML="You have chosen Electrical as your category";
-            a.appendChild(h1electrical);
-            localStorage.setItem("Category","Electrical");
-        }
-    //Software Function
-    function Software() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1software=document.createElement("h1");
-            h1software.id="h1category";
-            h1software.innerHTML="You have chosen Software as your category";
-            a.appendChild(h1software);
-            localStorage.setItem("Category","Software");
-        }
-    //Leadership Function
-    function Leadership() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1software=document.createElement("h1");
-            h1software.id="h1category";
-            h1software.innerHTML="You have chosen Leadership as your category";
-            a.appendChild(h1software);
-            localStorage.setItem("Category","Leadership");
-        }
     </script>
 </body>
 </html>

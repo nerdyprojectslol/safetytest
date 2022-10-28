@@ -198,6 +198,85 @@ function Clear() {
     document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
 }
 
+//Sets team and category
+    //FRC Function
+    function FRC(){
+        if(document.getElementById("h1team")){
+            document.getElementById("h1team").remove();
+        }
+            const a=document.getElementById("TeamChoose");
+            let h1team=document.createElement("h1");
+            h1team.id="h1team";
+            h1team.innerHTML="You have chosen FRC as your team";
+            h1team.style="font-family:Arial,Helvetica,sans-serif";
+            a.appendChild(h1team);
+            localStorage.setItem("Team","FRC");
+        }
+    //FTC Function  
+    function FTC(){
+        if(document.getElementById("h1team")){
+            document.getElementById("h1team").remove();
+        }
+            const a=document.getElementById("TeamChoose");
+            let h1team=document.createElement("h1");
+            h1team.id="h1team";
+            h1team.innerHTML="You have chosen FTC as your team";
+            h1team.style="font-family:Arial,Helvetica,sans-serif";
+            a.appendChild(h1team);
+            localStorage.setItem("Team","FTC");
+        }
+    //Mechanical Function
+    function Mechanical() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1mechanical=document.createElement("h1");
+            h1mechanical.id="h1category";
+            h1mechanical.innerHTML="You have chosen Mechanical as your category";
+            h1mechanical.style="font-family:Arial,Helvetica,sans-serif";
+            a.appendChild(h1mechanical);
+            localStorage.setItem("Category","Mechanical");
+        }
+    //Electrical Function
+    function Electrical() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1electrical=document.createElement("h1");
+            h1electrical.id="h1category";
+            h1electrical.innerHTML="You have chosen Electrical as your category";
+            h1electrical.style="font-family:Arial,Helvetica,sans-serif";
+            a.appendChild(h1electrical);
+            localStorage.setItem("Category","Electrical");
+        }
+    //Software Function
+    function Software() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1software=document.createElement("h1");
+            h1software.id="h1category";
+            h1software.innerHTML="You have chosen Software as your category";
+            h1software.style="font-family:Arial,Helvetica,sans-serif";
+            a.appendChild(h1software);
+            localStorage.setItem("Category","Software");
+        }
+    //Leadership Function
+    function Leadership() {
+        if(document.getElementById("h1category")){
+            document.getElementById("h1category").remove();
+        }
+            const a=document.getElementById("PathChoose");
+            let h1leadership=document.createElement("h1");
+            h1leadership.id="h1category";
+            h1leadership.innerHTML="You have chosen Leadership as your category";
+            h1leadership.style="font-family:Arial,Helvetica,sans-serif";
+            a.appendChild(h1leadership);
+            localStorage.setItem("Category","Leadership");
+        }
 
 //Preset Variables
 
@@ -209,6 +288,7 @@ let AnswersData;
 let datavar;
 
 //let PossibleQuestions2;
+
 
 //Question Creation Function
 function QuestionCreate() {
