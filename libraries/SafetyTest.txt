@@ -40,7 +40,6 @@ Question 4: In what situations do you need to wear a filter mask?
 Question 5: What are the most important attributes for safety?
   + Common sense
   + Knowledge
-  + Experience
   + Skill
   - Tools
   - Excitement
