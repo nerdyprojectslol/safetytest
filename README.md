@@ -5,7 +5,7 @@ FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran
 
 THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
----RELEASE 6.42--- 
+---RELEASE 6.43--- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
@@ -45,7 +45,7 @@ make different types of safety tests compared to the standard ones found at the 
         
 A: It started as a fun project. I was bored one day so I couldn't help myself not to do something productive, as well as to advance my HTML skills.
 It was only when I showed it to the rest of cabinet and the leads that I thought that this might have been a real thing that we could have done.
-I believe, so far on the day that I am making this (10/25/22), this took a cumulative 10 days of time, spread over about 6 weeks. It was mainly because I was bored,
+I believe, so far on the day that I am making this (10/31/22), this took a cumulative 10 days of time, spread over about 2 months. It was mainly because I was bored,
 but it did become a real thing that did happen.
 
 
@@ -56,7 +56,7 @@ A: Good question. The safety test is a set of questions stored in a JSON file (I
 
       Q: Are the questions correct?
 
-A: Should be, I checked over it with the safety mentor, as noted in Minor Update 6.33 (or 6.32, I forgot), on the GitHub release notes.
+A: It should be, it has been checked and corrected over by multiple cabinet members and leads, as well as the safety mentor, as noted in Minor Update 6.33 (or 6.32, I forgot), on the GitHub release notes.
 
 
 Anyway, that's it for me. I need to go code now. If you are reading this. I hope you have a great day (evening? morning? whatever). :))
