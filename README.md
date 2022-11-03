@@ -5,7 +5,7 @@ FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran
 
 THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
----RELEASE 7.0--- 
+---RELEASE 7.01--- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
