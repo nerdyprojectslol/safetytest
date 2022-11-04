@@ -19,7 +19,7 @@ Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a reposito
 
 This is a really complex project I had to work on and spend a lot of man-hours working on, so please don't distribute this unless it is to remake the test
 
-With over 70 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
+With over 60 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
 
 Realistically, I don't have more to say other than that, but a Q&A will be available below.
 
@@ -45,7 +45,7 @@ make different types of safety tests compared to the standard ones found at the 
         
 A: It started as a fun project. I was bored one day so I couldn't help myself not to do something productive, as well as to advance my HTML skills.
 It was only when I showed it to the rest of cabinet and the leads that I thought that this might have been a real thing that we could have done.
-I believe, so far on the day that I am making this (10/31/22), this took a cumulative 10 days of time, spread over about 2 months. It was mainly because I was bored,
+I believe, so far on the day that I am making this (11/3/22), this took a cumulative 10 days of time, spread over about 2 months. It was mainly because I was bored,
 but it did become a real thing that did happen.
 
 
