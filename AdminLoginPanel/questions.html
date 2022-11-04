@@ -1,0 +1,145 @@
+<html>
+
+<!-- Before Page -->
+
+    <head>
+        <!-- Page Title -->
+        <meta charset="UTF-8"/>
+        <title>Safety Test Questions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="4079.png" type="image/x-icon">
+
+        <!-- Libaries -->
+        <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>    
+    </head>
+
+    <!-- Main Program -->
+
+    <body>
+        <!-- Positions the page in the center -->
+            <center>
+                <h1 class="header" style="font-family: Arial, Helvetica, sans-serif">Welcome to OA Robotics</h1>
+
+            <!-- The white box and it's contents are here up until </div> -->
+                <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+                <img src="4079.png" class="logo">
+                <h1 id="SafetyPanel1" style="position:absolute; top: 7.5%; left: 50%">Safety Test Questions</h1>
+                <br><br><br><br>
+                <h1 id="ErrorBar" style="position:absolute; top:50%; right: 5%"></h1>
+                <!-- Questions-->
+
+                <h2 id="QuestionsLabel" style="width: 200px; height: 150px; position: absolute; top: 26%; font-size: 300%;border-radius: 50px; font-family:'Times New Roman', Times, serif;">Question:</h2>
+                <input id="Question" style="width: 500px; height: 69px; position: absolute; right: 33%; top: 27%; font-size: 150%; border-radius: 50px; font-family:'Times New Roman', Times, serif;"placeholder="Question here">
+
+                <!-- Number of answers-->
+                <h2 id="AnsNum" style="width: 200px; height: 150px; position: absolute; top: 35.5%; font-size: 300%;border-radius: 50px; font-family:'Times New Roman', Times, serif;">Number of Answers:</h2>
+                <input id="AnsInp" style="width: 50px; height: 69px; position: absolute; right: 73%; top: 38%; font-size: 150%; border-radius: 50px; font-family:'Times New Roman', Times, serif;" placeholder="#">
+
+                <!-- Input Type-->
+
+                <h2 id="InTy" style="width: 200px; height: 150px; position: absolute; top: 47.5%; font-size: 300%; border-radius: 50px; font-family:'Times New Roman', Times, serif;">Input Type:</h2>
+                <input id="Chk1" type="checkbox" style="width: 25px; height: 25px; position: absolute; right: 77%; top: 47%; border-radius: 50px;">
+                <input id="Chk2" type="checkbox" style="width: 25px; height: 25px; position: absolute; right: 77%; top: 51%; border-radius: 50px;">
+                <h1 id="Checkbox" class="MultipleChoice" style="width: 0px; height: 25px; position: absolute; right: 74%; top: 46%; font-size: 150%; border-radius: 50px; font-family:'Times New Roman', Times, serif;">Multiple Choice</h1>
+                <h1 id="Checkbox" class="SingleChoice" style="width: 0px; height: 25px; position: absolute; right: 74%; top: 50%; font-size: 150%; border-radius: 50px; font-family:'Times New Roman', Times, serif;">Single Choice</h1>    
+                
+                <!-- Answers -->
+
+                <h2 id="Ans1" style="width: 200px; height: 150px; position: absolute; top: 59%; font-size: 300%; border-radius: 50px; font-family:'Times New Roman', Times, serif;">Answers</h2>
+                <textarea id="Ans" row="AnsInp" style="width: 500px; height: 150px; position: absolute; right: 35%; top: 57%; font-size: 150%; border-radius: 10px; font-family:'Times New Roman', Times, serif;" placeholder="Use a comma to split each answer                                    Ex: Material Safety Data Sheet, Missing Stuff Data Sheet, ..."></textarea>
+            
+                <!-- Correct Answers -->
+
+                <h2 id="CorAns" style="width: 200px; height: 150px; position: absolute; top: 75.5%; font-size: 300%;border-radius: 50px; font-family:'Times New Roman', Times, serif;">Correct Answer(s):</h2>
+                <input id="CorrectAnswers" style="width: 200px; height: 69px; position: absolute; right: 62%; top: 78%; font-size: 150%; border-radius: 50px; font-family:'Times New Roman', Times, serif;" placeholder="Ex: 2, 3">
+
+                <!-- Submit Button -->
+
+                <button id="Submit1" style="width: 150px; height: 100px; position:absolute; top:90%; right:50%; border-radius: 50px; font-size: 20px; text-align: center; font-weight: bold;" onclick="QuestionPush()">Add Question</button>
+            </div>
+
+            </center>
+            <br><br><br><br><br><br><br>
+
+            <!-- Page Looks/Front End -->
+
+        <style>
+
+            .header img
+            {
+	            width: 80px;
+            }
+            body
+            {
+                background-image: linear-gradient(to right top, #f13333, #762121, #761730, #92245d, #9b1e3b);
+            }
+            .header
+            {
+                color: white;
+                font-family: 'Yeon Sung';
+                font-size: 45px;
+                margin-top: 80px;
+            }
+            #MainDiv1
+            {
+                background: rgba(255,255,255,0.8);
+                float: none;
+                border-radius: 15px;
+                height: 1480px;
+                width: 1080px;
+
+            }
+            .logo
+            {
+                width: 250px;
+                margin-top: 30px;
+                width: 250px;
+                border-radius: 15px;
+                position: absolute;
+                left: 3%;
+            }
+            #ProfileSettings
+            {
+                width:200px; 
+                height:150px; 
+                position:absolute; 
+                top: 72%; 
+                font-size: 300%;
+                border-radius: 50px;
+                font-family:'Times New Roman', Times, serif;
+                background: rgba(0, 119, 255, 0.5);
+            }
+
+            /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+            @media (max-width: 720px) {
+
+            #MainDiv1
+            {
+                width: 18.5em;
+            }
+        }
+
+        </style>
+
+        <!-- JavaScript Program -->
+        <script>
+            function QuestionPush() {
+                if (typeof document.getElementById("Question").value == "string" && typeof document.getElementById("AnsInp").value == "number" && typeof document.getElementById("Ans").value == "string" && typeof document.getElementById("CorrectAnswers").value == "number")
+                {
+                var Questions = document.getElementById("Question").value;
+                Questions.NumAns = document.getElementById("AnsInp").value;
+                Questions.NumAns.Answers = documsent.getElementById("Ans").value;
+                Questions.NumAns.CorrectAnswers = document.getElementById("CorrectAnswers").value;
+                localStorage.setItem("Questions", Questions);
+                } else {
+                    document.getElementById("ErrorBar").innerHTML.value = "Not all boxes are filled!";
+                    setTimeout(() => {document.getElementById("ErrorBar").innerHTML.value = "";}, 1000);
+                }
+            }
+        </script>
+    </body>
+</html>
