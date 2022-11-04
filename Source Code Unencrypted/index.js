@@ -317,7 +317,7 @@ function QuestionCreate() {
         
 
         //Fetching questions.json file as promise to resolve
-        fetch("/safetytest.js/data.json")
+        fetch("/SafetyTest.js/data.json")
         .then(data => data.json())
         .then(data => {
             datavar = data.PossibleQuestions;
