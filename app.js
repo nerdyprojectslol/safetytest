@@ -21,7 +21,7 @@ let url;
 if (localStorage.getItem("testPath")) {
      url = localStorage.getItem("testPath");
 } else {
-    url = "/GeneralTest"
+    url = "/General-Test-DND/"
 }
 
 //PossibleQuestionsCount Number
