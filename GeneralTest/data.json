@@ -1,4 +1,5 @@
 {
+    "QuestionAmount": 16,
     "PossibleQuestions": [
         {
             "id": "Q1",
@@ -87,7 +88,6 @@
                 }
             ]
         },
-
         {
             "id": "Q3",
             "Question": "In what situations do you need proper ventilation?",

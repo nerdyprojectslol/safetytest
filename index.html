@@ -6,7 +6,7 @@
         <title>OA Robotics General Safety Test</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Page Icon -->
-        <link rel="shortcut icon" href="/SafetyTest.html/4079.png" type="image/x-icon">
+        <link rel="shortcut icon" href="4079.png" type="image/x-icon">
 
         <!-- Libaries -->
         <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,11 +27,11 @@
 
             <!-- The white box and it's contents are here up until </div> -->
                 <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
-                <img src="SafetyTest.html/4079.png" class="logo">
+                <img src="4079.png" class="logo">
                 
-                    <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">Placeholder</h3>
+                    <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">This test is mandatory for working on a subdivision of the team.</h3>
                     <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-3-2022</h4>
-                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Release 7.0</h4>
+                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Release 8.0</h4>
                     <div class="form-group">
                         <br><br>
                     <label id="MainHeadingBox">Enter First and Last Names in Input Box</label>
@@ -147,6 +147,43 @@
         function checkKeyPressed(e) {
             if (e.keyCode == "13") {
                 saveUser();
+            }
+        }
+
+        //Saves user name
+        //Save Username in index.html
+        function saveUser() {
+    
+            let usernameinput = document.getElementById("user").value;
+
+            //Returns error if box is empty
+            if(usernameinput == ""){
+            document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
+                setTimeout(function(){
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+
+                //Checks if the username contains a space
+            }else if(usernameinput.includes(" ") == false) {
+                document.getElementById("MainHeadingBox").innerHTML = "You must input both your first and last names in the box";
+                setTimeout(function(){
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+
+                //If the username is valid
+            }else{
+            //Saves user in local storage for test firebase
+            username = document.getElementById("user").value;
+            localStorage.setItem("username", username);
+
+
+            //Moves user to test
+            if(localStorage.getItem("testPath")){
+                let url = localStorage.getItem("testPath");
+                window.location = url + "/test.html";
+            }else{
+                window.location = "GeneralTest/test.html"
+            }
             }
         }
     </script>

@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <title>OA Robotics Safety Test</title>
+    </head>
+    <body>
+        <script>
+                let currentFolder = window.location.pathname;
+                var dir = currentFolder.substring(0, currentFolder.lastIndexOf('/'));
+                localStorage.setItem("testPath", dir);
+
+                window.location = "/";
+        </script>
+    </body>
+</html>
