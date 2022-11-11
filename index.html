@@ -30,8 +30,8 @@
                 <img src="4079.png" class="logo">
                 
                     <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">This test is mandatory for working on a subdivision of the team.</h3>
-                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-3-2022</h4>
-                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Release 8.0</h4>
+                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-10-2022</h4>
+                    <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Update 8.01</h4>
                     <div class="form-group">
                         <br><br>
                     <label id="MainHeadingBox">Enter First and Last Names in Input Box</label>
@@ -121,6 +121,8 @@
             }
         </style>
     <script>
+/*
+
         //Sets question amount in index.html
         function H3Value() {
             //If the question amount is equal to 1, then it will display "question" instead of "questions"
@@ -141,14 +143,7 @@
             }
         }
         H3Value();
-
-        //Enter key press
-        window.addEventListener("keypress", checkKeyPressed, false);
-        function checkKeyPressed(e) {
-            if (e.keyCode == "13") {
-                saveUser();
-            }
-        }
+*/
 
         //Saves user name
         //Save Username in index.html
@@ -184,6 +179,14 @@
             }else{
                 window.location = "GeneralTest/test.html"
             }
+            }
+        }
+
+        //Enter key press
+        window.addEventListener("keypress", checkKeyPressed, false);
+        function checkKeyPressed(e) {
+            if (e.keyCode == "13") {
+                saveUser();
             }
         }
     </script>
