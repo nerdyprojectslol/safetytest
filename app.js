@@ -38,9 +38,9 @@ fetch(url+"/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
     //Sets settings in variable
-    possibleSettings = new Array(settings.split("\r\n").length);
-    for (let i = 0; i < settings.split("\r\n").length; i++) {
-        possibleSettings[i] = settings.split("\r\n")[i];
+    possibleSettings = new Array(settings.splice("\r\n").length);
+    for (let i = 0; i < settings.splice("\r\n").length; i++) {
+        possibleSettings[i] = settings.splice("\r\n")[i];
     }
 });
 
@@ -57,9 +57,9 @@ async function GeneralSettings() {
         //Put in code here
     }
 
-    if (possibleSettings[##].split(": ")[1] == "true") {
+    if (possibleSettings[##].splice(": ")[1] == "true") {
         a();
-    } else if (possibleSettings[##].split(": ")[1] == "false") {
+    } else if (possibleSettings[##].splice(": ")[1] == "false") {
         //Do nothing
     }
 
@@ -207,7 +207,7 @@ async function GeneralSettings() {
     //Set category
     function CategorySet() {
         //Set the localStorage category (this requires Category Choose to be false)
-        localStorage.setItem("Category", possibleSettings[11].split(": ")[1]);
+        localStorage.setItem("Category", possibleSettings[11].splice(": ")[1]);
     }
 
     //Accessibility function
@@ -226,46 +226,46 @@ async function GeneralSettings() {
     }
 
     //Checks team setting in settings.yml
-    if(possibleSettings[4].split(": ")[1] == "true") {
+    if(possibleSettings[4].splice(": ")[1] == "true") {
         TeamChoose();
-    } else if (possibleSettings[4].split(": ")[1] == "false") {
+    } else if (possibleSettings[4].splice(": ")[1] == "false") {
         if (document.getElementById("TeamChoose")) {
             document.getElementById("TeamChoose").remove();
         }
     }
 
     //Checks category setting in settings.yml
-    if(possibleSettings[5].split(": ")[1] == "true") {
+    if(possibleSettings[5].splice(": ")[1] == "true") {
         CategoryChoose();
-    } else if (possibleSettings[5].split(": ")[1] == "false") {
+    } else if (possibleSettings[5].splice(": ")[1] == "false") {
         if (document.getElementById("PathChoose")) {
             document.getElementById("PathChoose").remove();
         }
     }
 
     //Checks accessable setting in settings.yml
-    if(possibleSettings[7].split(": ")[1] == "false") {
+    if(possibleSettings[7].splice(": ")[1] == "false") {
         Accessable();
     }
 
     //Checks safety links setting in settings.yml
-    if(possibleSettings[8].split(": ")[1] == "true") {
+    if(possibleSettings[8].splice(": ")[1] == "true") {
         SafetyLinks();
-    } else if (possibleSettings[8].split(": ")[1] == "false") {
+    } else if (possibleSettings[8].splice(": ")[1] == "false") {
         if (document.getElementById("SafetyLinks")) {
             document.getElementById("SafetyLinks").remove();
         }
     }
 
     //Checks username setting in settings.yml
-    if(possibleSettings[9].split(": ")[1] == "true") {
+    if(possibleSettings[9].splice(": ")[1] == "true") {
         RequireUsername();
     }
 
     //Forced category setting
-    if(possibleSettings[11].split(": ")[1] == "true") {
+    if(possibleSettings[11].splice(": ")[1] == "true") {
         CategorySet();
-    } else if (possibleSettings[11].split(": ")[1] == "false") {
+    } else if (possibleSettings[11].splice(": ")[1] == "false") {
         if (localStorage.getItem("Category")) {
             localStorage.removeItem("Category");
         }
@@ -277,13 +277,13 @@ async function GeneralSettings() {
     function TypeofTest() {
         //Type of test at the top
         if (document.getElementById("TitleBar")) {
-            document.getElementById("TitleBar").innerHTML = "OA Robotics: "+possibleSettings[10].split(": ")[1]+" Safety Test";
-            document.getElementById("TopName").innerHTML = possibleSettings[10].split(": ")[1]+" Safety Test";
+            document.getElementById("TitleBar").innerHTML = "OA Robotics: "+possibleSettings[10].splice(": ")[1]+" Safety Test";
+            document.getElementById("TopName").innerHTML = possibleSettings[10].splice(": ")[1]+" Safety Test";
         }
 
         //Type of test on the front page
         if (document.getElementById("QuestionAmountH3")) {
-            document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: "+ possibleSettings[10].split(": ")[1];
+            document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: "+ possibleSettings[10].splice(": ")[1];
         }
     }
     //Checks type of test setting in settings.yml
@@ -367,8 +367,8 @@ function QuestionCor() {
     Score = 0;
 
     //Checks if the answer is correct
-    for(let Q = 0; Q < possibleSettings[2].split(": ")[1]; Q++){
-        for(var a = 0; a < possibleSettings[3].split(": ")[1]; a++) {
+    for(let Q = 0; Q < possibleSettings[2].splice(": ")[1]; Q++){
+        for(var a = 0; a < possibleSettings[3].splice(": ")[1]; a++) {
                 var checkanschecked = document.getElementById("AnsInp"+Q+"_"+a);
                 var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
                 LNGNum++;
@@ -426,7 +426,7 @@ function QuestionCor() {
     h12.style = "font-size: 15px; color: black; text-align: center; position: absolute; top: 80%; left: 5%;"
     scoredivid.appendChild(h12);
     LNGNum = 0;
-    if (Score == possibleSettings[2].split(": ")[1]) {
+    if (Score == possibleSettings[2].splice(": ")[1]) {
         Pass = true;
         didpass.innerHTML = "You Passed!";
         scoredivid.appendChild(didpass);
@@ -558,7 +558,7 @@ async function QuestionCreate() {
         //Redeclare function to run
 
         //Fetching questions.json file as promise to resolve
-        fetch(url+"/"+possibleSettings[6].split(": ")[1])
+        fetch(url+"/"+possibleSettings[6].splice(": ")[1])
         .then(data => data.json())
         .then(data => {
             datavar = data.PossibleQuestions;
@@ -586,7 +586,7 @@ async function QuestionCreate() {
     async function asyncisannoying() {
 
     
-    for (let i = 0; i < possibleSettings[2].split(": ")[1]; i++) {
+    for (let i = 0; i < possibleSettings[2].splice(": ")[1]; i++) {
 
         
         var divid = "Question_" + i + 1;
@@ -641,7 +641,7 @@ async function QuestionCreate() {
 
 
             //Inputs
-            for (let j = 0; j < possibleSettings[3].split(": ")[1]; j++) {
+            for (let j = 0; j < possibleSettings[3].splice(": ")[1]; j++) {
  
 
                 randomVal = [answerslength1, answerslength2, answerslength3, answerslength4];
