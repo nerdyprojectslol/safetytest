@@ -22,7 +22,7 @@ let datavar;
 let Pass = false;
 
 //Settings
-let possibleSettings = "";
+let possibleSettings;
 
 
 //Checks if testPath exists, else defaults to general test
@@ -38,10 +38,8 @@ fetch(url+"/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
     //Sets settings in variable
-    possibleSettings = new Array(settings.split("\r\n").length);
-    for (let i = 0; i < settings.split("\r\n").length; i++) {
-        possibleSettings[i] = settings.split("\r\n")[i];
-    }
+    const localvar = settings;
+    possibleSettings = localvar.split("\r\n");
     GeneralSettings();
 });
 
@@ -284,6 +282,7 @@ async function GeneralSettings() {
 
         //Type of test on the front page
         if (document.getElementById("QuestionAmountH3")) {
+            document.getElementById("FrontHeader").innerHTML = "OA Robotics "+possibleSettings[10].split(": ")[1]+" Safety Test"
             document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: "+ possibleSettings[10].split(": ")[1];
         }
     }
