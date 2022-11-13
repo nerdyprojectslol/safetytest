@@ -1,21 +1,31 @@
-//LICENSED UNDER THE MIT LICENSE
-//Erick Tran
-//Language: Javascript
-//Current FRC 4079 Team Member and Cabinet Member
-//Use the README.md file for more information :)
+/*
+LICENSED UNDER THE MIT LICENSE
+Erick Tran
+Language: Javascript
+Current FRC 4079 Team Member and Cabinet Member
+Use the README.md file for more information :)
+*/
 
-//Array Counts
 
-let PossibleQuestionsCount;
-
+//Global Variables
+const br = document.createElement("br");
 let PossibleQuestions = new Array();
 let answer = new Array();
-let anschoices = 4;
-
-
 let lng = [];
-
 let url;
+let Score = 0;
+let LNGNum = 0;
+let ArrayAnsRan = Math.floor(Math.random() * 4);
+let ArrayCount = 0;
+let QuestionArrayAt = 0;
+let PossibleQuestions1;
+let AnswersData;
+let datavar;
+let Pass = false;
+
+//Settings
+let possibleSettings;
+
 
 //Checks if testPath exists, else defaults to general test
 if (localStorage.getItem("testPath")) {
@@ -24,19 +34,272 @@ if (localStorage.getItem("testPath")) {
     url = "/General-Test-DND/"
 }
 
-//PossibleQuestionsCount Number
-    fetch(url+"/data.json")
-    .then(data => data.json())
-    .then(data => {
-        datavar = data.PossibleQuestions;
-        PossibleQuestionsCount = data.QuestionAmount;
-    });
 
-//Answers to each question held
-
-let Pass = false;
+//Settings - DO NOT DELETE
+fetch(url+"/settings.yml")
+    .then(settings => settings.text())
+    .then(settings => {
+    //Sets settings in variable
+    possibleSettings = settings.split("\r");
+    
+});
 
 
+
+
+
+//SETTINGS FUNCTIONS
+async function GeneralSettings() {
+
+    /* Structure:
+
+    function a(){
+        //Put in code here
+    }
+
+    if (possibleSettings[##].split(": ")[1] == "true") {
+        a();
+    } else if (possibleSettings[##].split(": ")[1] == "false") {
+        //Do nothing
+    }
+
+    */
+
+    //Waits for the settings to load
+    await fetch(url+"/settings.yml").then(settings => settings.text());
+
+    //Checks if user is on home page
+    if (window.location.pathname == "/") {
+        //Do nothing
+    } else {
+    //Team Selection
+    function TeamChoose() {
+        //Main Span Tag
+        const main = document.getElementById("RoboticsSelection");
+
+        //Team Div Selection
+        const team = document.createElement("div");
+        team.id = "TeamChoose";
+        main.appendChild(team);
+
+        //Question
+        const teamh1 = document.createElement("h1");
+        teamh1.innerHTML = "What team are you on?";
+        teamh1.style="font-size:x-large;letter-spacing:2px;";
+        team.appendChild(teamh1);
+
+        //Spacing
+        team.appendChild(br);
+        team.appendChild(br);
+
+        //FRC Button
+        const FRCbutton = document.createElement("button");
+        FRCbutton.innerHTML = "FRC";
+        FRCbutton.onclick = FRC;
+        FRCbutton.id="FRC";
+        team.appendChild(FRCbutton);
+
+        //FTC Button
+        const FTCButton = document.createElement("button");
+        FTCButton.innerHTML = "FTC";
+        FTCButton.onclick = FTC;
+        FTCButton.id="FTC";
+        team.appendChild(FTCButton);
+
+        //Spacing
+        team.appendChild(br);
+        team.appendChild(br);
+    }
+
+
+
+    //Category Selection
+    function CategoryChoose() {
+        //Main Span Tag
+        const main = document.getElementById("RoboticsSelection");
+
+        //Category Div Selection
+        const category = document.createElement("div");
+        category.id = "PathChoose";
+        main.appendChild(category);
+
+        //Question
+        const categoryh1 = document.createElement("h1");
+        categoryh1.innerHTML = "What category are you in?";
+        categoryh1.style="font-size:x-large;letter-spacing:2px;";
+        category.appendChild(categoryh1);
+
+        //Spacing
+        category.appendChild(br);
+        category.appendChild(br);
+
+        //Mechanical Button
+        const MechanicalButton = document.createElement("button");
+        MechanicalButton.innerHTML = "Mechanical";
+        MechanicalButton.onclick = Mechanical;
+        MechanicalButton.id="Mechanical";
+        category.appendChild(MechanicalButton);
+
+        //Electrical Button
+        const ElectricalButton = document.createElement("button");
+        ElectricalButton.innerHTML = "Electrical";
+        ElectricalButton.onclick = Electrical;
+        ElectricalButton.id="Electrical";
+        category.appendChild(ElectricalButton);
+
+        //Software Button
+        const SoftwareButton = document.createElement("button");
+        SoftwareButton.innerHTML = "Software";
+        SoftwareButton.onclick = Software;
+        SoftwareButton.id="Software";
+        category.appendChild(SoftwareButton);
+        
+        //Leadership Button
+        const LeadershipButton = document.createElement("button");
+        LeadershipButton.innerHTML = "Leadership";
+        LeadershipButton.onclick = Leadership;
+        LeadershipButton.id="Leadership";
+        category.appendChild(LeadershipButton);
+        
+        //Spacing
+        category.appendChild(br);
+        category.appendChild(br);
+    }
+
+
+
+    //Links for guidance
+    function SafetyLinks() {
+        //Safety Links
+        const safety = document.getElementById("SafetyLinks");
+
+        let link1 = document.createElement("a");
+        link1.href = "https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8/edit#slide=id.p1";
+        link1.target = "_blank";
+        link1.style = "color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;";
+        safety.appendChild(link1);
+
+        //Inner text for the first link
+        let link1h1 = document.createElement("h1");
+        link1h1.innerHTML = "Click here to view the safety presentation";
+        link1h1.style = "font-size:x-large; letter-spacing:2px;";
+        link1.appendChild(link1h1);
+
+        //Spacing
+        safety.appendChild(br);
+        safety.appendChild(br);
+        safety.appendChild(br);
+
+        //Second link
+        let link2 = document.createElement("a");
+        link2.href = "https://docs.google.com/document/d/10V0XJ5hpwAzRJV55c4fkTmZtw_brwUsQKo5n-rWnwog/edit?usp=sharing";
+        link2.target = "_blank";
+        link2.style = "color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;";
+        safety.appendChild(link2);
+
+        //Inner text for the second link
+        let link2h1 = document.createElement("h1");
+        link2h1.innerHTML = "If you need help with choosing categories, click here.";
+        link2h1.style = "font-size:x-large; letter-spacing:2px;";
+        link2.appendChild(link2h1);
+    }
+
+    //Set category
+    function CategorySet() {
+        //Set the localStorage category (this requires Category Choose to be false)
+        localStorage.setItem("Category", possibleSettings[11].split(": ")[1]);
+    }
+
+    //Accessibility function
+    function Accessable() {
+        window.location = "/";
+    }
+
+    //Username check function
+    function RequireUsername() {
+        if (!localStorage.getItem("username")) {
+            window.location = "/";
+        } else {
+            //Do nothing
+            return;
+        }
+    }
+
+    //Checks team setting in settings.yml
+    if(possibleSettings[4].split(": ")[1] == "true") {
+        TeamChoose();
+    } else if (possibleSettings[4].split(": ")[1] == "false") {
+        if (document.getElementById("TeamChoose")) {
+            document.getElementById("TeamChoose").remove();
+        }
+    }
+
+    //Checks category setting in settings.yml
+    if(possibleSettings[5].split(": ")[1] == "true") {
+        CategoryChoose();
+    } else if (possibleSettings[5].split(": ")[1] == "false") {
+        if (document.getElementById("PathChoose")) {
+            document.getElementById("PathChoose").remove();
+        }
+    }
+
+    //Checks accessable setting in settings.yml
+    if(possibleSettings[7].split(": ")[1] == "false") {
+        Accessable();
+    }
+
+    //Checks safety links setting in settings.yml
+    if(possibleSettings[8].split(": ")[1] == "true") {
+        SafetyLinks();
+    } else if (possibleSettings[8].split(": ")[1] == "false") {
+        if (document.getElementById("SafetyLinks")) {
+            document.getElementById("SafetyLinks").remove();
+        }
+    }
+
+    //Checks username setting in settings.yml
+    if(possibleSettings[9].split(": ")[1] == "true") {
+        RequireUsername();
+    }
+
+    //Forced category setting
+    if(possibleSettings[11].split(": ")[1] == "true") {
+        CategorySet();
+    } else if (possibleSettings[11].split(": ")[1] == "false") {
+        if (localStorage.getItem("Category")) {
+            localStorage.removeItem("Category");
+        }
+    }
+
+}
+
+    //Place any universal page functions here
+    function TypeofTest() {
+        //Type of test at the top
+        if (document.getElementById("TitleBar")) {
+            document.getElementById("TitleBar").innerHTML = "OA Robotics: "+possibleSettings[10].split(": ")[1]+" Safety Test";
+            document.getElementById("TopName").innerHTML = possibleSettings[10].split(": ")[1]+" Safety Test";
+        }
+
+        //Type of test on the front page
+        if (document.getElementById("QuestionAmountH3")) {
+            document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: "+ possibleSettings[10].split(": ")[1];
+        }
+    }
+    //Checks type of test setting in settings.yml
+    TypeofTest();
+}
+
+
+
+
+
+
+
+//Checks if the user is on the home page
+if (window.location.pathname == "/") {
+    //Do nothing
+} else {
 //Pass values to Google Sheets
 window.addEventListener("load", function() {
     const form = document.getElementById('QForm');
@@ -86,7 +349,7 @@ window.addEventListener("load", function() {
         const action = e.target.action;
 
       
-        //Fetch
+        //Sends POST request
         fetch(action, {
             method: 'POST',
             body: data,
@@ -95,17 +358,17 @@ window.addEventListener("load", function() {
         }
     });
   });
-let Score = 0;
+}
 
-let LNGNum = 0;
+
 //Calculating the total score
 function QuestionCor() {
     const AddQuestions = document.getElementById("Questions1");
     Score = 0;
 
     //Checks if the answer is correct
-    for(let Q = 0; Q < PossibleQuestionsCount; Q++){
-        for(var a = 0; a < anschoices; a++) {
+    for(let Q = 0; Q < possibleSettings[2].split(": ")[1]; Q++){
+        for(var a = 0; a < possibleSettings[3].split(": ")[1]; a++) {
                 var checkanschecked = document.getElementById("AnsInp"+Q+"_"+a);
                 var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
                 LNGNum++;
@@ -147,27 +410,23 @@ function QuestionCor() {
     scoreh1.style = "font-size: 80px; color: black; text-align: center; position: absolute; top: 10%; left: 5%; @media (max-width: 719px) {font-size: 40px;}";
     scoredivid.appendChild(scoreh1);
 
-    //Brs
-    const br = document.createElement("br");
+    //Spacing
     scoredivid.appendChild(br);
 
     //Pass or Fail H1
     const didpass = document.createElement("h1");
     didpass.style = "font-size: 25px; color: black; text-align: center; position: absolute; top: 60%; left: 15%;"
     
-    //Brs
-    const br2 = document.createElement("br");
-    scoredivid.appendChild(br2);
-
-    const br3 = document.createElement("br");
-    scoredivid.appendChild(br3);
+    //Spacing
+    scoredivid.appendChild(br);
+    scoredivid.appendChild(br);
 
     const h12 = document.createElement("h1");
     h12.innerHTML = "Known bug: You have to press the submit button twice to submit your score.";
     h12.style = "font-size: 15px; color: black; text-align: center; position: absolute; top: 80%; left: 5%;"
     scoredivid.appendChild(h12);
     LNGNum = 0;
-    if (Score == PossibleQuestionsCount) {
+    if (Score == possibleSettings[2].split(": ")[1]) {
         Pass = true;
         didpass.innerHTML = "You Passed!";
         scoredivid.appendChild(didpass);
@@ -179,10 +438,14 @@ function QuestionCor() {
 
 }
 
+
+
 //Clear all inputs
 function Clear() {
     document.querySelectorAll('input[type="checkbox"]').forEach(el => el.checked = false);
 }
+
+
 
 //Sets team and category
     //FRC Function
@@ -264,64 +527,52 @@ function Clear() {
             localStorage.setItem("Category","Leadership");
         }
 
-//Preset Variables
 
-let ArrayAnsRan = Math.floor(Math.random() * 4);
-let ArrayCount = 0;
-let QuestionArrayAt = 0;
-let PossibleQuestions1;
-let AnswersData;
-let datavar;
 
-//let PossibleQuestions2;
 
 
 //Question Creation Function
-function QuestionCreate() {
-            
-            
-            //Random Questions Function
-            function QuestionRan(array) {
-                let currentIndex = array.length, randomIndex;;
+async function QuestionCreate() {
+    //Waits for questions to load
+    await fetch(url+"/settings.yml").then(settings => settings.text());
 
-                // While there remain elements to shuffle.
-                while (currentIndex != 0) {
+        //Random Questions Function
+        function QuestionRan(array) {
+            let currentIndex = array.length, randomIndex;;
+
+            // While there remain elements to shuffle.
+            while (currentIndex != 0) {
       
-                    // Pick a remaining element.
-                    randomIndex = Math.floor(Math.random() * currentIndex);
-                    currentIndex--;
+                // Pick a remaining element.
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
     
-                    // And swap it with the current element.
-                    [array[currentIndex], array[randomIndex]] = [
-                        array[randomIndex], array[currentIndex]];
-                    }
+                // And swap it with the current element.
+                [array[currentIndex], array[randomIndex]] = [
+                    array[randomIndex], array[currentIndex]];
+                }
                     
-                return array;
-            }
+            return array;
+        }
     
         //Redeclare function to run
-        
 
         //Fetching questions.json file as promise to resolve
-        fetch(url+"/data.json")
+        fetch(url+"/"+possibleSettings[6].split(": ")[1])
         .then(data => data.json())
         .then(data => {
             datavar = data.PossibleQuestions;
-
+            
             for (var i = 0; i < datavar.length; i++){
-                //Document for my thought process in calulating questions and answers
-                //https://docs.google.com/document/d/1FgRlnSqRrApEkwcvM0OiQbvQhh-pAN_1nUfUGYhkVcg/edit?usp=sharing
                 if(datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
                 } else {
                     console.log("Question "+i+1+" not found");
                 }
-            }   
-                
+            }
             QuestionRan(PossibleQuestions);
             asyncisannoying();
-            });
-
+        });
 
 
 
@@ -330,18 +581,15 @@ function QuestionCreate() {
 
 
 
+
     //for loop to create questions answers
     async function asyncisannoying() {
 
-    if(PossibleQuestionsCount < 0){
-        console.log("EC: Q-1");
-        const abortController = new AbortController();
-        abortController.abort();
-        return;
-    }
+    
+    for (let i = 0; i < possibleSettings[2].split(": ")[1]; i++) {
 
-    for (let i = 0; i < PossibleQuestionsCount; i++) {
-        var divid = "Question_" + i+1;
+        
+        var divid = "Question_" + i + 1;
         
         //Creates a new div for each question
         let AddQuestionsDiv = document.createElement("div");
@@ -354,10 +602,9 @@ function QuestionCreate() {
         //Get the id from "AddQuestionsDiv1"
         let AddQuestionsDiv1 = document.getElementById(AddQuestionsDiv.id);
 
-        //Br tags for spacing
-        var br1 = document.createElement("br");
-        var br2 = document.createElement("br");
-        AddQuestions.appendChild(br1, br2);
+        //Spacing
+        AddQuestions.appendChild(br);
+        AddQuestions.appendChild(br);
 
         let H1Num = document.createElement("h1");
         H1Num.innerHTML = i+1 + ". " + PossibleQuestions[i + 1];
@@ -367,8 +614,6 @@ function QuestionCreate() {
         
 
         //Creates a new spacing for each question
-        const br = document.createElement("br");
-
         AddQuestionsDiv1.appendChild(br);
 
 
@@ -396,7 +641,7 @@ function QuestionCreate() {
 
 
             //Inputs
-            for (let j = 0; j < anschoices; j++) {
+            for (let j = 0; j < possibleSettings[3].split(": ")[1]; j++) {
  
 
                 randomVal = [answerslength1, answerslength2, answerslength3, answerslength4];
@@ -428,7 +673,7 @@ function QuestionCreate() {
                 AddLabel.appendChild(Checkboxes);
                 
                 let h1a = document.createElement("h1");
-                if (datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id) {
+                if (datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]]) {
                     h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
                     //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
                     h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
@@ -448,6 +693,7 @@ function QuestionCreate() {
 
                 }
             QuestionArrayAt = QuestionArrayAt + 1;
-            }
         }
     }
+}
+GeneralSettings();

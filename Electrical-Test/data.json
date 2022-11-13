@@ -1,5 +1,4 @@
 {
-    "QuestionAmount": 1,
     "PossibleQuestions": [
         {
             "id": "Q1",
@@ -84,6 +83,218 @@
                 {
                     "id":"Q2_a6",
                     "Answer": "Proper Protective Equipment",
+                    "IsCorrect":false
+                }
+            ]
+        },
+        {
+            "id": "Q3",
+            "Question": "In what situations do you need proper ventilation?",
+            "Answers":[
+                {
+                    "id": "Q3_a1",
+                    "Answer":"When working with chemicals",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q3_a2",
+                    "Answer": "When soldering",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q3_a3",
+                    "Answer": "When bolting metal parts",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q3_a4",
+                    "Answer": "When welding",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q3_a5",
+                    "Answer": "When eating",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q3_a6",
+                    "Answer": "While sanding",
+                    "IsCorrect":true
+                },
+                {
+                    "id":"Q3_a6",
+                    "Answer": "While sawing wood/metal",
+                    "IsCorrect":true
+                },
+                {
+                    "id":"Q3_a7",
+                    "Answer": "While using your phone",
+                    "IsCorrect":false
+                }
+            ]
+        },
+
+        {
+            "id": "Q4",
+            "Question": "In what situations do you need to wear a filter mask?",
+            "Answers":[
+                {
+                    "id": "Q4_a1",
+                    "Answer":"When working with chemicals",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a2",
+                    "Answer": "When soldering",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a3",
+                    "Answer": "When bolting metal parts",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a4",
+                    "Answer": "When welding",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a5",
+                    "Answer": "When using a miter saw",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q4_a6",
+                    "Answer": "When walking outside",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q4_a7",
+                    "Answer": "When sanding",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q4_a8",
+                    "Answer": "When painting",
+                    "IsCorrect":true
+                }
+            ]
+        },
+
+        {
+            "id": "Q5",
+            "Question": "What are the most important attributes for safety?",
+            "Answers":[
+                {
+                    "id": "Q5_a1",
+                    "Answer":"Common sense",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a2",
+                    "Answer": "Knowledge",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a3",
+                    "Answer": "Skill",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a4",
+                    "Answer": "Tools",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a5",
+                    "Answer": "Excitement",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a6",
+                    "Answer": "Joy",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a7",
+                    "Answer": "Communication",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a8",
+                    "Answer": "Eagerness",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q5_a9",
+                    "Answer": "Adventure",
+                    "IsCorrect":false
+                },
+                {
+                    "id":"Q5_a10",
+                    "Answer": "Training",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q5_a11",
+                    "Answer": "Paying attention",
+                    "IsCorrect":true
+                }
+            ]
+        },
+
+        {
+            "id": "Q6",
+            "Question": "Which of the following should always be available?",
+            "Answers":[
+                {
+                    "id": "Q6_a1",
+                    "Answer":"Fire extinguisher",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q6_a2",
+                    "Answer": "First aid kit",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q6_a3",
+                    "Answer": "Safety glasses",
+                    "IsCorrect":true
+                },
+                {
+                    "id": "Q6_a4",
+                    "Answer": "Spare ear pods (for music)",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a5",
+                    "Answer": "Duct tape",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a6",
+                    "Answer": "Materials to make a fire",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a7",
+                    "Answer": "Money",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a8",
+                    "Answer": "A whiteboard",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a9",
+                    "Answer": "Paint",
+                    "IsCorrect":false
+                },
+                {
+                    "id": "Q6_a10",
+                    "Answer": "Power tools",
                     "IsCorrect":false
                 }
             ]
