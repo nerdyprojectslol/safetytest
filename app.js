@@ -22,7 +22,7 @@ let datavar;
 let Pass = false;
 
 //Settings
-let possibleSettings = [];
+let possibleSettings;
 
 
 //Checks if testPath exists, else defaults to general test
@@ -38,8 +38,9 @@ fetch(url+"/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
     //Sets settings in variable
+    possibleSettings = new Array(settings.split("\r\n").length);
     for (let i = 0; i < settings.split("\r\n").length; i++) {
-        possibleSettings = settings.split("\r\n");
+        possibleSettings[i] = settings.split("\r\n")[i];
     }
 });
 
