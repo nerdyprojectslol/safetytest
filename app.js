@@ -22,7 +22,7 @@ let datavar;
 let Pass = false;
 
 //Settings
-let possibleSettings;
+let possibleSettings = "";
 
 
 //Checks if testPath exists, else defaults to general test
