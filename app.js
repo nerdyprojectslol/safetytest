@@ -42,6 +42,7 @@ fetch(url+"/settings.yml")
     for (let i = 0; i < settings.split("\r\n").length; i++) {
         possibleSettings[i] = settings.split("\r\n")[i];
     }
+    GeneralSettings();
 });
 
 
@@ -696,4 +697,3 @@ async function QuestionCreate() {
         }
     }
 }
-GeneralSettings();
