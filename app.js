@@ -2,11 +2,9 @@
 LICENSED UNDER THE MIT LICENSE
 Erick Tran
 Language: Javascript
-Current FRC 4079 Team Member and Cabinet Member
-Use the README.md file for more information :)
+Current FRC 4079 Team Member and Cabinet Member/Use the README.md file for more information :)
+Array Counts
 */
-
-
 //Global Variables
 const br = document.createElement("br");
 let PossibleQuestions = new Array();
@@ -24,7 +22,7 @@ let datavar;
 let Pass = false;
 
 //Settings
-let possibleSettings;
+let possibleSettings = [];
 
 
 //Checks if testPath exists, else defaults to general test
@@ -40,8 +38,9 @@ fetch(url+"/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
     //Sets settings in variable
-    possibleSettings = settings.split("\r");
-    
+    for (let i = 0; i < settings.split("\r\n").length; i++) {
+        possibleSettings = settings.split("\r\n");
+    }
 });
 
 
