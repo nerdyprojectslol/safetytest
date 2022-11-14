@@ -38,8 +38,10 @@ fetch(url+"/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
     //Sets settings in variable
-    for (let i = 0; i < settings.split("\r\n").length; i++) {
+    let tempCount;
+    while (settings.split("\r\n")[tempCount] != null) {
         possibleSettings[i] = settings.split("\r\n")[i].split(": ")[1];
+        tempCount++;
     }
     GeneralSettings();
 });
