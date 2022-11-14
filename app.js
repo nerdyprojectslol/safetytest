@@ -41,8 +41,8 @@ fetch(url + "/settings.yml")
         //Sets settings in variable
         let tempCount = 0;
         tempSettings = settings.toString();
-        while (tempSettings.split("\r\n")[tempCount] != null) {
-            possibleSettings.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
+        while (tempSettings.split("\n")[tempCount] != null) {
+            possibleSettings.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
             tempCount++;
         }
         GeneralSettings();
