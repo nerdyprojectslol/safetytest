@@ -20,6 +20,7 @@ let PossibleQuestions1;
 let AnswersData;
 let datavar;
 let Pass = false;
+let tempSettings;
 
 //Settings
 let possibleSettings = [];
@@ -27,24 +28,25 @@ let possibleSettings = [];
 
 //Checks if testPath exists, else defaults to general test
 if (localStorage.getItem("testPath")) {
-     url = localStorage.getItem("testPath");
+    url = localStorage.getItem("testPath");
 } else {
-    url = "/General-Test-DND/"
+    url = "/General-Test-DND/";
 }
 
 
 //Settings - DO NOT DELETE
-fetch(url+"/settings.yml")
+fetch(url + "/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
-    //Sets settings in variable
-    let tempCount = 0;
-    while (settings.split("\r\n")[tempCount] != null) {
-        possibleSettings.push(settings.split("\r\n")[tempCount].split(": ")[1]);
-        tempCount++;
-    }
-    GeneralSettings();
-});
+        //Sets settings in variable
+        let tempCount = 0;
+        tempSettings = settings.toString();
+        while (tempSettings.split("\r\n")[tempCount] != null) {
+            possibleSettings.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
+            tempCount++;
+        }
+        GeneralSettings();
+    });
 
 
 
@@ -68,225 +70,225 @@ async function GeneralSettings() {
     */
 
     //Waits for the settings to load
-    await fetch(url+"/settings.yml").then(settings => settings.text());
+    await fetch(url + "/settings.yml").then(settings => settings.text());
 
     //Checks if user is on home page
     if (window.location.pathname == "/") {
         //Do nothing
     } else {
-    //Team Selection
-    function TeamChoose() {
-        //Main Span Tag
-        const main = document.getElementById("RoboticsSelection");
+        //Team Selection
+        function TeamChoose() {
+            //Main Span Tag
+            const main = document.getElementById("RoboticsSelection");
 
-        //Team Div Selection
-        const team = document.createElement("div");
-        team.id = "TeamChoose";
-        main.appendChild(team);
+            //Team Div Selection
+            const team = document.createElement("div");
+            team.id = "TeamChoose";
+            main.appendChild(team);
 
-        //Question
-        const teamh1 = document.createElement("h1");
-        teamh1.innerHTML = "What team are you on?";
-        teamh1.style="font-size:x-large;letter-spacing:2px;";
-        team.appendChild(teamh1);
+            //Question
+            const teamh1 = document.createElement("h1");
+            teamh1.innerHTML = "What team are you on?";
+            teamh1.style = "font-size:x-large;letter-spacing:2px;";
+            team.appendChild(teamh1);
 
-        //Spacing
-        team.appendChild(br);
-        team.appendChild(br);
+            //Spacing
+            team.appendChild(br);
+            team.appendChild(br);
 
-        //FRC Button
-        const FRCbutton = document.createElement("button");
-        FRCbutton.innerHTML = "FRC";
-        FRCbutton.onclick = FRC;
-        FRCbutton.id="FRC";
-        team.appendChild(FRCbutton);
+            //FRC Button
+            const FRCbutton = document.createElement("button");
+            FRCbutton.innerHTML = "FRC";
+            FRCbutton.onclick = FRC;
+            FRCbutton.id = "FRC";
+            team.appendChild(FRCbutton);
 
-        //FTC Button
-        const FTCButton = document.createElement("button");
-        FTCButton.innerHTML = "FTC";
-        FTCButton.onclick = FTC;
-        FTCButton.id="FTC";
-        team.appendChild(FTCButton);
+            //FTC Button
+            const FTCButton = document.createElement("button");
+            FTCButton.innerHTML = "FTC";
+            FTCButton.onclick = FTC;
+            FTCButton.id = "FTC";
+            team.appendChild(FTCButton);
 
-        //Spacing
-        team.appendChild(br);
-        team.appendChild(br);
-    }
-
-
-
-    //Category Selection
-    function CategoryChoose() {
-        //Main Span Tag
-        const main = document.getElementById("RoboticsSelection");
-
-        //Category Div Selection
-        const category = document.createElement("div");
-        category.id = "PathChoose";
-        main.appendChild(category);
-
-        //Question
-        const categoryh1 = document.createElement("h1");
-        categoryh1.innerHTML = "What category are you in?";
-        categoryh1.style="font-size:x-large;letter-spacing:2px;";
-        category.appendChild(categoryh1);
-
-        //Spacing
-        category.appendChild(br);
-        category.appendChild(br);
-
-        //Mechanical Button
-        const MechanicalButton = document.createElement("button");
-        MechanicalButton.innerHTML = "Mechanical";
-        MechanicalButton.onclick = Mechanical;
-        MechanicalButton.id="Mechanical";
-        category.appendChild(MechanicalButton);
-
-        //Electrical Button
-        const ElectricalButton = document.createElement("button");
-        ElectricalButton.innerHTML = "Electrical";
-        ElectricalButton.onclick = Electrical;
-        ElectricalButton.id="Electrical";
-        category.appendChild(ElectricalButton);
-
-        //Software Button
-        const SoftwareButton = document.createElement("button");
-        SoftwareButton.innerHTML = "Software";
-        SoftwareButton.onclick = Software;
-        SoftwareButton.id="Software";
-        category.appendChild(SoftwareButton);
-        
-        //Leadership Button
-        const LeadershipButton = document.createElement("button");
-        LeadershipButton.innerHTML = "Leadership";
-        LeadershipButton.onclick = Leadership;
-        LeadershipButton.id="Leadership";
-        category.appendChild(LeadershipButton);
-        
-        //Spacing
-        category.appendChild(br);
-        category.appendChild(br);
-    }
+            //Spacing
+            team.appendChild(br);
+            team.appendChild(br);
+        }
 
 
 
-    //Links for guidance
-    function SafetyLinks() {
-        //Safety Links
-        const safety = document.getElementById("SafetyLinks");
+        //Category Selection
+        function CategoryChoose() {
+            //Main Span Tag
+            const main = document.getElementById("RoboticsSelection");
 
-        let link1 = document.createElement("a");
-        link1.href = "https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8/edit#slide=id.p1";
-        link1.target = "_blank";
-        link1.style = "color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;";
-        safety.appendChild(link1);
+            //Category Div Selection
+            const category = document.createElement("div");
+            category.id = "PathChoose";
+            main.appendChild(category);
 
-        //Inner text for the first link
-        let link1h1 = document.createElement("h1");
-        link1h1.innerHTML = "Click here to view the safety presentation";
-        link1h1.style = "font-size:x-large; letter-spacing:2px;";
-        link1.appendChild(link1h1);
+            //Question
+            const categoryh1 = document.createElement("h1");
+            categoryh1.innerHTML = "What category are you in?";
+            categoryh1.style = "font-size:x-large;letter-spacing:2px;";
+            category.appendChild(categoryh1);
 
-        //Spacing
-        safety.appendChild(br);
-        safety.appendChild(br);
-        safety.appendChild(br);
+            //Spacing
+            category.appendChild(br);
+            category.appendChild(br);
 
-        //Second link
-        let link2 = document.createElement("a");
-        link2.href = "https://docs.google.com/document/d/10V0XJ5hpwAzRJV55c4fkTmZtw_brwUsQKo5n-rWnwog/edit?usp=sharing";
-        link2.target = "_blank";
-        link2.style = "color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;";
-        safety.appendChild(link2);
+            //Mechanical Button
+            const MechanicalButton = document.createElement("button");
+            MechanicalButton.innerHTML = "Mechanical";
+            MechanicalButton.onclick = Mechanical;
+            MechanicalButton.id = "Mechanical";
+            category.appendChild(MechanicalButton);
 
-        //Inner text for the second link
-        let link2h1 = document.createElement("h1");
-        link2h1.innerHTML = "If you need help with choosing categories, click here.";
-        link2h1.style = "font-size:x-large; letter-spacing:2px;";
-        link2.appendChild(link2h1);
-    }
+            //Electrical Button
+            const ElectricalButton = document.createElement("button");
+            ElectricalButton.innerHTML = "Electrical";
+            ElectricalButton.onclick = Electrical;
+            ElectricalButton.id = "Electrical";
+            category.appendChild(ElectricalButton);
 
-    //Set category
-    function CategorySet() {
-        //Set the localStorage category (this requires Category Choose to be false)
-        localStorage.setItem("Category", possibleSettings[11]);
-    }
+            //Software Button
+            const SoftwareButton = document.createElement("button");
+            SoftwareButton.innerHTML = "Software";
+            SoftwareButton.onclick = Software;
+            SoftwareButton.id = "Software";
+            category.appendChild(SoftwareButton);
 
-    //Accessibility function
-    function Accessable() {
-        window.location = "/";
-    }
+            //Leadership Button
+            const LeadershipButton = document.createElement("button");
+            LeadershipButton.innerHTML = "Leadership";
+            LeadershipButton.onclick = Leadership;
+            LeadershipButton.id = "Leadership";
+            category.appendChild(LeadershipButton);
 
-    //Username check function
-    function RequireUsername() {
-        if (!localStorage.getItem("username")) {
+            //Spacing
+            category.appendChild(br);
+            category.appendChild(br);
+        }
+
+
+
+        //Links for guidance
+        function SafetyLinks() {
+            //Safety Links
+            const safety = document.getElementById("SafetyLinks");
+
+            let link1 = document.createElement("a");
+            link1.href = "https://docs.google.com/presentation/d/1fQ98hhuO8KD8b8ZOy71ZRj2cuW5fbBJ8/edit#slide=id.p1";
+            link1.target = "_blank";
+            link1.style = "color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;";
+            safety.appendChild(link1);
+
+            //Inner text for the first link
+            let link1h1 = document.createElement("h1");
+            link1h1.innerHTML = "Click here to view the safety presentation";
+            link1h1.style = "font-size:x-large; letter-spacing:2px;";
+            link1.appendChild(link1h1);
+
+            //Spacing
+            safety.appendChild(br);
+            safety.appendChild(br);
+            safety.appendChild(br);
+
+            //Second link
+            let link2 = document.createElement("a");
+            link2.href = "https://docs.google.com/document/d/10V0XJ5hpwAzRJV55c4fkTmZtw_brwUsQKo5n-rWnwog/edit?usp=sharing";
+            link2.target = "_blank";
+            link2.style = "color:rgba(29,185,202,0.75); font-family:Arial,Helvetica,sans-serif;";
+            safety.appendChild(link2);
+
+            //Inner text for the second link
+            let link2h1 = document.createElement("h1");
+            link2h1.innerHTML = "If you need help with choosing categories, click here.";
+            link2h1.style = "font-size:x-large; letter-spacing:2px;";
+            link2.appendChild(link2h1);
+        }
+
+        //Set category
+        function CategorySet() {
+            //Set the localStorage category (this requires Category Choose to be false)
+            localStorage.setItem("Category", possibleSettings[11]);
+        }
+
+        //Accessibility function
+        function Accessable() {
             window.location = "/";
-        } else {
-            //Do nothing
-            return;
         }
-    }
 
-    //Checks team setting in settings.yml
-    if(possibleSettings[4] == "true") {
-        TeamChoose();
-    } else if (possibleSettings[4] == "false") {
-        if (document.getElementById("TeamChoose")) {
-            document.getElementById("TeamChoose").remove();
+        //Username check function
+        function RequireUsername() {
+            if (!localStorage.getItem("username")) {
+                window.location = "/";
+            } else {
+                //Do nothing
+                return;
+            }
         }
-    }
 
-    //Checks category setting in settings.yml
-    if(possibleSettings[5] == "true") {
-        CategoryChoose();
-    } else if (possibleSettings[5] == "false") {
-        if (document.getElementById("PathChoose")) {
-            document.getElementById("PathChoose").remove();
+        //Checks team setting in settings.yml
+        if (possibleSettings[4] == "true") {
+            TeamChoose();
+        } else if (possibleSettings[4] == "false") {
+            if (document.getElementById("TeamChoose")) {
+                document.getElementById("TeamChoose").remove();
+            }
         }
-    }
 
-    //Checks accessable setting in settings.yml
-    if(possibleSettings[7] == "false") {
-        Accessable();
-    }
-
-    //Checks safety links setting in settings.yml
-    if(possibleSettings[8] == "true") {
-        SafetyLinks();
-    } else if (possibleSettings[8] == "false") {
-        if (document.getElementById("SafetyLinks")) {
-            document.getElementById("SafetyLinks").remove();
+        //Checks category setting in settings.yml
+        if (possibleSettings[5] == "true") {
+            CategoryChoose();
+        } else if (possibleSettings[5] == "false") {
+            if (document.getElementById("PathChoose")) {
+                document.getElementById("PathChoose").remove();
+            }
         }
-    }
 
-    //Checks username setting in settings.yml
-    if(possibleSettings[9] == "true") {
-        RequireUsername();
-    }
-
-    //Forced category setting
-    if(possibleSettings[11] == "true") {
-        CategorySet();
-    } else if (possibleSettings[11] == "false") {
-        if (localStorage.getItem("Category")) {
-            localStorage.removeItem("Category");
+        //Checks accessable setting in settings.yml
+        if (possibleSettings[7] == "false") {
+            Accessable();
         }
-    }
 
-}
+        //Checks safety links setting in settings.yml
+        if (possibleSettings[8] == "true") {
+            SafetyLinks();
+        } else if (possibleSettings[8] == "false") {
+            if (document.getElementById("SafetyLinks")) {
+                document.getElementById("SafetyLinks").remove();
+            }
+        }
+
+        //Checks username setting in settings.yml
+        if (possibleSettings[9] == "true") {
+            RequireUsername();
+        }
+
+        //Forced category setting
+        if (possibleSettings[11] == "true") {
+            CategorySet();
+        } else if (possibleSettings[11] == "false") {
+            if (localStorage.getItem("Category")) {
+                localStorage.removeItem("Category");
+            }
+        }
+
+    }
 
     //Place any universal page functions here
     function TypeofTest() {
         //Type of test at the top
         if (document.getElementById("TitleBar")) {
-            document.getElementById("TitleBar").innerHTML = "OA Robotics: "+possibleSettings[10]+" Safety Test";
-            document.getElementById("TopName").innerHTML = possibleSettings[10]+" Safety Test";
+            document.getElementById("TitleBar").innerHTML = "OA Robotics: " + possibleSettings[10] + " Safety Test";
+            document.getElementById("TopName").innerHTML = possibleSettings[10] + " Safety Test";
         }
 
         //Type of test on the front page
         if (document.getElementById("QuestionAmountH3")) {
-            document.getElementById("FrontHeader").innerHTML = "OA Robotics "+possibleSettings[10]+" Safety Test"
-            document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: "+ possibleSettings[10];
+            document.getElementById("FrontHeader").innerHTML = "OA Robotics " + possibleSettings[10] + " Safety Test"
+            document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: " + possibleSettings[10];
         }
     }
     //Checks type of test setting in settings.yml
@@ -303,64 +305,64 @@ async function GeneralSettings() {
 if (window.location.pathname == "/") {
     //Do nothing
 } else {
-//Pass values to Google Sheets
-window.addEventListener("load", function() {
-    const form = document.getElementById('QForm');
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-      
-    //Data to send
-    let data = new FormData();
-    let dateLocal = new Date();
-    let NameLocal = localStorage.getItem("username");
-    let TeamLocal = localStorage.getItem("Team");
-    let CategoryLocal = localStorage.getItem("Category");
+    //Pass values to Google Sheets
+    window.addEventListener("load", function() {
+        const form = document.getElementById('QForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
 
-    //Checks if some of the values are null
-    if (localStorage.getItem("username") == null) {
-        NameLocal = "No Name";
-    }
-    if (localStorage.getItem("Team") == null) {
-        TeamLocal = "No Team Chosen/General OA Robotics";
-    }
-    if (localStorage.getItem("Category") == null) {
-        CategoryLocal = "No Division Chosen";
-    }
+            //Data to send
+            let data = new FormData();
+            let dateLocal = new Date();
+            let NameLocal = localStorage.getItem("username");
+            let TeamLocal = localStorage.getItem("Team");
+            let CategoryLocal = localStorage.getItem("Category");
 
-    //Sends data to Google Sheets
-    if((data.get('Name') == localStorage.getItem("username")) && (data.get('Team') == localStorage.getItem("Team")) && (data.get('Category') == localStorage.getItem("Category"))){
-        data.set("Name", NameLocal);
-        data.set("Team", TeamLocal);
-        data.set("Category", CategoryLocal);
-        data.set("Pass", Pass);
-        data.set("Score", Score);
-        data.set("Time", dateLocal);
-        const action = e.target.action;
+            //Checks if some of the values are null
+            if (localStorage.getItem("username") == null) {
+                NameLocal = "No Name";
+            }
+            if (localStorage.getItem("Team") == null) {
+                TeamLocal = "No Team Chosen/General OA Robotics";
+            }
+            if (localStorage.getItem("Category") == null) {
+                CategoryLocal = "No Division Chosen";
+            }
 
-        fetch(action, {
-            method: 'POST',
-            body: data,
-        })
-    } else {
+            //Sends data to Google Sheets
+            if ((data.get('Name') == localStorage.getItem("username")) && (data.get('Team') == localStorage.getItem("Team")) && (data.get('Category') == localStorage.getItem("Category"))) {
+                data.set("Name", NameLocal);
+                data.set("Team", TeamLocal);
+                data.set("Category", CategoryLocal);
+                data.set("Pass", Pass);
+                data.set("Score", Score);
+                data.set("Time", dateLocal);
+                const action = e.target.action;
 
-        data.append("Name", NameLocal);
-        data.append("Team", TeamLocal);
-        data.append("Category", CategoryLocal);
-        data.append("Pass", Pass);
-        data.append("Score", Score);
-        data.append("Time", dateLocal);
-        const action = e.target.action;
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+            } else {
 
-      
-        //Sends POST request
-        fetch(action, {
-            method: 'POST',
-            body: data,
-        })
+                data.append("Name", NameLocal);
+                data.append("Team", TeamLocal);
+                data.append("Category", CategoryLocal);
+                data.append("Pass", Pass);
+                data.append("Score", Score);
+                data.append("Time", dateLocal);
+                const action = e.target.action;
 
-        }
+
+                //Sends POST request
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+
+            }
+        });
     });
-  });
 }
 
 
@@ -370,20 +372,20 @@ function QuestionCor() {
     Score = 0;
 
     //Checks if the answer is correct
-    for(let Q = 0; Q < possibleSettings[2]; Q++){
-        for(var a = 0; a < possibleSettings[3]; a++) {
-                var checkanschecked = document.getElementById("AnsInp"+Q+"_"+a);
-                var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
-                LNGNum++;
-                if(checkanschecked.checked == IsCor){
-                        Score = Score + 0.25;
-                    }else if(checkanschecked.checked != IsCor){
-                        Score = Score;
-                    } else {
-                        console.log("A possible score could not be determined");
-                    }
-                }
+    for (let Q = 0; Q < possibleSettings[2]; Q++) {
+        for (var a = 0; a < possibleSettings[3]; a++) {
+            var checkanschecked = document.getElementById("AnsInp" + Q + "_" + a);
+            var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
+            LNGNum++;
+            if (checkanschecked.checked == IsCor) {
+                Score = Score + 0.25;
+            } else if (checkanschecked.checked != IsCor) {
+                Score = Score;
+            } else {
+                console.log("A possible score could not be determined");
             }
+        }
+    }
 
     //Replaces the scoreboard
     if (document.getElementById("scoringdiv")) {
@@ -419,7 +421,7 @@ function QuestionCor() {
     //Pass or Fail H1
     const didpass = document.createElement("h1");
     didpass.style = "font-size: 25px; color: black; text-align: center; position: absolute; top: 60%; left: 15%;"
-    
+
     //Spacing
     scoredivid.appendChild(br);
     scoredivid.appendChild(br);
@@ -451,84 +453,84 @@ function Clear() {
 
 
 //Sets team and category
-    //FRC Function
-    function FRC(){
-        if(document.getElementById("h1team")){
-            document.getElementById("h1team").remove();
-        }
-            const a=document.getElementById("TeamChoose");
-            let h1team=document.createElement("h1");
-            h1team.id="h1team";
-            h1team.innerHTML="You have chosen FRC as your team";
-            h1team.style="font-family:Arial,Helvetica,sans-serif";
-            a.appendChild(h1team);
-            localStorage.setItem("Team","FRC");
-        }
-    //FTC Function  
-    function FTC(){
-        if(document.getElementById("h1team")){
-            document.getElementById("h1team").remove();
-        }
-            const a=document.getElementById("TeamChoose");
-            let h1team=document.createElement("h1");
-            h1team.id="h1team";
-            h1team.innerHTML="You have chosen FTC as your team";
-            h1team.style="font-family:Arial,Helvetica,sans-serif";
-            a.appendChild(h1team);
-            localStorage.setItem("Team","FTC");
-        }
-    //Mechanical Function
-    function Mechanical() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1mechanical=document.createElement("h1");
-            h1mechanical.id="h1category";
-            h1mechanical.innerHTML="You have chosen Mechanical as your category";
-            h1mechanical.style="font-family:Arial,Helvetica,sans-serif";
-            a.appendChild(h1mechanical);
-            localStorage.setItem("Category","Mechanical");
-        }
-    //Electrical Function
-    function Electrical() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1electrical=document.createElement("h1");
-            h1electrical.id="h1category";
-            h1electrical.innerHTML="You have chosen Electrical as your category";
-            h1electrical.style="font-family:Arial,Helvetica,sans-serif";
-            a.appendChild(h1electrical);
-            localStorage.setItem("Category","Electrical");
-        }
-    //Software Function
-    function Software() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1software=document.createElement("h1");
-            h1software.id="h1category";
-            h1software.innerHTML="You have chosen Software as your category";
-            h1software.style="font-family:Arial,Helvetica,sans-serif";
-            a.appendChild(h1software);
-            localStorage.setItem("Category","Software");
-        }
-    //Leadership Function
-    function Leadership() {
-        if(document.getElementById("h1category")){
-            document.getElementById("h1category").remove();
-        }
-            const a=document.getElementById("PathChoose");
-            let h1leadership=document.createElement("h1");
-            h1leadership.id="h1category";
-            h1leadership.innerHTML="You have chosen Leadership as your category";
-            h1leadership.style="font-family:Arial,Helvetica,sans-serif";
-            a.appendChild(h1leadership);
-            localStorage.setItem("Category","Leadership");
-        }
+//FRC Function
+function FRC() {
+    if (document.getElementById("h1team")) {
+        document.getElementById("h1team").remove();
+    }
+    const a = document.getElementById("TeamChoose");
+    let h1team = document.createElement("h1");
+    h1team.id = "h1team";
+    h1team.innerHTML = "You have chosen FRC as your team";
+    h1team.style = "font-family:Arial,Helvetica,sans-serif";
+    a.appendChild(h1team);
+    localStorage.setItem("Team", "FRC");
+}
+//FTC Function  
+function FTC() {
+    if (document.getElementById("h1team")) {
+        document.getElementById("h1team").remove();
+    }
+    const a = document.getElementById("TeamChoose");
+    let h1team = document.createElement("h1");
+    h1team.id = "h1team";
+    h1team.innerHTML = "You have chosen FTC as your team";
+    h1team.style = "font-family:Arial,Helvetica,sans-serif";
+    a.appendChild(h1team);
+    localStorage.setItem("Team", "FTC");
+}
+//Mechanical Function
+function Mechanical() {
+    if (document.getElementById("h1category")) {
+        document.getElementById("h1category").remove();
+    }
+    const a = document.getElementById("PathChoose");
+    let h1mechanical = document.createElement("h1");
+    h1mechanical.id = "h1category";
+    h1mechanical.innerHTML = "You have chosen Mechanical as your category";
+    h1mechanical.style = "font-family:Arial,Helvetica,sans-serif";
+    a.appendChild(h1mechanical);
+    localStorage.setItem("Category", "Mechanical");
+}
+//Electrical Function
+function Electrical() {
+    if (document.getElementById("h1category")) {
+        document.getElementById("h1category").remove();
+    }
+    const a = document.getElementById("PathChoose");
+    let h1electrical = document.createElement("h1");
+    h1electrical.id = "h1category";
+    h1electrical.innerHTML = "You have chosen Electrical as your category";
+    h1electrical.style = "font-family:Arial,Helvetica,sans-serif";
+    a.appendChild(h1electrical);
+    localStorage.setItem("Category", "Electrical");
+}
+//Software Function
+function Software() {
+    if (document.getElementById("h1category")) {
+        document.getElementById("h1category").remove();
+    }
+    const a = document.getElementById("PathChoose");
+    let h1software = document.createElement("h1");
+    h1software.id = "h1category";
+    h1software.innerHTML = "You have chosen Software as your category";
+    h1software.style = "font-family:Arial,Helvetica,sans-serif";
+    a.appendChild(h1software);
+    localStorage.setItem("Category", "Software");
+}
+//Leadership Function
+function Leadership() {
+    if (document.getElementById("h1category")) {
+        document.getElementById("h1category").remove();
+    }
+    const a = document.getElementById("PathChoose");
+    let h1leadership = document.createElement("h1");
+    h1leadership.id = "h1category";
+    h1leadership.innerHTML = "You have chosen Leadership as your category";
+    h1leadership.style = "font-family:Arial,Helvetica,sans-serif";
+    a.appendChild(h1leadership);
+    localStorage.setItem("Category", "Leadership");
+}
 
 
 
@@ -537,40 +539,42 @@ function Clear() {
 //Question Creation Function
 async function QuestionCreate() {
     //Waits for questions to load
-    await fetch(url+"/settings.yml").then(settings => settings.text());
+    await fetch(url + "/settings.yml").then(settings => settings.text());
 
-        //Random Questions Function
-        function QuestionRan(array) {
-            let currentIndex = array.length, randomIndex;;
+    //Random Questions Function
+    function QuestionRan(array) {
+        let currentIndex = array.length,
+            randomIndex;;
 
-            // While there remain elements to shuffle.
-            while (currentIndex != 0) {
-      
-                // Pick a remaining element.
-                randomIndex = Math.floor(Math.random() * currentIndex);
-                currentIndex--;
-    
-                // And swap it with the current element.
-                [array[currentIndex], array[randomIndex]] = [
-                    array[randomIndex], array[currentIndex]];
-                }
-                    
-            return array;
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+                array[randomIndex], array[currentIndex]
+            ];
         }
-    
-        //Redeclare function to run
 
-        //Fetching questions.json file as promise to resolve
-        fetch(url+"/"+possibleSettings[6])
+        return array;
+    }
+
+    //Redeclare function to run
+
+    //Fetching questions.json file as promise to resolve
+    fetch(url + "/" + possibleSettings[6])
         .then(data => data.json())
         .then(data => {
             datavar = data.PossibleQuestions;
-            
-            for (var i = 0; i < datavar.length; i++){
-                if(datavar[i].id == ("Q" + (i + 1))) {
+
+            for (var i = 0; i < datavar.length; i++) {
+                if (datavar[i].id == ("Q" + (i + 1))) {
                     PossibleQuestions[i] = datavar[i].Question;
                 } else {
-                    console.log("Question "+i+1+" not found");
+                    console.log("Question " + i + 1 + " not found");
                 }
             }
             QuestionRan(PossibleQuestions);
@@ -588,64 +592,64 @@ async function QuestionCreate() {
     //for loop to create questions answers
     async function asyncisannoying() {
 
-    
-    for (let i = 0; i < possibleSettings[2]; i++) {
 
-        
-        var divid = "Question_" + i + 1;
-        
-        //Creates a new div for each question
-        let AddQuestionsDiv = document.createElement("div");
-        AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
-        AddQuestionsDiv.id = divid;
-
-        AddQuestions.appendChild(AddQuestionsDiv);
-        
-
-        //Get the id from "AddQuestionsDiv1"
-        let AddQuestionsDiv1 = document.getElementById(AddQuestionsDiv.id);
-
-        //Spacing
-        AddQuestions.appendChild(br);
-        AddQuestions.appendChild(br);
-
-        let H1Num = document.createElement("h1");
-        H1Num.innerHTML = i+1 + ". " + PossibleQuestions[i + 1];
-        H1Num.style = "color: black; font-size: 20px; font-weight: 300; text-align: left;";
-        AddQuestionsDiv1.appendChild(H1Num);
-
-        
-
-        //Creates a new spacing for each question
-        AddQuestionsDiv1.appendChild(br);
+        for (let i = 0; i < possibleSettings[2]; i++) {
 
 
-        //Updating Variables
-        ArrayCount = ArrayCount + 1;
+            var divid = "Question_" + i + 1;
 
-        let answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-        let answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-        let answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-        let answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-        
-        //Making sure of no repeats
-        while (answerslength1 == answerslength2 || answerslength1 == answerslength3 || answerslength1 == answerslength4 || answerslength2 == answerslength3 || answerslength2 == answerslength4 || answerslength3 == answerslength4) {
-            answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-            answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-            answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-            answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-        }
+            //Creates a new div for each question
+            let AddQuestionsDiv = document.createElement("div");
+            AddQuestionsDiv.className = "form-group col-lg-4 col-md-3 col-sm-4 col-xs-1 q_div";
+            AddQuestionsDiv.id = divid;
 
-        //Adding value of answers to array
-        lng.push(answerslength1);
-        lng.push(answerslength2);
-        lng.push(answerslength3);
-        lng.push(answerslength4);
+            AddQuestions.appendChild(AddQuestionsDiv);
+
+
+            //Get the id from "AddQuestionsDiv1"
+            let AddQuestionsDiv1 = document.getElementById(AddQuestionsDiv.id);
+
+            //Spacing
+            AddQuestions.appendChild(br);
+            AddQuestions.appendChild(br);
+
+            let H1Num = document.createElement("h1");
+            H1Num.innerHTML = i + 1 + ". " + PossibleQuestions[i + 1];
+            H1Num.style = "color: black; font-size: 20px; font-weight: 300; text-align: left;";
+            AddQuestionsDiv1.appendChild(H1Num);
+
+
+
+            //Creates a new spacing for each question
+            AddQuestionsDiv1.appendChild(br);
+
+
+            //Updating Variables
+            ArrayCount = ArrayCount + 1;
+
+            let answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+
+            //Making sure of no repeats
+            while (answerslength1 == answerslength2 || answerslength1 == answerslength3 || answerslength1 == answerslength4 || answerslength2 == answerslength3 || answerslength2 == answerslength4 || answerslength3 == answerslength4) {
+                answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            }
+
+            //Adding value of answers to array
+            lng.push(answerslength1);
+            lng.push(answerslength2);
+            lng.push(answerslength3);
+            lng.push(answerslength4);
 
 
             //Inputs
             for (let j = 0; j < possibleSettings[3]; j++) {
- 
+
 
                 randomVal = [answerslength1, answerslength2, answerslength3, answerslength4];
 
@@ -674,14 +678,14 @@ async function QuestionCreate() {
                 Checkboxes.value = "yes";
 
                 AddLabel.appendChild(Checkboxes);
-                
+
                 let h1a = document.createElement("h1");
                 if (datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]]) {
                     h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
                     //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
                     h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
                     h1a.style = "color:black;"
-                    AddLabel.appendChild(h1a); 
+                    AddLabel.appendChild(h1a);
                 } else {
                     h1a.id = "NoQId";
                     h1a.innerHTML = "No Question Response Available";
@@ -694,7 +698,7 @@ async function QuestionCreate() {
 
                 //Input Labels
 
-                }
+            }
             QuestionArrayAt = QuestionArrayAt + 1;
         }
     }
