@@ -38,9 +38,9 @@ fetch(url+"/settings.yml")
     .then(settings => settings.text())
     .then(settings => {
     //Sets settings in variable
-    const localvar = settings;
-    for (let i = 0; i < localvar.split("\r\n").length; i++) {
-        possibleSettings.push(localvar.split("\r\n")[i]);
+    //const localvar = settings.split("\r\n");
+    for (let i = 0; i < settings.split("\r\n").length; i++) {
+        possibleSettings.push(settings.split("\r\n")[i]);
     }
     GeneralSettings();
 });
