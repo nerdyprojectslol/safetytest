@@ -56,17 +56,14 @@ fetch(url + "/settings.yml")
 async function GeneralSettings() {
 
     /* Structure:
-
     function a(){
         //Put in code here
     }
-
     if (possibleSettings[##] == "true") {
         a();
     } else if (possibleSettings[##] == "false") {
         //Do nothing
     }
-
     */
 
     //Waits for the settings to load
