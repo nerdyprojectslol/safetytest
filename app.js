@@ -43,6 +43,12 @@ fetch(url + "/settings.yml")
         tempSettings = settings.toString();
         while (tempSettings.split("\n")[tempCount] != null) {
             possibleSettings.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
+
+            //Use the latter for testing purposes
+
+            //while (tempSettings.split("\r\n")[tempCount] != null) {
+            //    possibleSettings.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
+
             tempCount++;
         }
         GeneralSettings();

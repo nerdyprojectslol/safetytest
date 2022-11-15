@@ -5,7 +5,7 @@ AnswersPerQuestion: 4
 TeamGUI: true
 CategoryGUI: false
 JSONfilename: data.json
-Accessable: true
+Accessable: false
 SafetyTestGuides: true
 RequiresUsername: true
 TypeofTest: Tooling
