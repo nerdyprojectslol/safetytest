@@ -44,7 +44,7 @@ fetch(url + "/settings.yml")
         while (tempSettings.split("\n")[tempCount] != null) {
             possibleSettings.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
 
-            //Use the latter for testing purposes
+            //Use the latter while statement for testing purposes
 
             //while (tempSettings.split("\r\n")[tempCount] != null) {
             //    possibleSettings.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
@@ -286,12 +286,17 @@ async function GeneralSettings() {
         if (document.getElementById("TitleBar")) {
             document.getElementById("TitleBar").innerHTML = "OA Robotics: " + possibleSettings[10] + " Safety Test";
             document.getElementById("TopName").innerHTML = possibleSettings[10] + " Safety Test";
+
         }
 
         //Type of test on the front page
         if (document.getElementById("QuestionAmountH3")) {
+            document.getElementById("Title").innerHTML = "OA Robotics " + possibleSettings[10] + " Safety Test";
             document.getElementById("FrontHeader").innerHTML = "OA Robotics " + possibleSettings[10] + " Safety Test"
             document.getElementById("QuestionAmountH3").innerHTML = "Chosen Test: " + possibleSettings[10];
+            if (possibleSettings[7] == "false") {
+                document.getElementById("Warning").innerHTML = "Warning: This test is inaccessable. Please contact your admin for more information.";
+            }
         }
     }
     //Checks type of test setting in settings.yml
