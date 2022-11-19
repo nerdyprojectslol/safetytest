@@ -9,18 +9,11 @@ Array Counts
 const br = document.createElement("br");
 let PossibleQuestions = new Array();
 let answer = new Array();
-let lng = [];
 let url;
 let Score = 0;
-let LNGNum = 0;
-let ArrayAnsRan = Math.floor(Math.random() * 4);
-let ArrayCount = 0;
-let QuestionArrayAt = 0;
-let PossibleQuestions1;
-let AnswersData;
-let datavar;
+let questiondata;
 let Pass = false;
-let tempSettings;
+let lng = [];
 
 //Settings
 let possibleSettings = [];
@@ -40,14 +33,15 @@ fetch(url + "/settings.yml")
     .then(settings => {
         //Sets settings in variable
         let tempCount = 0;
+        let tempSettings;
         tempSettings = settings.toString();
         while (tempSettings.split("\n")[tempCount] != null) {
             possibleSettings.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
 
             //Use the latter while statement for testing purposes
 
-            //while (tempSettings.split("\r\n")[tempCount] != null) {
-            //    possibleSettings.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
+        //while (tempSettings.split("\r\n")[tempCount] != null) {
+            //possibleSettings.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
 
             tempCount++;
         }
@@ -377,13 +371,14 @@ if (window.location.pathname == "/") {
 //Calculating the total score
 function QuestionCor() {
     const AddQuestions = document.getElementById("Questions1");
+    let LNGNum = 0;
     Score = 0;
 
     //Checks if the answer is correct
     for (let Q = 0; Q < possibleSettings[2]; Q++) {
-        for (var a = 0; a < possibleSettings[3]; a++) {
-            var checkanschecked = document.getElementById("AnsInp" + Q + "_" + a);
-            var IsCor = datavar.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
+        for (let a = 0; a < possibleSettings[3]; a++) {
+            const checkanschecked = document.getElementById("AnsInp" + Q + "_" + a);
+            const IsCor = questiondata.find(x => x.Question == PossibleQuestions[Q + 1]).Answers[lng[LNGNum]].IsCorrect;
             LNGNum++;
             if (checkanschecked.checked == IsCor) {
                 Score = Score + 0.25;
@@ -419,8 +414,8 @@ function QuestionCor() {
     //Score H1
     const scoreh1 = document.createElement("h1");
     scoreh1.id = "scoreh1";
-    scoreh1.innerHTML = "Score: " + Score;
-    scoreh1.style = "font-size: 80px; color: black; text-align: center; position: absolute; top: 10%; left: 5%; @media (max-width: 719px) {font-size: 40px;}";
+    scoreh1.innerHTML = "Score: " + Score + " / " + possibleSettings[2];
+    scoreh1.style = "font-size: 65px; color: black; text-align: center; position: absolute; top: 10%; left: 5%; @media (max-width: 719px) {font-size: 40px;}";
     scoredivid.appendChild(scoreh1);
 
     //Spacing
@@ -439,6 +434,8 @@ function QuestionCor() {
     h12.style = "font-size: 15px; color: black; text-align: center; position: absolute; top: 80%; left: 5%;"
     scoredivid.appendChild(h12);
     LNGNum = 0;
+
+    //Checks if score is equal to possible settings passing rating and sets the status of passing
     if (Score == possibleSettings[2]) {
         Pass = true;
         didpass.innerHTML = "You Passed!";
@@ -576,11 +573,11 @@ async function QuestionCreate() {
     fetch(url + "/" + possibleSettings[6])
         .then(data => data.json())
         .then(data => {
-            datavar = data.PossibleQuestions;
+            questiondata = data.PossibleQuestions;
 
-            for (var i = 0; i < datavar.length; i++) {
-                if (datavar[i].id == ("Q" + (i + 1))) {
-                    PossibleQuestions[i] = datavar[i].Question;
+            for (let i = 0; i < questiondata.length; i++) {
+                if (questiondata[i].id == ("Q" + (i + 1))) {
+                    PossibleQuestions[i] = questiondata[i].Question;
                 } else {
                     console.log("Question " + i + 1 + " not found");
                 }
@@ -600,11 +597,11 @@ async function QuestionCreate() {
     //for loop to create questions answers
     async function asyncisannoying() {
 
+        let QuestionArrayAt = 0;
 
         for (let i = 0; i < possibleSettings[2]; i++) {
 
-
-            var divid = "Question_" + i + 1;
+            const divid = "Question_" + i + 1;
 
             //Creates a new div for each question
             let AddQuestionsDiv = document.createElement("div");
@@ -627,25 +624,21 @@ async function QuestionCreate() {
             AddQuestionsDiv1.appendChild(H1Num);
 
 
-
             //Creates a new spacing for each question
             AddQuestionsDiv1.appendChild(br);
 
 
-            //Updating Variables
-            ArrayCount = ArrayCount + 1;
-
-            let answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-            let answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-            let answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-            let answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength1 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength2 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength3 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+            let answerslength4 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
 
             //Making sure of no repeats
             while (answerslength1 == answerslength2 || answerslength1 == answerslength3 || answerslength1 == answerslength4 || answerslength2 == answerslength3 || answerslength2 == answerslength4 || answerslength3 == answerslength4) {
-                answerslength1 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-                answerslength2 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-                answerslength3 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
-                answerslength4 = Math.floor(Math.random() * Object.keys(datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength1 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength2 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength3 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
+                answerslength4 = Math.floor(Math.random() * Object.keys(questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers).length);
             }
 
             //Adding value of answers to array
@@ -653,7 +646,6 @@ async function QuestionCreate() {
             lng.push(answerslength2);
             lng.push(answerslength3);
             lng.push(answerslength4);
-
 
             //Inputs
             for (let j = 0; j < possibleSettings[3]; j++) {
@@ -688,10 +680,10 @@ async function QuestionCreate() {
                 AddLabel.appendChild(Checkboxes);
 
                 let h1a = document.createElement("h1");
-                if (datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]]) {
-                    h1a.id = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
+                if (questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]]) {
+                    h1a.id = questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].id;
                     //For Answers[]: Answers[Math.floor(Math.random()*answerslength)]
-                    h1a.innerHTML = datavar.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
+                    h1a.innerHTML = questiondata.find(x => x.Question === PossibleQuestions[i + 1]).Answers[randomVal[j]].Answer;
                     h1a.style = "color:black;"
                     AddLabel.appendChild(h1a);
                 } else {
