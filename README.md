@@ -5,7 +5,7 @@ FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran
 
 THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
----RELEASE 9.22--- 
+---RELEASE 9.23--- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
@@ -54,7 +54,7 @@ make different types of safety tests compared to the standard ones found at the 
         
 A: It started as a fun project. I was bored one day so I couldn't help myself not to do something productive, as well as to advance my HTML skills.
 It was only when I showed it to the rest of cabinet and the leads that I thought that this might have been a real thing that we could have done.
-I believe, so far on the day that I am making this (11/18/22), this took a cumulative 10 days of time, spread over about 2 months. It was mainly because I was bored,
+I believe, so far on the day that I am making this (11/19/22), this took a cumulative 10 days of time, spread over about 3 months. It was mainly because I was bored,
 but it did become a real thing that did happen.
 
 

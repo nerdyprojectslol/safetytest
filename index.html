@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <!-- Page Title -->
     <meta charset="UTF-8" />
@@ -18,7 +18,6 @@
 </head>
 
 <!-- Main Program -->
-
 <body>
     <!-- Positions the page in the center -->
     <center>
@@ -31,8 +30,8 @@
             <img src="4079.png" class="logo">
 
             <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">Chosen Test: </h3>
-            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-18-2022</h4>
-            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Update 9.22</h4>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-19-2022</h4>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Update 9.23</h4>
             <div class="form-group">
                 <br>
                 <h1 id="Warning" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; font-weight: bold;"></h1><br>
@@ -117,27 +116,28 @@
     <script>
         /*
 
-                                                                                                                                                                                                                //Sets question amount in index.html
-                                                                                                                                                                                                                function H3Value() {
-                                                                                                                                                                                                                    //If the question amount is equal to 1, then it will display "question" instead of "questions"
-                                                                                                                                                                                                                    if (PossibleQuestionsCount == 1) {
-                                                                                                                                                                                                                        document.getElementById("QuestionAmountH3").innerHTML = "There is " + PossibleQuestionsCount + " question in this test.";
-                                                                                                                                                                                                                        //If the question amount is greater than one, then it will display "questions" instead of "question (Normal Behavior)"
-                                                                                                                                                                                                                    } else if (PossibleQuestionsCount > 1){
-                                                                                                                                                                                                                        document.getElementById("QuestionAmountH3").innerHTML = "There are " + PossibleQuestionsCount + " questions in this test.";
-                                                                                                                                                                                                                        //If the question amount is less than one, then it will display a negative error message
-                                                                                                                                                                                                                    } else if (PossibleQuestionsCount < 0) {
-                                                                                                                                                                                                                        document.getElementById("QuestionAmountH3").innerHTML = "There is a negative amount of questions in this test. EC: Q-1";
-                                                                                                                                                                                                                        //If the question amount is equal to zero, then it will display a zero error message
-                                                                                                                                                                                                                    } else if (PossibleQuestionsCount = 0) {
-                                                                                                                                                                                                                        document.getElementById("QuestionAmountH3").innerHTML = "There are no questions in this test. Please contact the developer. EC: Q0";
-                                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                                        //If the question amount is not a number, then it will display a NaN error message
-                                                                                                                                                                                                                        document.getElementById("QuestionAmountH3").innerHTML = "A question amount could not be determined. Please contact the developer. EC: NaN";
-                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                }
-                                                                                                                                                                                                                H3Value();
-                                                                                                                                                                                                        */
+        //Sets question amount in index.html
+        function H3Value() {
+            
+            if (PossibleQuestionsCount == 1) {
+                //If the question amount is equal to 1, then it will display "question" instead of "questions"
+                document.getElementById("QuestionAmountH3").innerHTML = "There is " + PossibleQuestionsCount + " question in this test.";
+            } else if (PossibleQuestionsCount > 1){
+                //If the question amount is greater than one, then it will display "questions" instead of "question (Normal Behavior)"
+                document.getElementById("QuestionAmountH3").innerHTML = "There are " + PossibleQuestionsCount + " questions in this test.";
+            } else if (PossibleQuestionsCount < 0) {
+                //If the question amount is less than one, then it will display a negative error message
+                document.getElementById("QuestionAmountH3").innerHTML = "There is a negative amount of questions in this test. EC: Q-1";
+            } else if (PossibleQuestionsCount = 0) {
+                //If the question amount is equal to zero, then it will display a zero error message
+                document.getElementById("QuestionAmountH3").innerHTML = "There are no questions in this test. Please contact the developer. EC: Q0";
+            } else {
+                //If the question amount is not a number, then it will display a NaN error message
+                document.getElementById("QuestionAmountH3").innerHTML = "A question amount could not be determined. Please contact the developer. EC: NaN";
+            }
+        }
+        H3Value();
+        */
 
         //Saves user name
         //Save Username in index.html
