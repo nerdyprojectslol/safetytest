@@ -5,27 +5,16 @@ FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran
 
 THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
----RELEASE 10.04--- 
+---RELEASE 10.05--- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
-
-
-
---USAGE INSTRUCTIONS--
-General Rule of Thumb for Making Questions or adding responses to Questions:
-
-There MUST be at least 2 more questions than the amount of questions chosen for the test. (If 16 questions were chosen, there should be at least 18 questions)
-
-The lowest quantity of answers across all questions should be noted, as this will be used in the settings.yml file.
-
-
 
 
 Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a repository for the OA Robotics Safety Test I made.
 
 This is a really complex project I had to work on and spend a lot of man-hours working on, so please don't distribute this unless it is to remake the test
 
-With over 110 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
+With over 120 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
 
 Realistically, I don't have more to say other than that, but a Q&A will be available below.
 
