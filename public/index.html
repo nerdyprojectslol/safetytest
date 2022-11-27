@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Page Title -->
+    <meta charset="UTF-8" />
+    <title id="Title">OA Robotics Testing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Page Icon -->
+    <link rel="shortcut icon" href="/items/4079-transparent.png" type="image/x-icon">
+
+    <!-- Libaries -->
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="test.html/app.js"></script>
+</head>
+
+<!-- Main Program -->
+<body>
+    <!-- Positions the page in the center -->
+    <center>
+        <h1 class="header" style="font-family: Arial, Helvetica, sans-serif" id="FrontHeader">
+            OA Robotics Test
+        </h1>
+
+        <!-- The white box and it's contents are here up until </div> -->
+        <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+            <br><br>
+            <img src="items/4079.png" class="logo">
+
+            <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">Chosen Test: </h3>
+
+            <!-- NOTE: Make contents inside of dropdown dynamic-->
+            <div id="dynamicdrop1">
+                <br>
+                <div id="Dropdown1" class="dropdown">
+                    <button onclick="Dropdown()" id="BtnDropdown1" class="dropbtn">Looking for a different test?</button>
+                    <div id="Dropcont" class="dropdown-content">
+                        <a id="General" href="Tests/Safety-Test/" style="animation: growDown 300ms ease-in-out forwards">Safety Test</a>
+                        <a id="Tools" href="Tests/Tools-Test/" style="animation: growDown 450ms ease-in-out forwards">Tooling Test</a>
+                        <a id="Mechanical" href="Tests/Mechanical-Test/" style="animation: growDown 600ms ease-in-out forwards">Mechanical Test</a>
+                        <a id="Electrical" href="Tests/Electrical-Test/" style="animation: growDown 750ms ease-in-out forwards">Electrical Test</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-27-2022</h4>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Release 10.00</h4>
+            <div class="form-group">
+                <br>
+                <h1 id="Warning" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; font-weight: bold;"></h1><br>
+                <label id="MainHeadingBox">Enter First and Last Names in Input Box</label>
+
+                <!-- Username Input -->
+
+                <input type="text" id="user" class="form-control" placeholder="Erick Tran">
+            </div>
+
+            <!-- Name Save button -->
+            <button id="login_button" class="btn btn-primary" onclick="saveUser()">Start</button>
+            <br><br>
+        </div>
+
+        <br><br><br><br><br>
+        <h1 id="BottomThing">If you have any inquiries about robotics, you can email <a id="Email"
+            href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq"
+            target="_blank">student.cabinet@frc4079.org.</a>
+    </h1>        <br><br><br><br><br>
+    </center>
+    <!-- Page Looks/Front End -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .header img {
+            width: 80px;
+        }
+        
+        body {
+            background-image: linear-gradient(to right top, #3e3e3e, #2b2e30, #151918, #949c9a,#353537);
+        }
+        
+        .header {
+            color: white;
+            font-family: 'Yeon Sung';
+            font-size: 45px;
+            margin-top: 80px;
+        }
+        
+        .login_div {
+            background: rgba(255, 255, 255, 0.8);
+            float: none;
+            border-radius: 15px;
+        }
+        
+        #login_button {
+            width: 250px;
+            font-size: 200%;
+        }
+        
+        .logo {
+            width: 80px;
+            margin-top: 30px;
+            width: 80%;
+            border-radius: 15px;
+        }
+        
+        #BottomThing {
+            color: rgba(255, 255, 255, 0.75);
+            font-family: Arial, Helvetica, sans-serif;
+            letter-spacing: 2px;
+        }
+
+        #Email {
+            font-size: 100%;
+            color: aqua;
+        }
+
+        .dropbtn {
+            background-color: #225c83;
+            color: white;
+            padding: 16px;
+            font-size: 21px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Dropdown button on hover & focus */
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #225c83;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 150%;
+            font-weight: bold;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            border-radius: 10px;
+        }
+
+        /* Show the dropdown menu on hover */
+        .show {
+            display: block;
+        }
+
+        #MainHeadingBox {
+            font-size: 200%;
+            font-weight: bold;
+        }
+
+        /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+        
+        @media (max-width: 720px) {
+            .login_div {
+                width: 18.5em;
+            }
+            #login_button {
+                width: 100%;
+                font-size: 200%;
+            }
+            #BottomThing {
+                font-size: 15px;
+            }
+            .dropbtn {
+                background-color: #3498DB;
+                color: white;
+                padding: 16px;
+                font-size: 120%;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        /* Animation for dropdown menu */
+        @keyframes growDown {
+            0% {
+                opacity: 0;
+                transform: translateY(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(1);
+            }
+        }
+    </style>
+    <script>
+        //Checks if dropdown menu exists
+        //if (document.getElementById("Dropdown1")) {
+            //Dropdown toggle
+            function Dropdown() {
+                document.getElementById("Dropcont").classList.toggle("show");
+            }
+
+            //Closes dropdown menu if user clicks outside of it
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    const dropdowns = document.getElementsByClassName("dropdown-content");
+                    let i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        let openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        //}
+        
+
+
+        /*
+
+        //Sets question amount in index.html
+        function H3Value() {
+            
+            if (PossibleQuestionsCount == 1) {
+                //If the question amount is equal to 1, then it will display "question" instead of "questions"
+                document.getElementById("QuestionAmountH3").innerHTML = "There is " + PossibleQuestionsCount + " question in this test.";
+            } else if (PossibleQuestionsCount > 1){
+                //If the question amount is greater than one, then it will display "questions" instead of "question (Normal Behavior)"
+                document.getElementById("QuestionAmountH3").innerHTML = "There are " + PossibleQuestionsCount + " questions in this test.";
+            } else if (PossibleQuestionsCount < 0) {
+                //If the question amount is less than one, then it will display a negative error message
+                document.getElementById("QuestionAmountH3").innerHTML = "There is a negative amount of questions in this test. EC: Q-1";
+            } else if (PossibleQuestionsCount = 0) {
+                //If the question amount is equal to zero, then it will display a zero error message
+                document.getElementById("QuestionAmountH3").innerHTML = "There are no questions in this test. Please contact the developer. EC: Q0";
+            } else {
+                //If the question amount is not a number, then it will display a NaN error message
+                document.getElementById("QuestionAmountH3").innerHTML = "A question amount could not be determined. Please contact the developer. EC: NaN";
+            }
+        }
+        H3Value();
+        */
+
+        //Saves user name
+        //Save Username in index.html
+        function saveUser() {
+
+            let usernameinput = document.getElementById("user").value;
+
+            //Returns error if box is empty
+            if (usernameinput == "") {
+                document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
+                setTimeout(function() {
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+
+                //Checks if the username contains a space
+            } else if (usernameinput.includes(" ") == false) {
+                document.getElementById("MainHeadingBox").innerHTML = "You must input both your first and last names in the box";
+                setTimeout(function() {
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+                //Checks the limit of a username
+            } else if (usernameinput.split(" ")[1].length > 20 || usernameinput.split(" ")[2] > 25) {
+                document.getElementById("MainHeadingBox").innerHTML = "Your first or last name is too long. Try again.";
+                setTimeout(function() {
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+                //If the username is valid
+            } else {
+                //Saves user in local storage for test firebase
+                username = document.getElementById("user").value;
+                localStorage.setItem("username", username);
+
+                window.location = "test.html";
+            }
+        }
+
+        //Sets the test
+        if (localStorage.getItem("testPath")) {
+            //Do nothing
+        } else {
+            localStorage.setItem("testPath", "/Tests/Safety-Test");
+        }
+
+        //Key press enter
+        function checkKeyPressed(e) {
+            if (e.keyCode == "13") {
+                saveUser();
+            }
+        }
+
+        //Enter key press
+        window.addEventListener("keypress", checkKeyPressed, false);
+    </script>
+</body>
+
+</html>
