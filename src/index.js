@@ -7,7 +7,7 @@ const app = express();
 const { google } = require('googleapis');
 
 //Server
-//const port = 443;
+//const port = 80;
 //File System
 const fs = require("fs");
 
@@ -48,9 +48,10 @@ try {
 
                 let tempCount = 0;
 
-                while (tempSettings.split("\r\n")[tempCount] != null) {
+                //Replace all \r\n statements with \n because \r\n is only supported in local run time
+                while (tempSettings.split("\n")[tempCount] != null) {
                     //Encountered an error, pls fix tomorrow tyy
-                    settingsMain.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
+                    settingsMain.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
                     tempCount++;
                 }
                 settingsOut = settingsMain;
