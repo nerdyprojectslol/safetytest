@@ -48,10 +48,9 @@ try {
 
                 let tempCount = 0;
 
-                //Replace all \r\n statements with \n because \r\n is only supported in local run time
-                while (tempSettings.split("\n")[tempCount] != null) {
+                while (tempSettings.split("\r\n")[tempCount] != null) {
                     //Encountered an error, pls fix tomorrow tyy
-                    settingsMain.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
+                    settingsMain.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
                     tempCount++;
                 }
                 settingsOut = settingsMain;
