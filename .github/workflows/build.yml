@@ -1,8 +1,13 @@
 on: push
 jobs:
-  first-job:
-    runs-on: windows-latest
+  build-node:
+    runs-on: ubuntu-latest
+    container: node:14
     steps:
       - run: node --version
       - run: npm --version
-    
+      - uses: actions/checkout@v3
+      - run: npm install
+      - run: npm install fs
+      - run: npm install googleapis
+      - run: node src/index.js
