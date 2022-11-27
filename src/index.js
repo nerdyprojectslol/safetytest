@@ -7,7 +7,7 @@ const app = express();
 const { google } = require('googleapis');
 
 //Server
-const port = 25565;
+const port = 80;
 
 //File System
 const fs = require("fs");
