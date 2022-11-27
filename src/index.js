@@ -7,12 +7,12 @@ const app = express();
 const { google } = require('googleapis');
 
 //Server
-const port = 443;
+//const port = 443;
 //File System
 const fs = require("fs");
 
 //Port hosted on, as well as logging the status of the server, if it is running or not
-app.listen(port, () => console.log('Server started on port ' + port));
+//app.listen(port, () => console.log('Server started on port ' + port));
 
 try {
 
