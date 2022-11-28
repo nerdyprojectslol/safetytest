@@ -10,4 +10,4 @@ jobs:
       - run: npm install
       - run: npm install fs
       - run: npm install googleapis
-      - run: node src/index.js
+      - run: node index.js
