@@ -1,19 +1,15 @@
 //Packages
 const express = require('express');
 
+//Accessing the library/module for usage
+const app = express();
 //Google API
 const { google } = require('googleapis');
 
-//File System
-const fs = require("fs");
-
-//Accessing the library/module for usage
-const app = express();
-
-
-
 //Server
 //const port = 80;
+//File System
+const fs = require("fs");
 
 //Port hosted on, as well as logging the status of the server, if it is running or not
 //app.listen(port, () => console.log('Server started on port ' + port));
@@ -53,9 +49,9 @@ try {
                 let tempCount = 0;
 
                 //Replace all \r\n statements with \n because \r\n is only supported in local run time
-                while (tempSettings.split("\n")[tempCount] != null) {
+                while (tempSettings.split("\r\n")[tempCount] != null) {
                     //Encountered an error, pls fix tomorrow tyy
-                    settingsMain.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
+                    settingsMain.push(tempSettings.split("\r\n")[tempCount].split(": ")[1]);
                     tempCount++;
                 }
                 settingsOut = settingsMain;
@@ -73,9 +69,9 @@ try {
             const tempURL = JSON.stringify(req.body);
 
             const url = tempURL.split(",")[0].split(":")[1].split('"')[1];
+            fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data1) {
 
-            fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data) {
-                questions = data;
+                questions = data1;
 
                 const tempQuestions = questions.toString();
 

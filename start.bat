@@ -1,1 +1,1 @@
-nodemon index.js
+nodemon src/index.js
