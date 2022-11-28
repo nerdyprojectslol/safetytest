@@ -7,12 +7,12 @@ const app = express();
 const { google } = require('googleapis');
 
 //Server
-const port = 443;
+//const port = 443;
 //File System
 const fs = require("fs");
 
 //Port hosted on, as well as logging the status of the server, if it is running or not
-app.listen(port, () => console.log('Server started on port ' + port));
+//app.listen(port, () => console.log('Server started on port ' + port));
 
 try {
 
@@ -27,7 +27,7 @@ try {
     let settingsOut;
 
     //Get settings or any other needed file and export to the client
-    app.post("/settings", async (req, res) => {
+    app.post("/settings", async(req, res) => {
         try {
             let settings;
 
@@ -37,9 +37,9 @@ try {
 
             let settingsMain = [];
             //Gets settings from the url
-            fs.readFile("public" + url + "/settings.yml", "utf8", async function (err, data) {
+            fs.readFile("public" + url + "/settings.yml", "utf8", async function(err, data) {
                 settings = data
-                //Code to set settings
+                    //Code to set settings
 
 
 
@@ -62,14 +62,14 @@ try {
         }
     });
 
-    app.post("/questions", async (req, res) => {
+    app.post("/questions", async(req, res) => {
         try {
             let questions;
 
             const tempURL = JSON.stringify(req.body);
 
             const url = tempURL.split(",")[0].split(":")[1].split('"')[1];
-            fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data1) {
+            fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function(err, data1) {
 
                 questions = data1;
 
@@ -94,13 +94,13 @@ try {
 
 
     //The authentication for the google API
-    const authentication = async () => {
+    const authentication = async() => {
         //The credentials for the google API
         const auth = new google.auth.GoogleAuth({
-            keyFile: "src/credentials.json",
-            scopes: "https://www.googleapis.com/auth/spreadsheets"
-        })
-        //The client for the google API, waiting for the authentication to get the credentials
+                keyFile: "src/credentials.json",
+                scopes: "https://www.googleapis.com/auth/spreadsheets"
+            })
+            //The client for the google API, waiting for the authentication to get the credentials
         const client = await auth.getClient();
         //The google API
         const googleAPI = google.sheets({
@@ -115,7 +115,7 @@ try {
     const id = "1WyTjyGrxWOyzYaWiOUkYICdnMXZvJJAZgS5P5tUd6dk";
 
     //The function that will be called to add the data to the google sheet
-    app.get("/api", async ( /*req,*/ res) => {
+    app.get("/api", async( /*req,*/ res) => {
         try {
             //Waiting for the authentication to get the credentials
             const { googleAPI } = await authentication();
@@ -135,7 +135,7 @@ try {
 
 
     //Sending data to the sheet
-    app.post("/api", async (req, res) => {
+    app.post("/api", async(req, res) => {
         try {
             //destructure 'newName' and 'newValue' from req.body
             const { Name, Team, Category, Pass, Score, Type } = req.body;
