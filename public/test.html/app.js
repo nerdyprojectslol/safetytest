@@ -29,7 +29,7 @@ async function getContents() {
 
     //Sends a post request
     let urlSend = {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -383,7 +383,7 @@ async function PassValues() {
 
 
     let options = {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },

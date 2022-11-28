@@ -10,6 +10,8 @@ const fs = require("fs");
 //Accessing the library/module for usage
 const app = express();
 
+
+
 //Server
 //const port = 80;
 
@@ -29,7 +31,7 @@ try {
     let settingsOut;
 
     //Get settings or any other needed file and export to the client
-    app.post("/settings", async (req, res) => {
+    app.get("/settings", async (req, res) => {
         try {
             let settings;
 
@@ -64,7 +66,7 @@ try {
         }
     });
 
-    app.post("/questions", async (req, res) => {
+    app.get("/questions", async (req, res) => {
         try {
             let questions;
 
