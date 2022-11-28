@@ -1,15 +1,17 @@
 //Packages
 const express = require('express');
 
-//Accessing the library/module for usage
-const app = express();
 //Google API
 const { google } = require('googleapis');
 
-//Server
-//const port = 80;
 //File System
 const fs = require("fs");
+
+//Accessing the library/module for usage
+const app = express();
+
+//Server
+//const port = 80;
 
 //Port hosted on, as well as logging the status of the server, if it is running or not
 //app.listen(port, () => console.log('Server started on port ' + port));
@@ -27,7 +29,7 @@ try {
     let settingsOut;
 
     //Get settings or any other needed file and export to the client
-    app.post("/settings", async (req, res) => {
+    app.get("/settings", async (req, res) => {
         try {
             let settings;
 
@@ -62,7 +64,7 @@ try {
         }
     });
 
-    app.post("/questions", async (req, res) => {
+    app.get("/questions", async (req, res) => {
         try {
             let questions;
 
