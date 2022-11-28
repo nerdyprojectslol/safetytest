@@ -41,7 +41,7 @@ async function getContents() {
         .then(response => response.text())
         .then(data => {
             possibleSettings = JSON.parse(data);
-
+            localStorage.setItem("Test", possibleSettings[10]);
             GeneralSettings();
 
         });
@@ -552,8 +552,6 @@ async function QuestionCreate() {
     possibleQuestionsGet();
     //Wait for data to be fetched
     await fetch("/questions");
-
-    localStorage.setItem("Test", possibleSettings[10]);
 
     const AddQuestions = document.getElementById("Questions1");
 
