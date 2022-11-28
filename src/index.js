@@ -31,7 +31,7 @@ try {
     let settingsOut;
 
     //Get settings or any other needed file and export to the client
-    app.get("/settings", async (req, res) => {
+    app.post("/settings", async (req, res) => {
         try {
             let settings;
 
@@ -66,7 +66,7 @@ try {
         }
     });
 
-    app.get("/questions", async (req, res) => {
+    app.post("/questions", async (req, res) => {
         try {
             let questions;
 

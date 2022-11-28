@@ -29,7 +29,7 @@ async function getContents() {
 
     //Sends a post request
     let urlSend = {
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
