@@ -18,9 +18,8 @@ app.listen(port, () => console.log('Server started on port ' + port));
 app.get('/', (req, res) => {
     app.use(express.static('public'));
     res.sendFile(path.join(__dirname + '/public/'));
-});
 
-try {
+
 
 
 
@@ -36,11 +35,11 @@ try {
     let settingsOut;
 
     //Get settings or any other needed file and export to the client
-    app.post("/settings", async (req, res) => {
+    app.post("/settings", async (request, response) => {
         try {
             let settings;
 
-            const tempURL = JSON.stringify(req.body);
+            const tempURL = JSON.stringify(request.body);
 
             const url = tempURL.split(",")[0].split(":")[1].split('"')[1];
 
@@ -64,18 +63,18 @@ try {
                     tempCount++;
                 }
                 settingsOut = settingsMain;
-                res.send(settingsMain);
+                response.send(settingsMain);
             });
         } catch (err) {
             console.log(err);
         }
     });
 
-    app.post("/questions", async (req, res) => {
+    app.post("/questions", async (request, response) => {
         try {
             let questions;
 
-            const tempURL = JSON.stringify(req.body);
+            const tempURL = JSON.stringify(request.body);
 
             const url = tempURL.split(",")[0].split(":")[1].split('"')[1];
             fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data1) {
@@ -93,7 +92,7 @@ try {
                 }
                 */
 
-                res.send(tempQuestions);
+                response.send(tempQuestions);
             });
         } catch (err) {
             console.log(err);
@@ -124,7 +123,7 @@ try {
     const id = "1WyTjyGrxWOyzYaWiOUkYICdnMXZvJJAZgS5P5tUd6dk";
 
     //The function that will be called to add the data to the google sheet
-    app.get("/api", async (req, res) => {
+    app.get("/api", async (request, res1) => {
         try {
             //Waiting for the authentication to get the credentials
             const { googleAPI } = await authentication();
@@ -134,20 +133,20 @@ try {
                 spreadsheetId: id,
                 range: "Sheet1!A1:F1",
             });
-            res.send({ success: true });
+            res1.send({ success: true });
             //If there is an error, it will be logged in the console
         } catch (error) {
             console.log(error);
-            res.status(500).send(error.message);
+            res1.status(500).send(error.message);
         }
     });
 
 
     //Sending data to the sheet
-    app.post("/api", async (req, res) => {
+    app.post("/api", async (request, response1) => {
         try {
-            //destructure 'newName' and 'newValue' from req.body
-            const { Name, Team, Category, Pass, Score, Type } = req.body;
+            //destructure 'newName' and 'newValue' from request.body
+            const { Name, Team, Category, Pass, Score, Type } = request.body;
             let Time = (new Date().getUTCMonth() + 1) + "/" + (new Date().getUTCDate() - 1) + "/" + new Date().getUTCFullYear() + " --- Time: " + new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
             const { googleAPI } = await authentication();
             //add the new name and value to the sheet
@@ -163,16 +162,14 @@ try {
             });
 
             //Checks the current status of the server and sends a success/fail response
-            if (response.status === 200) {
-                res.send({ success: true });
+            if (response1.status === 200) {
+                response1.send({ success: true });
             } else {
-                return res.status(500).send("Error writing to sheet");
+                return response1.status(500).send("Error writing to sheet");
             }
         } catch (error) {
             console.log(error, "There was an error updating the spreadsheet", error.message);
-            res.status(500).send();
+            response1.status(500).send();
         }
     });
-} catch (err) {
-    console.log(err);
-}
+});
