@@ -282,19 +282,29 @@ async function GeneralSettings() {
         if (document.getElementById("TitleBar")) {
             document.getElementById("TitleBar").innerHTML = "OA Robotics: " + possibleSettings[10] + " Test";
             document.getElementById("TopName").innerHTML = "Robotics " + possibleSettings[10] + " Test";
-            document.getElementById("myRange").max = possibleSettings[2];
+            document.getElementById("myRange").max = possibleSettings[2] - 1;
 
             //Use this variable to determine if the browser is compatible with the test
-            let browserName = (function (agent) {
+            let browserName = (function(agent) {
                 switch (true) {
-                    case agent.indexOf("edge") > -1: return "MS Edge";
-                    case agent.indexOf("edg/") > -1: return "Chromium (Edge)";
-                    case agent.indexOf("opr") > -1 && !!window.opr: alert("Opera may not function properly with this test. Please use a different browser for a better experience."); return "Opera";
-                    case agent.indexOf("chrome") > -1 && !!window.chrome: return "Chrome";
-                    case agent.indexOf("trident") > -1: alert("Internet Explorer may not function properly with this test. Please use a different browser for a better experience."); return "Internet Explorer";
-                    case agent.indexOf("firefox") > -1: return "Mozilla Firefox";
-                    case agent.indexOf("safari") > -1: return "Safari";
-                    default: return "other";
+                    case agent.indexOf("edge") > -1:
+                        return "MS Edge";
+                    case agent.indexOf("edg/") > -1:
+                        return "Chromium (Edge)";
+                    case agent.indexOf("opr") > -1 && !!window.opr:
+                        alert("Opera may not function properly with this test. Please use a different browser for a better experience.");
+                        return "Opera";
+                    case agent.indexOf("chrome") > -1 && !!window.chrome:
+                        return "Chrome";
+                    case agent.indexOf("trident") > -1:
+                        alert("Internet Explorer may not function properly with this test. Please use a different browser for a better experience.");
+                        return "Internet Explorer";
+                    case agent.indexOf("firefox") > -1:
+                        return "Mozilla Firefox";
+                    case agent.indexOf("safari") > -1:
+                        return "Safari";
+                    default:
+                        return "other";
                 }
             })
             return browserName;

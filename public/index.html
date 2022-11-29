@@ -41,24 +41,19 @@
                     <button onclick="Dropdown()" id="BtnDropdown1" class="dropbtn">Looking for a different
                         test?</button>
                     <div id="Dropcont" class="dropdown-content">
-                        <a id="General" href="Tests/Safety-Test/"
-                            style="animation: growDown 300ms ease-in-out forwards">Safety Test</a>
-                        <a id="Tools" href="Tests/Tools-Test/"
-                            style="animation: growDown 450ms ease-in-out forwards">Tooling Test</a>
-                        <a id="Mechanical" href="Tests/Mechanical-Test/"
-                            style="animation: growDown 600ms ease-in-out forwards">Mechanical Test</a>
-                        <a id="Electrical" href="Tests/Electrical-Test/"
-                            style="animation: growDown 750ms ease-in-out forwards">Electrical Test</a>
+                        <a id="General" href="Tests/Safety-Test/" style="animation: growDown 300ms ease-in-out forwards">Safety Test</a>
+                        <a id="Tools" href="Tests/Tools-Test/" style="animation: growDown 450ms ease-in-out forwards">Tooling Test</a>
+                        <a id="Mechanical" href="Tests/Mechanical-Test/" style="animation: growDown 600ms ease-in-out forwards">Mechanical Test</a>
+                        <a id="Electrical" href="Tests/Electrical-Test/" style="animation: growDown 750ms ease-in-out forwards">Electrical Test</a>
                     </div>
                 </div>
                 <br>
             </div>
             <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-28-2022</h4>
-            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Update 10.33</h4>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Update 10.34</h4>
             <div class="form-group">
                 <br>
-                <h1 id="Warning"
-                    style="font-family: Arial, Helvetica, sans-serif; font-size: larger; font-weight: bold;"></h1><br>
+                <h1 id="Warning" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; font-weight: bold;"></h1><br>
                 <label id="MainHeadingBox">Enter First and Last Names in Input Box</label>
 
                 <!-- Username Input -->
@@ -72,9 +67,7 @@
         </div>
 
         <br><br><br><br><br>
-        <h1 id="BottomThing">If you have any inquiries about robotics, you can email <a id="Email"
-                href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq"
-                target="_blank">student.cabinet@frc4079.org.</a>
+        <h1 id="BottomThing">If you have any inquiries about robotics, you can email <a id="Email" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq" target="_blank">student.cabinet@frc4079.org.</a>
         </h1> <br><br><br><br><br>
     </center>
     <!-- Page Looks/Front End -->
@@ -82,51 +75,51 @@
         html {
             scroll-behavior: smooth;
         }
-
+        
         .header img {
             width: 80px;
         }
-
+        
         body {
             background-image: linear-gradient(to right top, #3e3e3e, #2b2e30, #151918, #949c9a, #353537);
         }
-
+        
         .header {
             color: white;
             font-family: 'Yeon Sung';
             font-size: 45px;
             margin-top: 80px;
         }
-
+        
         .login_div {
             background: rgba(255, 255, 255, 0.8);
             float: none;
             border-radius: 15px;
         }
-
+        
         #login_button {
             width: 250px;
             font-size: 200%;
         }
-
+        
         .logo {
             width: 80px;
             margin-top: 30px;
             width: 80%;
             border-radius: 15px;
         }
-
+        
         #BottomThing {
             color: rgba(255, 255, 255, 0.75);
             font-family: Arial, Helvetica, sans-serif;
             letter-spacing: 2px;
         }
-
+        
         #Email {
             font-size: 100%;
             color: aqua;
         }
-
+        
         .dropbtn {
             background-color: #225c83;
             color: white;
@@ -136,23 +129,20 @@
             cursor: pointer;
             border-radius: 5px;
         }
-
         /* Dropdown button on hover & focus */
-
+        
         .dropbtn:hover,
         .dropbtn:focus {
             background-color: #225c83;
         }
-
         /* The container <div> - needed to position the dropdown content */
-
+        
         .dropdown {
             position: relative;
             display: inline-block;
         }
-
         /* Dropdown Content (Hidden by Default) */
-
+        
         .dropdown-content {
             display: none;
             position: absolute;
@@ -162,9 +152,8 @@
             z-index: 1;
             border-radius: 10px;
         }
-
         /* Links inside the dropdown */
-
+        
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
@@ -173,41 +162,35 @@
             font-size: 150%;
             font-weight: bold;
         }
-
         /* Change color of dropdown links on hover */
-
+        
         .dropdown-content a:hover {
             background-color: #ddd;
             border-radius: 10px;
         }
-
         /* Show the dropdown menu on hover */
-
+        
         .show {
             display: block;
         }
-
+        
         #MainHeadingBox {
             font-size: 200%;
             font-weight: bold;
         }
-
         /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
-
+        
         @media (max-width: 720px) {
             .login_div {
                 width: 95%;
             }
-
             #login_button {
                 width: 100%;
                 font-size: 200%;
             }
-
             #BottomThing {
                 font-size: 15px;
             }
-
             .dropbtn {
                 background-color: #3498DB;
                 color: white;
@@ -217,15 +200,13 @@
                 cursor: pointer;
             }
         }
-
         /* Animation for dropdown menu */
-
+        
         @keyframes growDown {
             0% {
                 opacity: 0;
                 transform: translateY(-15px);
             }
-
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -241,19 +222,19 @@
         }
 
         //Closes dropdown menu if user clicks outside of it
-        window.onclick = function (event) {
-            if (!event.target.matches('.dropbtn')) {
-                const dropdowns = document.getElementsByClassName("dropdown-content");
-                let i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    let openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
+        window.onclick = function(event) {
+                if (!event.target.matches('.dropbtn')) {
+                    const dropdowns = document.getElementsByClassName("dropdown-content");
+                    let i;
+                    for (i = 0; i < dropdowns.length; i++) {
+                        let openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
                     }
                 }
             }
-        }
-        //}
+            //}
 
 
 
@@ -291,20 +272,20 @@
             //Returns error if box is empty
             if (usernameinput == "") {
                 document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
-                setTimeout(function () {
+                setTimeout(function() {
                     document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
                 }, 3000);
 
                 //Checks if the username contains a space
             } else if (usernameinput.includes(" ") == false) {
                 document.getElementById("MainHeadingBox").innerHTML = "You must input both your first and last names in the box";
-                setTimeout(function () {
+                setTimeout(function() {
                     document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
                 }, 3000);
                 //Checks the limit of a username
             } else if (usernameinput.split(" ")[1].length > 20 || usernameinput.split(" ")[2] > 25) {
                 document.getElementById("MainHeadingBox").innerHTML = "Your first or last name is too long. Try again.";
-                setTimeout(function () {
+                setTimeout(function() {
                     document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
                 }, 3000);
                 //If the username is valid
