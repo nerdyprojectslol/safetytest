@@ -1,9 +1,193 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <!-- Page Title -->
+    <meta charset="UTF-8" />
+    <title id="Title">OA Robotics General Safety Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Page Icon -->
+    <link rel="shortcut icon" href="4079.png" type="image/x-icon">
 
-<body onload="load()">
-    <script>function load() {
-            window.location = "public";
+    <!-- Libaries -->
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<!-- Main Program -->
+<body>
+    <!-- Positions the page in the center -->
+    <center>
+        <h1 class="header" style="font-family: Arial, Helvetica, sans-serif" id="FrontHeader">
+            OA Robotics General Safety Test
+        </h1>
+
+        <!-- The white box and it's contents are here up until </div> -->
+        <div id="MainDiv1" class="col-lg-4 col-md-3 col-sm-4 col-xs-1 login_div">
+            <img src="4079.png" class="logo">
+
+            <h3 id="QuestionAmountH3" style="font-family: 'Times New Roman', Times, serif;">Chosen Test: </h3>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Last Updated on 11-19-2022</h4>
+            <h4 id="Heading2" style="font-family: 'Times New Roman', Times, serif">Github Minor Update 9.23</h4>
+            <div class="form-group">
+                <br>
+                <h1 id="Warning" style="font-family: Arial, Helvetica, sans-serif; font-size: larger; font-weight: bold;"></h1><br>
+                <label id="MainHeadingBox">Enter First and Last Names in Input Box</label>
+
+                <!-- Username Input -->
+
+                <input type="text" id="user" class="form-control" placeholder="Erick Tran">
+            </div>
+
+            <!-- Name Save button -->
+            <button id="login_button" class="btn btn-primary" onclick="saveUser()">Start</button>
+            <br><br>
+        </div>
+        <br><br><br><br><br>
+        <h1 id="Email">If you have any questions, contact us at <a id="Email2" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCJlGTfPdclgmNzzDQksvWgGbJmQzcmsRzDQFWFkWtrMDGRfVkWKQFTThcwsGgGbsXwgmnvq" target="_blank">student.cabinet@frc4079.org.</a></h1>
+        <br><br><br><br><br>
+    </center>
+    <!-- Page Looks/Front End -->
+    <style>
+        .header img {
+            width: 80px;
+        }
+        
+        body {
+            background-image: linear-gradient(to right top, #000000, #2c3033, #212527, #313a37, #2e2e35);
+        }
+        
+        .header {
+            color: white;
+            font-family: 'Yeon Sung';
+            font-size: 45px;
+            margin-top: 80px;
+        }
+        
+        .login_div {
+            background: rgba(255, 255, 255, 0.8);
+            float: none;
+            border-radius: 15px;
+        }
+        
+        #login_button {
+            width: 250px;
+            font-size: 200%;
+        }
+        
+        .logo {
+            width: 80px;
+            margin-top: 30px;
+            width: 80%;
+            border-radius: 15px;
+        }
+        
+        #Email {
+            color: red;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        #Email2 {
+            font-size: 225%;
+            color: aqua;
+        }
+        /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
+        
+        @media (max-width: 720px) {
+            .login_div {
+                width: 18.5em;
+            }
+            #login_button {
+                width: 100%;
+                font-size: 200%;
+            }
+            #Email {
+                font-size: 10px;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #Email2 {
+                color: aqua;
+            }
+        }
+    </style>
+    <script>
+        /*
+
+        //Sets question amount in index.html
+        function H3Value() {
+            
+            if (PossibleQuestionsCount == 1) {
+                //If the question amount is equal to 1, then it will display "question" instead of "questions"
+                document.getElementById("QuestionAmountH3").innerHTML = "There is " + PossibleQuestionsCount + " question in this test.";
+            } else if (PossibleQuestionsCount > 1){
+                //If the question amount is greater than one, then it will display "questions" instead of "question (Normal Behavior)"
+                document.getElementById("QuestionAmountH3").innerHTML = "There are " + PossibleQuestionsCount + " questions in this test.";
+            } else if (PossibleQuestionsCount < 0) {
+                //If the question amount is less than one, then it will display a negative error message
+                document.getElementById("QuestionAmountH3").innerHTML = "There is a negative amount of questions in this test. EC: Q-1";
+            } else if (PossibleQuestionsCount = 0) {
+                //If the question amount is equal to zero, then it will display a zero error message
+                document.getElementById("QuestionAmountH3").innerHTML = "There are no questions in this test. Please contact the developer. EC: Q0";
+            } else {
+                //If the question amount is not a number, then it will display a NaN error message
+                document.getElementById("QuestionAmountH3").innerHTML = "A question amount could not be determined. Please contact the developer. EC: NaN";
+            }
+        }
+        H3Value();
+        */
+
+        //Saves user name
+        //Save Username in index.html
+        function saveUser() {
+
+            let usernameinput = document.getElementById("user").value;
+
+            //Returns error if box is empty
+            if (usernameinput == "") {
+                document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
+                setTimeout(function() {
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+
+                //Checks if the username contains a space
+            } else if (usernameinput.includes(" ") == false) {
+                document.getElementById("MainHeadingBox").innerHTML = "You must input both your first and last names in the box";
+                setTimeout(function() {
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+                //Checks the limit of a username
+            } else if (usernameinput.split(" ")[1].length > 20 || usernameinput.split(" ")[2] > 25) {
+                document.getElementById("MainHeadingBox").innerHTML = "Your first or last name is too long. Try again.";
+                setTimeout(function() {
+                    document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
+                }, 3000);
+                //If the username is valid
+            } else {
+                //Saves user in local storage for test firebase
+                username = document.getElementById("user").value;
+                localStorage.setItem("username", username);
+
+
+                //Moves user to test
+                if (localStorage.getItem("testPath")) {
+                    let url = localStorage.getItem("testPath");
+                    window.location = url + "/test.html";
+                } else {
+                    window.location = "General-Test-DND/test.html"
+                }
+            }
+        }
+
+        //Enter key press
+        window.addEventListener("keypress", checkKeyPressed, false);
+
+        function checkKeyPressed(e) {
+            if (e.keyCode == "13") {
+                saveUser();
+            }
         }
     </script>
 </body>
