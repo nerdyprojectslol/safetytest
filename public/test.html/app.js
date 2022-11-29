@@ -43,7 +43,6 @@ async function getContents() {
             possibleSettings = JSON.parse(data);
 
             GeneralSettings();
-
         });
 
 }
@@ -549,9 +548,8 @@ async function QuestionCreate() {
             });
 
     }
-    possibleQuestionsGet();
+
     //Wait for data to be fetched
-    await fetch("/questions");
 
     localStorage.setItem("Test", possibleSettings[10]);
 
@@ -695,6 +693,7 @@ async function QuestionCreate() {
         ClearButton.className = "btn btn-primary";
         ClearDiv.appendChild(ClearButton);
     }
+    possibleQuestionsGet();
 }
 
 //Clear all inputs

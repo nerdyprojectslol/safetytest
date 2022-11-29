@@ -1,5 +1,6 @@
 //Packages
 const express = require('express');
+const path = require('path');
 
 //Accessing the library/module for usage
 const app = express();
@@ -14,18 +15,19 @@ const fs = require("fs");
 //Port hosted on, as well as logging the status of the server, if it is running or not
 app.listen(port, () => console.log('Server started on port ' + port));
 
-
+app.get('/', (req, res) => {
+    app.use(express.static('public'));
+    res.sendFile(path.join(__dirname + '/public/'));
+});
 
 try {
 
 
 
     //The folder the server will be hosted on (html, css, js)
-    app.use(express.static('public'));
+    
 
-    app.get('/', (req, res) => {
-        res.sendStatus(200);
-    });
+
 
     //Limiting the size of json data (1mb) and parsing JSON data
     app.use(express.json({ limit: '5mb' }));
@@ -104,7 +106,7 @@ try {
     const authentication = async () => {
         //The credentials for the google API
         const auth = new google.auth.GoogleAuth({
-            keyFile: "src/credentials.json",
+            keyFile: "credentials.json",
             scopes: "https://www.googleapis.com/auth/spreadsheets"
         })
         //The client for the google API, waiting for the authentication to get the credentials
@@ -122,7 +124,7 @@ try {
     const id = "1WyTjyGrxWOyzYaWiOUkYICdnMXZvJJAZgS5P5tUd6dk";
 
     //The function that will be called to add the data to the google sheet
-    app.get("/api", async ( /*req,*/ res) => {
+    app.get("/api", async (req, res) => {
         try {
             //Waiting for the authentication to get the credentials
             const { googleAPI } = await authentication();
