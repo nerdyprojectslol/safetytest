@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!-- This file is used to set the path of the test. If perturbed, it will default to the last test the user was on or default to General Safety Test. -->
+<html>
+    <head>
+        <title>OA Robotics Safety Test</title>
+    </head>
+    <body>
+        <center id="Center">
+            <h1 id="RedirectText">Redirecting to Safety Test</h1>
+        </center>
+        <style>
+            body {
+                background-image: linear-gradient(to right top, #000000, #2c3033, #212527, #313a37, #2e2e35);
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+            }
+            h1{
+                padding-top: 10%;
+                position:sticky;
+                text-align: center;
+                color: white;
+                font-size: 125px;
+            }
+            @media (max-width: 720px) {
+                h1{
+                    padding-top: 50%;
+                }
+            }
+            
+        </style>
+        <script>
+            //Sets the testPath variable in local storage to the current folder
+            const currentFolder = window.location.pathname;
+            const dir = currentFolder.substring(0, currentFolder.lastIndexOf('/'));
+            localStorage.setItem("testPath", dir);
+
+            //Redirects to the main page
+            setTimeout(function(){
+                window.location = "/";
+            }, 1500);
+        </script>
+    </body>
+</html>
