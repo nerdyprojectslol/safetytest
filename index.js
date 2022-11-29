@@ -18,7 +18,7 @@ app.listen(port, () => console.log('Server started on port ' + port));
 app.get('/', (req, res) => {
     app.use(express.static('public'));
     res.sendFile(path.join(__dirname + '/public/'));
-
+});
 
 
 
@@ -172,4 +172,3 @@ app.get('/', (req, res) => {
             response1.status(500).send();
         }
     });
-});
