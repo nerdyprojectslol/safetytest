@@ -23,6 +23,9 @@ try {
     //The folder the server will be hosted on (html, css, js)
     app.use(express.static('public'));
 
+    app.get('/', (req, res) => {
+        res.sendStatus(200);
+    });
 
     //Limiting the size of json data (1mb) and parsing JSON data
     app.use(express.json({ limit: '5mb' }));
@@ -168,10 +171,6 @@ try {
             res.status(500).send();
         }
     });
-
-    app.get('/', (req, res) => {
-        res.sendStatus(200);
-});
 } catch (err) {
     console.log(err);
 }
