@@ -1,0 +1,250 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: linear-gradient(to right top, #3e3e3e, #2b2e30, #151918, #949c9a, #353537);
+}
+
+.slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+}
+
+
+.navbar1 {
+    top: 4%;
+    position: sticky;
+    z-index: 9;
+}
+
+#SubmitClear {
+    letter-spacing: 50px;
+}
+
+.header:not(#NAS) {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    letter-spacing: 5px;
+    margin-top: 80px
+}
+
+#NAS {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 500%;
+    letter-spacing: 5px;
+    margin-top: 80px
+}
+
+.header img {
+    width: 80px;
+    margin-left: -15px
+}
+
+#Questions1 div:not(#scoringdiv),
+#TeamChoose,
+#PathChoose {
+    background: rgba(255, 255, 255, 0.5);
+    float: none;
+    border-radius: 5px;
+    height: 300px;
+    width: 550px;
+    position: relative;
+    left: 10px;
+    line-height: 20px;
+    font-size: 13px;
+}
+
+#scoringdiv {
+    background: rgba(255, 255, 255, 0.5);
+    float: none;
+    border-radius: 5px;
+    height: 300px;
+    width: 550px;
+    position: relative;
+    left: 10px;
+    font-size: 13px;
+}
+
+#logo {
+    width: 10px;
+    margin-top: 30px;
+    width: 10%;
+    border-radius: 15px
+}
+
+#Submit,
+#Clear {
+    height: 50px;
+    width: 100px;
+    border-radius: 100px;
+    font-size: 25px;
+    background: rgba(255, 255, 255, 0.75);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#FRC,
+#FTC {
+    height: 150px;
+    width: 175px;
+    border-radius: 35px;
+    font-size: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#FRC {
+    background-image: linear-gradient(to right top, #a92d2d, #ec5c5c, #9a2622, #740c0c, #ff0000);
+}
+
+#FTC {
+    background-image: linear-gradient(to right top, #48c8cc, #559fd4, #26c8c2, #1c7a74, #35ba96);
+}
+
+#Leadership,
+#Mechanical,
+#Electrical,
+#Software {
+    height: 125px;
+    width: 125px;
+    border-radius: 35px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Leadership {
+    background-image: linear-gradient(to right top, #969fa5, #76838c, #7e8789, #a5aeab, #b6bac2);
+}
+
+#Mechanical {
+    background-image: linear-gradient(to right top, #a92d2d, #ec5c5c, #9a2622, #740c0c, #ff0000);
+}
+
+#Electrical {
+    background-image: linear-gradient(to right top, #4da9e6, #1c73b1, #4259ad, #525dd6, #3f41c3);
+}
+
+#Software {
+    background-image: linear-gradient(to right top, #49c518, #15c04e, #4ce785, #328815, #136a14);
+}
+
+#BottomThing {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+#Email {
+    font-size: 100%;
+    color: aqua;
+}
+
+#scoreh1 {
+    font-size: 80px;
+}
+
+#Clear,
+#Submit {
+    background: transparent;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    height: 100px;
+    width: 200px;
+    border-radius: 15px;
+    border-spacing: 10px;
+}
+
+@media(max-width:719px) {
+    body {
+        background-image: linear-gradient(to right top, #3a4146, #171a1c, #282b2c, #363a39, #434752);
+    }
+
+    #Compendium1 {
+        font-size: 30px;
+    }
+
+    #logo {
+        width: 50px;
+        margin-top: 30px;
+        width: 50%;
+        border-radius: 15px
+    }
+
+    #QuestionBox,
+    #Scorebox {
+        background: rgba(255, 255, 255, 0.5);
+        font-size: 20px;
+        float: none;
+        border-radius: 5px;
+        height: 150px;
+        width: 250px;
+        position: relative;
+        left: 10px;
+        line-height: 20px
+    }
+
+    #FunctionalButtons {
+        height: 50px;
+        width: 100px;
+        border-radius: 100px;
+        font-size: 25px;
+        background: rgba(255, 255, 255, 0.75);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #Questions1 div:not(#scoringdiv),
+    #TeamChoose,
+    #PathChoose {
+        background: rgba(255, 255, 255, 0.5);
+        float: none;
+        border-radius: 5px;
+        font-size: 15px;
+        height: 300%;
+        width: 90%;
+        position: relative;
+        line-height: 35px;
+    }
+
+    #scoringdiv {
+        background: rgba(255, 255, 255, 0.5);
+        float: none;
+        border-radius: 5px;
+        height: 500px;
+        width: 90%;
+        position: relative;
+    }
+
+    #scoreh1 {
+        font-size: 20px;
+    }
+
+    #BottomThing {
+        font-size: 15px;
+    }
+
+    #NAS {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 300%;
+        letter-spacing: 5px;
+        margin-top: 80px
+    }
+}
+
+/* Animation for dropdown menu */
+@keyframes MoveUpDown {
+    0% {
+        bottom: 0;
+    }
+
+    100% {
+        bottom: 100px;
+    }
+}
