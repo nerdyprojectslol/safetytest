@@ -168,7 +168,7 @@ Question 14: What items should go in the Safety Binder?
   - Materials
   - Inventory
 
-Question 15: What SHOULDN't be done for proper electricity use?
+Question 15: What SHOULDN'T be done for proper electricity use?
   + Breaking off the ground prong on the plug
   + Not wearing your safety glasses next to a power tool
   + Using a power tool with a damaged cord

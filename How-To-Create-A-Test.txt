@@ -1,55 +1,32 @@
 
-
-
 --Test Creation Guide--
 
 
-First, navigate to folder location "public/Tests"
+First, navigate to folder location "public/Tests/"
 
 
-Secondly, create a new folder. Your folder name should be "#############-Test". 
+Secondly, create a new folder. Your folder name should be "####-Test". 
 If you require more words, you can change the index.js file in src/index.js.
 
 
-After that, there should be two items in your folder. One is a folder called: "ItemsFolder"
-The other file is called "index.html".
+After that, there should be three items in your folder.
+ - settings.yml
+ - ######Test.txt (Check IMPORTANT for more details)
+ - index.html
 
-
-
-The contents of this index.html file is as follows:
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8" />
-    <title>OA Robotics Testing Redirect</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/items/4079-transparent.png" type="image/x-icon">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js-css/LocStorTest.js"></script>
-    <link rel="stylesheet" href="/js-css/LocStorTest.css">
-</head>
-
-<body>
-    <center id="Center">
-        <h1 id="RedirectText">Redirecting to chosen test...</h1>
-    </center>
-</body>
-
-</html>
-
-
-
-
-Afterwards, save and move onto the ItemsFolder folder
-
-In the ItemsFolder folder, there should be 2 items:
- - settings.yml (Cap sensitive)
- - ####Test.txt (Look for IMPORTANT below for more information)
 
 IMPORTANT: Your .txt file MUST be the same name as the main test folder
 (Ex: If your test name is Tools-Test, your .txt file should be ToolsTest.txt)
+
+
+
+
+The contents of the index.html file is as follows:
+
+<!DOCTYPE html><html><head><meta charset="UTF-8" /><title>OA Robotics Testing Redirect</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="/items/4079-transparent.png" type="image/x-icon"><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script type="text/javascript" src="/js-css/LocStorTest.js"></script><link rel="stylesheet" href="/js-css/LocStorTest.css"></head><body><center id="Center"><h1 id="RedirectText">Redirecting to chosen test...</h1></center></body></html>
+
+Copy and paste this line into your index.html file.
+
 
 
 
@@ -74,6 +51,8 @@ It is recommended if you have SetCategory to true, CategoryGUI should be false, 
 
 
 
+
+
 In your ####Test.txt file, you should have a similar file structure to this:
 
 Question 1: What color is the sky?
@@ -91,7 +70,6 @@ Question 2: Where is New York City located?
  + Near the Atlantic Ocean
 
 ...
-
 
 
 

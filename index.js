@@ -36,7 +36,7 @@ app.post("/settings", async (request, response) => {
 
         let settingsMain = [];
         //Gets settings from the url
-        fs.readFile("public" + url + "/ItemsFolder/settings.yml", "utf8", async function (err, data) {
+        fs.readFile("public" + url + "/settings.yml", "utf8", async function (err, data) {
             //console.log("Reading settings");
             try {
                 settings = data
@@ -112,7 +112,7 @@ app.post("/questions", async (request, response) => {
         let datajson = {};
         datajson.PossibleQuestions = [];
 
-        fs.readFile("public" + url + "/ItemsFolder/" + settingsOut[6], "utf8", async function (err, data2) {
+        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data2) {
 
             questions = data2;
             //console.log(questions)
