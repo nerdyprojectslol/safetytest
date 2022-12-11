@@ -4,7 +4,8 @@
   "description": "This is a testing app for my test",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "start": "node index.js",
+    "error": "error: no test specified"
   },
   "keywords": [
     "testing",
