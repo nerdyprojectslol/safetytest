@@ -14,11 +14,9 @@
   "author": "Lil Gamer Playz - Erick Tran",
   "license": "MIT",
   "dependencies": {
-    "@shopify/app-bridge-utils": "^3.4.3",
-    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "googleapis": "^109.0.1",
     "import": "^0.0.6",
-    "require": "^0.4.4"
+    "require": "^0.4.9"
   }
 }
