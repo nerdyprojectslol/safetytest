@@ -4,7 +4,7 @@
   "description": "This is a testing app for my test",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon src/index.js"
+    "test": "node index.js"
   },
   "keywords": [
     "testing",

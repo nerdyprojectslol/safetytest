@@ -5,7 +5,7 @@ FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran
 
 THIS VERSION OF THE SAFETY TEST IS READY FOR USE.
 
----MINOR UPDATE 11.01--- 
+---MINOR UPDATE 11.02--- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
@@ -28,7 +28,7 @@ Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a reposito
 
 This is a really complex project I had to work on and spend a lot of man-hours working on, so please don't distribute this unless it is to remake the test
 
-With over 100 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
+With over 170 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
 
 Realistically, I don't have more to say other than that, but a Q&A will be available below.
 
