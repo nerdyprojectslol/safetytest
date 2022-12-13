@@ -286,7 +286,7 @@ async function GeneralSettings() {
             document.getElementById("myRange").max = possibleSettings[2] - 1;
 
             //Use this variable to determine if the browser is compatible with the test
-            let browserName = (function (agent) {
+            let browserName = (function(agent) {
                 switch (true) {
                     case agent.indexOf("edge") > -1:
                         return "MS Edge";
@@ -507,7 +507,7 @@ function Dropdown() {
 }
 
 //Closes dropdown menu if user clicks outside of it
-window.onclick = function (event) {
+window.onclick = function(event) {
     //Checks if user clicked on dropdown button
     if (!event.target.matches('.dropbtn')) {
         //Shows or hides dropdown menu
@@ -522,32 +522,6 @@ window.onclick = function (event) {
     }
 }
 
-
-//Checks if user changed slider
-while (document.getElementById("myRange")) {
-    document.getElementById("myRange").onchange = function () {
-        sliderScroll();
-    };
-}
-
-//Scrolls to question
-function sliderScroll() {
-    let SliderValue1 = Math.round(document.getElementById("myRange").value);
-    document.addEventListener("click", handler, true);
-
-    function handler(e) {
-        e.stopPropagation();
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        setTimeout(function () {
-            document.removeEventListener("click", handler, true);
-        }, 1000);
-    }
-    location.href = "#Question_" + SliderValue1 + "1";
-}
-
-
-
 //Save Username in main index.html
 function saveUser() {
 
@@ -556,20 +530,20 @@ function saveUser() {
     //Returns error if box is empty
     if (usernameinput == "") {
         document.getElementById("MainHeadingBox").innerHTML = "Please enter a valid username";
-        setTimeout(function () {
+        setTimeout(function() {
             document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
         }, 3000);
 
         //Checks if the username contains a space
     } else if (usernameinput.includes(" ") == false) {
         document.getElementById("MainHeadingBox").innerHTML = "You must input both your first and last names in the box";
-        setTimeout(function () {
+        setTimeout(function() {
             document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
         }, 3000);
         //Checks the limit of a username
     } else if (usernameinput.split(" ")[1].length > 20 || usernameinput.split(" ")[2] > 25) {
         document.getElementById("MainHeadingBox").innerHTML = "Your first or last name is too long. Try again.";
-        setTimeout(function () {
+        setTimeout(function() {
             document.getElementById("MainHeadingBox").innerHTML = "Enter First and Last Names in Input Box";
         }, 3000);
         //If the username is valid

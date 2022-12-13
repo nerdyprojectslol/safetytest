@@ -4,6 +4,6 @@ const dir = currentFolder.substring(0, currentFolder.lastIndexOf('/'));
 localStorage.setItem("testPath", dir);
 
 //Redirects to the main page
-setTimeout(function () {
+setTimeout(function() {
     window.location = "/";
 }, 1500);

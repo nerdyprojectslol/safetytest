@@ -15,8 +15,8 @@ After that, there should be three items in your folder.
  - index.html
 
 
-IMPORTANT: Your .txt file MUST be the same name as the main test folder
-(Ex: If your test name is Tools-Test, your .txt file should be ToolsTest.txt)
+IMPORTANT: Your .txt file MUST be the same as the name chosen in settings:
+(Ex: if "Questionfilename: MechanicalTest.txt", your test name should be MechanicalTest.txt. You can change this to whatever you want.)
 
 
 

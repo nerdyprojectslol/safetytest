@@ -8,6 +8,7 @@ html {
 
 body {
     background-image: linear-gradient(to right top, #3e3e3e, #2b2e30, #151918, #949c9a, #353537);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -24,7 +25,7 @@ body {
 }
 
 #Start_Button {
-    width: 250px;
+    width: 95%;
     font-size: 200%;
 }
 
@@ -47,14 +48,15 @@ body {
 }
 
 .dropbtn {
-    background-color: #225c83;
+    background-color: #3498DB;
     color: white;
     padding: 16px;
-    font-size: 21px;
+    font-size: 120%;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
 }
+
 
 /* Dropdown button on hover & focus */
 
@@ -63,12 +65,14 @@ body {
     background-color: #225c83;
 }
 
+
 /* The container <div> - needed to position the dropdown content */
 
 .dropdown {
     position: relative;
     display: inline-block;
 }
+
 
 /* Dropdown Content (Hidden by Default) */
 
@@ -82,6 +86,7 @@ body {
     border-radius: 10px;
 }
 
+
 /* Links inside the dropdown */
 
 .dropdown-content a {
@@ -93,12 +98,14 @@ body {
     font-weight: bold;
 }
 
+
 /* Change color of dropdown links on hover */
 
 .dropdown-content a:hover {
     background-color: #ddd;
     border-radius: 10px;
 }
+
 
 /* Show the dropdown menu on hover */
 
@@ -111,22 +118,21 @@ body {
     font-weight: bold;
 }
 
+#Heading2 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
 /*THIS IS FOR MOBILE SUPPORT - DO NOT REMOVE*/
 
 @media (max-width: 720px) {
-    .Start_Div {
-        width: 95%;
-    }
-
     #Start_Button {
         width: 100%;
         font-size: 200%;
     }
-
     #BottomThing {
         font-size: 15px;
     }
-
     .dropbtn {
         background-color: #3498DB;
         color: white;
@@ -137,6 +143,7 @@ body {
     }
 }
 
+
 /* Animation for dropdown menu */
 
 @keyframes growDown {
@@ -144,7 +151,6 @@ body {
         opacity: 0;
         transform: translateY(-15px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);

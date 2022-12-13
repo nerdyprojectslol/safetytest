@@ -16,7 +16,6 @@ body {
     outline: none;
 }
 
-
 .navbar1 {
     top: 4%;
     position: sticky;
@@ -51,6 +50,7 @@ body {
 #Questions1 div:not(#scoringdiv),
 #TeamChoose,
 #PathChoose {
+    font-family: Arial, Helvetica, sans-serif;
     background: rgba(255, 255, 255, 0.5);
     float: none;
     border-radius: 5px;
@@ -63,6 +63,7 @@ body {
 }
 
 #scoringdiv {
+    font-family: Arial, Helvetica, sans-serif;
     background: rgba(255, 255, 255, 0.5);
     float: none;
     border-radius: 5px;
@@ -165,18 +166,15 @@ body {
     body {
         background-image: linear-gradient(to right top, #3a4146, #171a1c, #282b2c, #363a39, #434752);
     }
-
     #Compendium1 {
         font-size: 30px;
     }
-
     #logo {
         width: 50px;
         margin-top: 30px;
         width: 50%;
         border-radius: 15px
     }
-
     #QuestionBox,
     #Scorebox {
         background: rgba(255, 255, 255, 0.5);
@@ -189,7 +187,6 @@ body {
         left: 10px;
         line-height: 20px
     }
-
     #FunctionalButtons {
         height: 50px;
         width: 100px;
@@ -198,7 +195,6 @@ body {
         background: rgba(255, 255, 255, 0.75);
         font-family: Arial, Helvetica, sans-serif;
     }
-
     #Questions1 div:not(#scoringdiv),
     #TeamChoose,
     #PathChoose {
@@ -211,7 +207,6 @@ body {
         position: relative;
         line-height: 35px;
     }
-
     #scoringdiv {
         background: rgba(255, 255, 255, 0.5);
         float: none;
@@ -219,16 +214,14 @@ body {
         height: 500px;
         width: 90%;
         position: relative;
+        font-family: Arial, Helvetica, sans-serif;
     }
-
     #scoreh1 {
         font-size: 20px;
     }
-
     #BottomThing {
         font-size: 15px;
     }
-
     #NAS {
         color: white;
         font-family: Arial, Helvetica, sans-serif;
@@ -238,12 +231,13 @@ body {
     }
 }
 
+
 /* Animation for dropdown menu */
+
 @keyframes MoveUpDown {
     0% {
         bottom: 0;
     }
-
     100% {
         bottom: 100px;
     }
