@@ -1,3 +1,7 @@
+Before we start, I might say that it is NECESSARY that you do not delete the Safety-Test folder in public/Tests
+You may delete or create any other folder, but the safety test folder is the base folder and must not be removed, unless there is a replacement going in immediately.
+
+
 
 --Test Creation Guide--
 
