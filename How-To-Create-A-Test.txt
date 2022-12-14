@@ -6,7 +6,7 @@ First, navigate to folder location "public/Tests/"
 
 
 Secondly, create a new folder. Your folder name should be "####-Test". 
-If you require more words, you can change the index.js file in src/index.js.
+If you require more words, you can change the index.js file in index.js.
 
 
 After that, there should be three items in your folder.
@@ -23,14 +23,16 @@ IMPORTANT: Your .txt file MUST be the same as the name chosen in settings:
 
 The contents of the index.html file is as follows:
 
+
 <!DOCTYPE html><html><head><meta charset="UTF-8" /><title>OA Robotics Testing Redirect</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="shortcut icon" href="/items/4079-transparent.png" type="image/x-icon"><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script><script type="text/javascript" src="/js-css/LocStorTest.js"></script><link rel="stylesheet" href="/js-css/LocStorTest.css"></head><body><center id="Center"><h1 id="RedirectText">Redirecting to chosen test...</h1></center></body></html>
+
 
 Copy and paste this line into your index.html file.
 
 
 
 
-In your settings.yml folder, the file structure should start off with these contents (You may add more, but it must be reflected in test.html/app.js):
+In your settings.yml folder, the file structure should start off with these contents (You may add more, but it must be reflected in public/js-css/test.js):
 
 # Settings folder, controlling functions of the test
 # DO NOT RENAME FOLDER OR REMOVE THESE FIRST TWO LINES
@@ -59,7 +61,8 @@ Question 1: What color is the sky?
  + Blue
  - Red
  - Yellow
- + Purple
+ - Purple
+ + Not Purple
 
 Question 2: Where is New York City located?
  + New York State
