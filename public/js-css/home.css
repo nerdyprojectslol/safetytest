@@ -141,6 +141,9 @@ body {
         border: none;
         cursor: pointer;
     }
+    .Start_Div {
+        width: 95%;
+    }
 }
 
 
