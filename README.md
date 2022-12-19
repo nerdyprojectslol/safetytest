@@ -3,7 +3,7 @@ This is a repository for an updated version of the OA Robotics Safety Test avail
 
 FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran 2022
 
----MAJOR UPDATE 11.1-- 
+---MINOR UPDATE 11.11-- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
