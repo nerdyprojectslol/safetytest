@@ -1,7 +1,7 @@
 # Settings folder, controlling functions of the test
 # DO NOT RENAME FOLDER OR REMOVE THESE FIRST TWO LINES
 Questions: 1
-AnswersPerQuestion: 4
+AnswersPerQuestion: 6
 TeamGUI: true
 CategoryGUI: false
 Questionfilename: ToolsTest.txt

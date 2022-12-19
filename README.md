@@ -3,7 +3,7 @@ This is a repository for an updated version of the OA Robotics Safety Test avail
 
 FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran 2022
 
----MINOR UPDATE 11.09-- 
+---MAJOR UPDATE 11.1-- 
 
 (Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
 
@@ -20,8 +20,8 @@ There MUST be at least 4 answers, there is no maximum amount of answers.
 
 
 
-Website currently hosted on Heroku at:
-"oa-robotics-testing.herokuapp.com"
+Website hosted on railway.app
+
 
 Domain at "oasafety.personalweb.systems", planning on moving it to the official FRC domain soon.
 
@@ -30,7 +30,7 @@ Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a reposito
 
 This is a really complex project I had to work on and spend a lot of man-hours working on, so please don't distribute this unless it is to remake the test
 
-With over 170 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
+With over 180 releases/patches, this is the most complex project I've worked on so far (in HTML). Hope you enjoy!
 
 Realistically, I don't have more to say other than that, but a Q&A will be available below.
 

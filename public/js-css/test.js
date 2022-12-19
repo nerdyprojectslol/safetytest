@@ -698,7 +698,7 @@ function QuestionCor() {
             ansHistoryNum++;
             //If the answer is correct
             if (checkanschecked.checked == IsCor) {
-                Score = Score + 0.25;
+                Score += Math.round(100 / possibleSettings[3]);
                 //If the answer is incorrect, do nothing
             } else if (checkanschecked.checked != IsCor) {
                 Score = Score;
@@ -713,6 +713,16 @@ function QuestionCor() {
     if (document.getElementById("scoringdiv")) {
         document.getElementById("scoringdiv").remove();
     }
+
+    switch (true) {
+        case (Score / 100) > possibleSettings[2]:
+            Score = possibleSettings[2];
+            break;
+        default:
+            Score /= 100;
+            break;
+    }
+
 
     //Username
     let user = localStorage.getItem("username");

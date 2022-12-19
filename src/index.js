@@ -23,6 +23,7 @@ app.use(express.static('public'));
 app.use(express.json({ limit: '5mb' }));
 
 let settingsOut;
+let folderSplit = "\n";
 
 //Get settings or any other needed file and export to the client
 app.post("/settings", async(request, response) => {
@@ -48,9 +49,9 @@ app.post("/settings", async(request, response) => {
                 let tempCount = 0;
 
                 //Replace all \r\n statements with \n because \r\n is only supported in local run time
-                while (tempSettings.split("\n")[tempCount] != null) {
+                while (tempSettings.split(folderSplit)[tempCount] != null) {
                     //Encountered an error, pls fix tomorrow tyy
-                    settingsMain.push(tempSettings.split("\n")[tempCount].split(": ")[1]);
+                    settingsMain.push(tempSettings.split(folderSplit)[tempCount].split(": ")[1]);
                     tempCount++;
                 }
                 settingsOut = settingsMain;
@@ -124,7 +125,7 @@ app.post("/questions", async(request, response) => {
             for (let i = 0; i < tempQuestions.split("Question ").length - 1; i++) {
                 let data1 = {
                         "id": "Q" + (i + 1),
-                        "Question": tempQuestions.split("Question ")[i + 1].split("\n")[0].split(": ")[1],
+                        "Question": tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].split(": ")[1],
                         "Answers": []
                     }
                     //console.log(datajson.PossibleQuestions);
@@ -133,7 +134,7 @@ app.post("/questions", async(request, response) => {
                 datajson.PossibleQuestions.push(data1);
 
 
-                let Answers = tempQuestions.split("Question ")[i + 1].split(": ")[1].split("\n");
+                let Answers = tempQuestions.split("Question ")[i + 1].split(": ")[1].split(folderSplit);
                 Answers.shift();
                 //console.log(Answers);
                 let AnswersData = [];
@@ -188,7 +189,7 @@ app.post("/questions", async(request, response) => {
 const authentication = async() => {
     //The credentials for the google API
     const auth = new google.auth.GoogleAuth({
-            keyFile: "credentials.json",
+            keyFile: "src/credentials.json",
             scopes: "https://www.googleapis.com/auth/spreadsheets"
         })
         //The client for the google API, waiting for the authentication to get the credentials
