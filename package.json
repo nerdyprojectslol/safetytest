@@ -2,9 +2,9 @@
     "name": "nodejs-testing",
     "version": "1.0.0",
     "description": "This is a testing app for my test",
-    "main": "src/index.js",
+    "main": "index.js",
     "scripts": {
-        "start": "node src/index.js",
+        "start": "node index.js",
         "error": "error: no test specified"
     },
     "keywords": [

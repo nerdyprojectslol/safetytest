@@ -189,7 +189,7 @@ app.post("/questions", async(request, response) => {
 const authentication = async() => {
     //The credentials for the google API
     const auth = new google.auth.GoogleAuth({
-            keyFile: "src/credentials.json",
+            keyFile: "credentials.json",
             scopes: "https://www.googleapis.com/auth/spreadsheets"
         })
         //The client for the google API, waiting for the authentication to get the credentials
