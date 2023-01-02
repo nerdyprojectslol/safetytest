@@ -78,7 +78,8 @@ Question 2: Where is New York City located?
 
 ...
 
-
+NOTE: If a text file has a starting character of #, it is a HIDDEN file and will not be shown to test users.
+You will still be able to access it if you type in the file path, providing an alternative to the "Accessable" setting.
 
 And thats all you have to do to set this up. There will eventually be a script that can automatically do this for you,
 but you can use the base structure at the moment. Thank you for your time.

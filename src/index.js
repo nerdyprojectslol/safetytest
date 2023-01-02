@@ -1,6 +1,5 @@
 //Packages
 const express = require('express');
-const path = require('path');
 
 //Accessing the library/module for usage
 const app = express();
@@ -11,7 +10,6 @@ const { google } = require('googleapis');
 const port = process.env.PORT || 3000;
 //File System
 const fs = require("fs");
-
 
 //Port hosted on, as well as logging the status of the server, if it is running or not
 app.listen(port, () => console.log('Server started on port ' + port));
@@ -26,7 +24,7 @@ let settingsOut;
 let folderSplit = "\n";
 
 //Get settings or any other needed file and export to the client
-app.post("/settings", async(request, response) => {
+app.post("/settings", async (request, response) => {
     //console.log("Settings requested" + request.body);
     try {
         let settings;
@@ -37,11 +35,11 @@ app.post("/settings", async(request, response) => {
 
         let settingsMain = [];
         //Gets settings from the url
-        fs.readFile("public" + url + "/settings.yml", "utf8", async function(err, data) {
+        fs.readFile("public" + url + "/settings.yml", "utf8", async function (err, data) {
             //console.log("Reading settings");
             try {
                 settings = data
-                    //console.log(settings);
+                //console.log(settings);
                 const tempSettings = settings.toString();
                 //console.log(tempSettings);
                 //Use the latter while statement for testing purposes
@@ -66,7 +64,7 @@ app.post("/settings", async(request, response) => {
     }
 });
 
-app.get("/folderdata", async(request, response) => {
+app.get("/folderdata", async (request, response) => {
     try {
         let folderData = [];
 
@@ -74,7 +72,7 @@ app.get("/folderdata", async(request, response) => {
         const folderPath = "public/Tests";
 
         //Getting the folders in the folder
-        fs.readdir(folderPath, async(err, files) => {
+        fs.readdir(folderPath, async (err, files) => {
             //console.log("Reading folder");
             try {
                 //For each file in the folder
@@ -82,9 +80,53 @@ app.get("/folderdata", async(request, response) => {
                     //If the file is a folder
                     if (fs.lstatSync(folderPath + "/" + file).isDirectory()) {
                         //Add the folder to the array
-                        folderData.push(file);
+                        let filePath = folderPath + "/" + file;
+                        fs.readdirSync(folderPath + "/" + file).forEach(file2 => {
+                            //console.log(file2);
+                            let settings;
+
+                            let setinclude = false;
+                            let txtinclude = false;
+                            let htmlinclude = false;
+
+                            let typeoftxt = "";
+
+                            if (fs.existsSync(filePath + "/settings.yml")) {
+                                //console.log(settings.split(folderSplit)[6].split(": ")[1]);
+                                typeoftxt = fs.readFileSync(folderPath + "/" + file + "/" + file2, "utf8").split(folderSplit)[6].split(": ")[1];
+                                setinclude = true;
+                            }
+
+                            if (fs.existsSync(filePath + "/" + typeoftxt)) {
+                                txtinclude = true;
+                            }
+
+                            if (fs.existsSync(filePath + "/index.html")) {
+                                htmlinclude = true;
+                            }
+
+                            if (setinclude == true && txtinclude == true && htmlinclude == true) {
+                                //console.log(setinclude, txtinclude, htmlinclude);
+                                if (!file.includes("#", 0)) {
+                                    folderData.push(file);
+                                    if (folderData.includes("Safety-Test")) {
+                                        folderData.splice(folderData.indexOf("Safety-Test"), 1);
+                                    }
+                                } else if (file.includes("#", 0)) {
+                                    console.log("Folder " + file + " is a hidden folder and will not be shown");
+                                }
+                            } else if (setinclude == false || txtinclude == false || htmlinclude == false) {
+                                if (typeoftxt == undefined) {
+                                    //console.log("Error, returning");
+                                } else {
+                                    //console.log(setinclude, txtinclude, htmlinclude);
+                                    console.log("Folder " + file + " is missing a file and will not be shown. It is missing file(s): " + (setinclude == false ? "settings.yml, " : "") + (txtinclude == false ? "Missing Answers File" + ", " : "") + (htmlinclude == false ? "index.html, " : ""));
+                                }
+                            }
+                        });
                     }
                 });
+
                 if (folderData.includes("Safety-Test")) {
                     folderData.splice(folderData.indexOf("Safety-Test"), 1);
                 }
@@ -100,7 +142,7 @@ app.get("/folderdata", async(request, response) => {
     }
 });
 
-app.post("/questions", async(request, response) => {
+app.post("/questions", async (request, response) => {
     //console.log("Questions requested: " + request.body);
     try {
         let questions;
@@ -113,7 +155,7 @@ app.post("/questions", async(request, response) => {
         let datajson = {};
         datajson.PossibleQuestions = [];
 
-        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function(err, data2) {
+        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data2) {
 
             questions = data2;
             //console.log(questions)
@@ -124,11 +166,11 @@ app.post("/questions", async(request, response) => {
             //For loop for sending each question to the variable
             for (let i = 0; i < tempQuestions.split("Question ").length - 1; i++) {
                 let data1 = {
-                        "id": "Q" + (i + 1),
-                        "Question": tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].split(": ")[1],
-                        "Answers": []
-                    }
-                    //console.log(datajson.PossibleQuestions);
+                    "id": "Q" + (i + 1),
+                    "Question": tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].split(": ")[1],
+                    "Answers": []
+                }
+                //console.log(datajson.PossibleQuestions);
 
                 //Send data to the variable
                 datajson.PossibleQuestions.push(data1);
@@ -186,13 +228,13 @@ app.post("/questions", async(request, response) => {
 
 
 //The authentication for the google API
-const authentication = async() => {
+const authentication = async () => {
     //The credentials for the google API
     const auth = new google.auth.GoogleAuth({
-            keyFile: "credentials.json",
-            scopes: "https://www.googleapis.com/auth/spreadsheets"
-        })
-        //The client for the google API, waiting for the authentication to get the credentials
+        keyFile: "src/credentials.json",
+        scopes: "https://www.googleapis.com/auth/spreadsheets"
+    })
+    //The client for the google API, waiting for the authentication to get the credentials
     const client = await auth.getClient();
     //The google API
     const googleAPI = google.sheets({
@@ -207,7 +249,7 @@ const authentication = async() => {
 const id = "1WyTjyGrxWOyzYaWiOUkYICdnMXZvJJAZgS5P5tUd6dk";
 
 //The function that will be called to add the data to the google sheet
-app.get("/api", async(request, res1) => {
+app.get("/api", async (request, res1) => {
     try {
         //Waiting for the authentication to get the credentials
         const { googleAPI } = await authentication();
@@ -227,7 +269,7 @@ app.get("/api", async(request, res1) => {
 
 
 //Sending data to the sheet
-app.post("/api", async(request, response1) => {
+app.post("/api", async (request, response1) => {
     try {
         //destructure 'newName' and 'newValue' from request.body
         const { Name, Team, Category, Pass, Score, Type } = request.body;
