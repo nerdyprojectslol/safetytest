@@ -1,7 +1,7 @@
 # OA-Robotics-Safety-Test
 This is a repository for an updated version of the OA Robotics Safety Test available.
 
-FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran 2022
+FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran 2023
 
 ---MAJOR UPDATE 11.3-- 
 
