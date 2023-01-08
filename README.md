@@ -5,25 +5,10 @@ FULLY LICENSED UNDER THE MIT LICENSE - SEE LICENSE FILE FOR DETAILS - Erick Tran
 
 ---MAJOR UPDATE 11.3-- 
 
-(Personal Repository Version with all the latest updates at: https://github.com/nerdyprojectslol/safetytest)
+Hosted on domain "oasafety.personalweb.systems"
 
 
-
---USAGE INSTRUCTIONS--
-General Rule of Thumb for Making Questions or adding responses to Questions:
-There should be at least 4-5 extra questions more than the provided amount of questions (If 16 was the max, 20-21 questions would suffice)
-For every question, there should at least be 5-6 answers.
-
-There MUST be at least 2 more questions than the amount of questions chosen for the test. (If 16 questions were chosen, there should be at least 18 questions)
-
-There MUST be at least 4 answers, there is no maximum amount of answers.
-
-
-
-Website hosted on railway.app
-
-
-Domain at "oasafety.personalweb.systems", planning on moving it to the official FRC domain soon.
+Required: NodeJS (https://nodejs.org/en/download/)
 
 
 Hi all, Lil Gamer Playz (Erick) here. If you are seeing this, this is a repository for the OA Robotics Safety Test I made.
