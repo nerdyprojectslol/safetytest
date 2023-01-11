@@ -142,12 +142,14 @@ app.get("/folderdata", async(request, response) => {
     }
 });
 
+let questions;
 app.post("/questions", async(request, response) => {
     //console.log("Questions requested: " + request.body);
     try {
-        let questions;
+        
 
         const tempURL = JSON.stringify(request.body);
+        console.log(tempURL);
 
         const url = tempURL.split(",")[0].split(":")[1].split('"')[1];
 
@@ -155,14 +157,15 @@ app.post("/questions", async(request, response) => {
         let datajson = {};
         datajson.PossibleQuestions = [];
 
+        console.log("public" + url + "/" + settingsOut[6]);
         fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function(err, data2) {
+            console.log(data2);
 
             questions = data2;
-            console.log(questions)
+            console.log(questions);
 
-            const tempQuestions = questions.toString();
-            //console.log(tempQuestions);
-
+            const tempQuestions = questions;
+            console.log(tempQuestions);
             //For loop for sending each question to the variable
             for (let i = 0; i < tempQuestions.split("Question ").length - 1; i++) {
                 let data1 = {
