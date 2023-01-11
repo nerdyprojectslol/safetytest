@@ -24,7 +24,7 @@ let settingsOut;
 let folderSplit = "\n";
 
 //Get settings or any other needed file and export to the client
-app.post("/settings", async (request, response) => {
+app.post("/settings", async(request, response) => {
     //console.log("Settings requested" + request.body);
     try {
         let settings;
@@ -35,11 +35,11 @@ app.post("/settings", async (request, response) => {
 
         let settingsMain = [];
         //Gets settings from the url
-        fs.readFile("public" + url + "/settings.yml", "utf8", async function (err, data) {
+        fs.readFile("public" + url + "/settings.yml", "utf8", async function(err, data) {
             //console.log("Reading settings");
             try {
                 settings = data
-                //console.log(settings);
+                    //console.log(settings);
                 const tempSettings = settings.toString();
                 //console.log(tempSettings);
                 //Use the latter while statement for testing purposes
@@ -64,7 +64,7 @@ app.post("/settings", async (request, response) => {
     }
 });
 
-app.get("/folderdata", async (request, response) => {
+app.get("/folderdata", async(request, response) => {
     try {
         let folderData = [];
 
@@ -72,7 +72,7 @@ app.get("/folderdata", async (request, response) => {
         const folderPath = "public/Tests";
 
         //Getting the folders in the folder
-        fs.readdir(folderPath, async (err, files) => {
+        fs.readdir(folderPath, async(err, files) => {
             //console.log("Reading folder");
             try {
                 //For each file in the folder
@@ -142,7 +142,7 @@ app.get("/folderdata", async (request, response) => {
     }
 });
 
-app.post("/questions", async (request, response) => {
+app.post("/questions", async(request, response) => {
     //console.log("Questions requested: " + request.body);
     try {
         let questions;
@@ -155,10 +155,10 @@ app.post("/questions", async (request, response) => {
         let datajson = {};
         datajson.PossibleQuestions = [];
 
-        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function (err, data2) {
+        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function(err, data2) {
 
             questions = data2;
-            //console.log(questions)
+            console.log(questions)
 
             const tempQuestions = questions.toString();
             //console.log(tempQuestions);
@@ -166,49 +166,53 @@ app.post("/questions", async (request, response) => {
             //For loop for sending each question to the variable
             for (let i = 0; i < tempQuestions.split("Question ").length - 1; i++) {
                 let data1 = {
-                    "id": "Q" + (i + 1),
-                    "Question": tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].split(": ")[1],
-                    "Answers": []
-                }
-                //console.log(datajson.PossibleQuestions);
+                        "id": "Q" + (i + 1),
+                        "Question": tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].split(": ")[1],
+                        "Answers": []
+                    }
+                    //console.log(datajson.PossibleQuestions);
 
-                //Send data to the variable
-                datajson.PossibleQuestions.push(data1);
-
-
-                let Answers = tempQuestions.split("Question ")[i + 1].split(": ")[1].split(folderSplit);
-                Answers.shift();
-                //console.log(Answers);
-                let AnswersData = [];
+                if (data1.Question.includes("#")) {
+                    console.log("Question " + (i + 1) + " is a hidden question and will not be shown");
+                } else {
+                    //Send data to the variable
+                    datajson.PossibleQuestions.push(data1);
 
 
-                let removeAmount = 0;
-                if (Answers[Answers.length - 1] == "") {
-                    Answers.pop();
-                    removeAmount++;
-                }
+                    let Answers = tempQuestions.split("Question ")[i + 1].split(": ")[1].split(folderSplit);
+                    Answers.shift();
+                    //console.log(Answers);
+                    let AnswersData = [];
 
-                for (let j = 0; j < Answers.length - removeAmount; j++) {
-                    let bool = false;
-                    if (Answers[j].includes("+")) {
-                        bool = true;
-                        Answers[j] = Answers[j].split("+")[1];
-                    } else if (Answers[j].includes("-")) {
-                        bool = false;
-                        Answers[j] = Answers[j].split("-")[1];
+
+                    let removeAmount = 0;
+                    if (Answers[Answers.length - 1] == "") {
+                        Answers.pop();
+                        removeAmount++;
                     }
 
-                    AnswersData.push({
-                        "id": "Q" + (i + 1) + "_a" + (j + 1),
-                        "Answer": Answers[j],
-                        "IsCorrect": bool
-                    });
+                    for (let j = 0; j < Answers.length - removeAmount; j++) {
+                        let bool = false;
+                        if (Answers[j].includes("+")) {
+                            bool = true;
+                            Answers[j] = Answers[j].split("+")[1];
+                        } else if (Answers[j].includes("-")) {
+                            bool = false;
+                            Answers[j] = Answers[j].split("-")[1];
+                        }
 
-                    //console.log(data1.Answers + " --data1.answers");
+                        AnswersData.push({
+                            "id": "Q" + (i + 1) + "_a" + (j + 1),
+                            "Answer": Answers[j],
+                            "IsCorrect": bool
+                        });
+
+                        //console.log(data1.Answers + " --data1.answers");
+                    }
+                    //console.log(JSON.stringify(AnswersData) + " --AnswersData");
+                    data1.Answers = AnswersData;
+                    //console.log(JSON.stringify(data1) + " --data1.answers");
                 }
-                //console.log(JSON.stringify(AnswersData) + " --AnswersData");
-                data1.Answers = AnswersData;
-                //console.log(JSON.stringify(data1) + " --data1.answers");
             }
 
             //for (let i=0; i<Answers.length; i++) {
@@ -228,13 +232,13 @@ app.post("/questions", async (request, response) => {
 
 
 //The authentication for the google API
-const authentication = async () => {
+const authentication = async() => {
     //The credentials for the google API
     const auth = new google.auth.GoogleAuth({
-        keyFile: "src/credentials.json",
-        scopes: "https://www.googleapis.com/auth/spreadsheets"
-    })
-    //The client for the google API, waiting for the authentication to get the credentials
+            keyFile: "src/credentials.json",
+            scopes: "https://www.googleapis.com/auth/spreadsheets"
+        })
+        //The client for the google API, waiting for the authentication to get the credentials
     const client = await auth.getClient();
     //The google API
     const googleAPI = google.sheets({
@@ -249,7 +253,7 @@ const authentication = async () => {
 const id = "1WyTjyGrxWOyzYaWiOUkYICdnMXZvJJAZgS5P5tUd6dk";
 
 //The function that will be called to add the data to the google sheet
-app.get("/api", async (request, res1) => {
+app.get("/api", async(request, res1) => {
     try {
         //Waiting for the authentication to get the credentials
         const { googleAPI } = await authentication();
@@ -269,7 +273,7 @@ app.get("/api", async (request, res1) => {
 
 
 //Sending data to the sheet
-app.post("/api", async (request, response1) => {
+app.post("/api", async(request, response1) => {
     try {
         //destructure 'newName' and 'newValue' from request.body
         const { Name, Team, Category, Pass, Score, Type } = request.body;
