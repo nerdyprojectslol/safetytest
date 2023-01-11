@@ -18,7 +18,7 @@
     <center id="center">
         <h1 class="header" style="font-family:Arial,Helvetica,sans-serif" id="TitleBar">OA Robotics: Safety Test</h1>
         <br>
-        <h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">If you see this text, please wait for the test to load or the JS is broken. EC: NoLo</h2>
+        <h2 id="Compendium1" class="header" style="font-family:Arial,Helvetica,sans-serif">If you see this text, please wait for the test to load or refresh the page. EC: NoLo</h2>
         <br>
         <h2 id="NAS" class="header" style="font-family:Arial,Helvetica,sans-serif">Some questions may not have answers
         </h2>
@@ -63,6 +63,12 @@
             }
             location.href = "#Question_" + SliderValue1 + "1";
         }
+
+        setTimeout(function() {
+            if (document.getElementById("Compendium1").innerHTML == "If you see this text, please wait for the test to load or refresh the page. EC: NoLo") {
+                window.location.reload();
+            }
+        }, 3000);
     </script>
 </body>
 

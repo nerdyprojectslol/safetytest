@@ -83,8 +83,6 @@ app.get("/folderdata", async(request, response) => {
                         let filePath = folderPath + "/" + file;
                         fs.readdirSync(folderPath + "/" + file).forEach(file2 => {
                             //console.log(file2);
-                            let settings;
-
                             let setinclude = false;
                             let txtinclude = false;
                             let htmlinclude = false;
@@ -142,14 +140,13 @@ app.get("/folderdata", async(request, response) => {
     }
 });
 
-let questions;
+
 app.post("/questions", async(request, response) => {
     //console.log("Questions requested: " + request.body);
     try {
-        
 
         const tempURL = JSON.stringify(request.body);
-        console.log(tempURL);
+        //console.log(tempURL);
 
         const url = tempURL.split(",")[0].split(":")[1].split('"')[1];
 
@@ -157,15 +154,13 @@ app.post("/questions", async(request, response) => {
         let datajson = {};
         datajson.PossibleQuestions = [];
 
-        console.log("public" + url + "/" + settingsOut[6]);
-        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async function(err, data2) {
-            console.log(data2);
+        //console.log("public" + url + "/" + settingsOut[6]);
+        fs.readFile("public" + url + "/" + settingsOut[6], "utf8", async(err, data2) => {
+            //console.log(data2);
 
-            questions = data2;
-            console.log(questions);
+            const tempQuestions = data2.toString();
+            //If there is a toString error, there is mostly an issue with the file path or the async function
 
-            const tempQuestions = questions;
-            console.log(tempQuestions);
             //For loop for sending each question to the variable
             for (let i = 0; i < tempQuestions.split("Question ").length - 1; i++) {
                 let data1 = {
@@ -175,9 +170,10 @@ app.post("/questions", async(request, response) => {
                     }
                     //console.log(datajson.PossibleQuestions);
 
-                if (data1.Question.includes("#")) {
-                    console.log("Question " + (i + 1) + " is a hidden question and will not be shown");
-                } else {
+                //if (tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].includes("#")) {
+                    //data1.Question = undefined;
+                    //console.log("Question " + (i + 1) + " is a hidden question and will not be shown");
+                //} else if (!tempQuestions.split("Question ")[i + 1].split(folderSplit)[0].includes("#")){
                     //Send data to the variable
                     datajson.PossibleQuestions.push(data1);
 
@@ -215,7 +211,14 @@ app.post("/questions", async(request, response) => {
                     //console.log(JSON.stringify(AnswersData) + " --AnswersData");
                     data1.Answers = AnswersData;
                     //console.log(JSON.stringify(data1) + " --data1.answers");
-                }
+                //} else {
+
+                //}
+            if (response.statusCode == 200) {
+                //console.log("Questions sent to client");
+            } else {
+                console.log(err)
+            }
             }
 
             //for (let i=0; i<Answers.length; i++) {
